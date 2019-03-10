@@ -1,0 +1,53 @@
+/* GLOBAL VARS */
+
+/* fonts */
+$ff-main: 'Open Sans', sans-serif;
+$ff-title: 'Bebas', sans-serif;
+
+/* brand colors */
+$c-black: #000000;
+$c-blue: #41bfef;
+$c-yellow: #ffbb00;
+
+$c-gray: #ececec;
+
+$c-links: $c-blue;
+$c-links-border: $c-black;
+$c-disabled: #acacac;
+
+/* adaptive font size */
+$fz-h1: 6rem;
+$fz-h2: 3.75rem;
+$fz-h3: 3rem;
+$fz-h4: 2.125rem;
+$fz-h5: 1.5rem;
+$fz-h6: 1.25rem;
+
+$fz-subtitle-1: 1rem;
+$fz-subtitle-2: 0.875rem;
+
+$fz-body-1: 1rem;
+$fz-body-2: 0.875rem;
+
+$fz-button: 0.875rem;
+
+$fz-caption: 0.75rem;
+$fz-overline: 0.625rem;
+
+/* responsive breakpoints */
+$m-xs-max: 575px; 	/* mobile */
+$m-sm-min: 576px;
+$m-sm-max: 767px;
+$m-md-min: 768px;	/* tablet */ 
+$m-md-max: 991px;
+$m-lg-min: 992px;	/* desktop */
+$m-lg-max: 1199px;
+$m-xl-min: 1200px;	/* wide */
+
+$tr-standart: 0.3s ease-in;
+
+$br-standart: 5px;
+
+$bshadow-standart: 0px 4px 16px rgba(0, 0, 0, 0.25);
+
+$header-height: 100px;

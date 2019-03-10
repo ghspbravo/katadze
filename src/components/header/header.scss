@@ -1,0 +1,18 @@
+@import '../../scss/vars';
+
+.header {
+	&, .header-logo {
+		height: $header-height;
+	}
+	.header-logo {
+		margin-right: 30px;
+	}
+}
+
+.header-nav {
+	&-item {
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+}
