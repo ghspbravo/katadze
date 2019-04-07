@@ -1,18 +1,67 @@
 @import '../../scss/vars';
 
 .header {
-	&, .header-logo {
-		height: $header-height;
-	}
+	height: $header-height;
+	min-height: 75px;
+	max-height: $header-height;
+	transition: height $tr-standart;
 	.header-logo {
+		position: relative;
 		margin-right: 30px;
+		width: 120px; height: $header-height;
+		min-height: 75px;
+		transition: height $tr-standart;
+	}
+
+	&-wrapper {
+		position: fixed;
+		top: 0; left: 0;
+		width: 100%;
+		background-color: transparent;
 	}
 }
 
 .header-nav {
-	&-item {
+	.nav-item {
+		a {
+			color: $c-black;
+			font-family: $ff-title;
+			font-size: $fz-h5;
+
+			&.active {
+				color: $c-blue;
+			}
+		}
+
 		&:not(:last-child) {
 			margin-right: 30px;
 		}
+	}
+}
+
+.header_white {
+	background-color: white;
+	box-shadow: $bshadow-standart;
+	transition: box-shadow $tr-standart, background-color $tr-standart;
+
+	.header, .header-logo {
+		height: $header-height-mobile;
+	}
+
+	.header-nav a {
+		color: black;
+	}
+}
+
+.header_transparent {
+	background-color: transparent;
+	box-shadow: none;
+
+	.header, .header-logo {
+		height: $header-height;
+	}
+
+	.header-nav a {
+		color: white;
 	}
 }

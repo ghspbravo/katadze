@@ -1,6 +1,6 @@
 /* FONTS */
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,800');
 
 @font-face {
   font-family: 'Bebas';
@@ -23,6 +23,7 @@
 }
 
 @import './scss/vars';
+@import './scss/spacing';
 
 body {
 	position: relative;
@@ -32,14 +33,54 @@ body {
 	letter-spacing: 0.5px;
 	color: $c-black;
 	overflow-x: hidden;
+	overflow-y: scroll;
 	@media (max-width: $m-sm-max) {
 		font-size: $fz-body-2;
 		letter-spacing: 0.25;
 	}
 }
 
+html {
+	line-height: 1.3;
+}
+
 .wrapper {
-	padding-top: $header-height;
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	z-index: 1;
+	min-height: 100vh - $header-height;
+}
+
+main {
+	padding-top: 10vh;
+}
+
+header {
+	z-index: 5;
+	position: relative;
+}
+
+section {
+	position: relative;
+	z-index: 1;
+}
+
+.sbox {
+	background-color: #fff;
+	padding: 25px 0;
+	&_info {
+		background-color: $c-info;
+	}
+	&_bg {
+		background-repeat: no-repeat;
+		background-color: $c-gray-dark;
+		background-size: cover;
+		background-position: center;
+	}
+	&_fixed {
+		position: fixed;
+	}
 }
 
 img, iframe, svg {
@@ -48,7 +89,26 @@ img, iframe, svg {
 
 /* CONTENT */
 
+b {
+	font-weight: 600;
+}
+
+.upper {
+	text-transform: uppercase;
+}
+
+.secondary {
+	color: $c-gray-dark;
+}
+
 /* titles */
+
+.title_page {
+	font-weight: 800;
+	color: $c-blue;
+	text-transform: uppercase;
+}
+
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	font-family: $ff-main;
 
@@ -65,7 +125,7 @@ h1, .h1, h2, .h2 {
 }
 
 h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-	font-weight: 700;
+	font-weight: 800;
 	&.lead {
 		font-weight: 400;
 	}
@@ -141,7 +201,6 @@ p, .text {
 	font-size: $fz-body-1;
 	font-weight: 400;
 	letter-spacing: 0.5px;
-	line-height: 1.3;
 	margin: 15px 0;
 	@media(max-width: $m-sm-max) {
 		font-size: $fz-body-2;
@@ -198,37 +257,60 @@ a, .link {
 
 button, .button,
 input[type=reset], input[type=button], input[type=submit] {
-	font-family: $ff-title;
+
+	&.alter {
+		font-family: $ff-title;
+		color: $c-black;
+		background: white;
+		border: 1px solid $c-gray;
+		letter-spacing: 1.25px;
+		padding: 10px 10px 5px 10px;
+
+		&:hover, &:focus {
+			background: $c-blue;
+			color: white;
+		}
+	
+		&:focus {
+			outline: 0;
+			background: darken($c-blue, 40%);
+		}
+	}
+
 	font-size: $fz-button;
-	letter-spacing: 1.25px;
 	line-height: 1;
 	font-weight: 400;
-	color: $c-black;
+	color: white;
+	text-transform: uppercase;
+
+	border-radius: $br-standart;
+	border: none;
+
+	background: linear-gradient(180deg, #6F9BCF 0%, #66D2EA 100%);
 
 	cursor: pointer;
-	background-color: white;
-	border: 1px solid $c-gray;
-	border-radius: $br-standart;
+	user-select: none;
 
-	padding: 10px 10px 5px 10px;
+	padding: 10px 15px;
 
 	transition: all $tr-standart;
 
 	&:hover, &:focus {
-		background-color: $c-blue;
+		background: linear-gradient(180deg, #ffbb00 0%, #ff9100 100%);
 		color: white;
 	}
 
 	&:focus {
 		outline: 0;
-		background-color: darken($c-blue, 40%);
 	}
 
 	&:disabled {
 		cursor: not-allowed;
 		color: $c-disabled;
+		border: 1px solid $c-gray;
+		background: white;
 		&:focus, &:hover {
-			background-color: white;
+			background: white;
 			color: $c-disabled;
 		}
 	}
@@ -252,7 +334,7 @@ body {
 	display: none;
 }
 ::-webkit-scrollbar-thumb {
-	background-color: rgb(0, 0, 0);
+	background-color: $c-blue;
 	border-radius: 2px;
 }
 ::-webkit-scrollbar-track {
@@ -278,19 +360,29 @@ legend {
 	padding: 0 15px;
 }
 
+label {
+	color: $c-form-label;
+	cursor: pointer;
+}
+
 .input, input[type=text], input[type=email], input[type=tel], input[type=url], input[type=password], input[type=search], input[type=number], textarea {
-	padding: 10px;
+	padding: 0 0 5px 0;
 	font-size: $fz-body-2;
 	transition: box-shadow $tr-standart;
-	border-radius: $br-standart;
-	border-style: ridge;
+	border: none;
+	border-bottom: 2px solid $c-form-label;
+	color: $c-form-label;
 
 	&:hover, &:focus {
-		box-shadow: $bshadow-standart;
-	}
-
-	&:focus {
 		outline: none;
 		border-color: $c-yellow;
 	}
+
+	&:focus {
+		color: black;
+	}
+}
+
+.form-group {
+	margin: 10px 0;
 }

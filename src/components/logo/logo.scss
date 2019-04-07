@@ -1,8 +1,62 @@
+@import '../../scss/vars';
+
 .logo {
-	&, img {
-		height: 100%;
+  svg {
+		width: 75px;
+		height: 75px;
+    path {
+      fill: #2b2a29;
+			fill-rule: evenodd;
+			transition: fill $tr-standart;
+    }
 	}
-  img {
-    object-fit: contain;
+	
+	&_white {
+		svg path {
+			fill: white;
+		}
+	}
+}
+
+.logo-brand {
+	position: absolute;
+	top: 0; left: 0;
+	background-color: $c-blue;
+	height: 230px; width: 100%;
+	clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+	padding: 20px 10px;
+
+	text-align: center;
+
+	&__brand, &__category {
+		text-transform: uppercase;
+		font-family: $ff-title;
+		user-select: none;
+	}
+
+	&__brand {
+		font-size: $fz-h4;
+		color: white;
+	}
+
+	&__category {
+		background-color: #fff;
+		color: $c-black;
+		padding: 3px 3px 0 3px;
+		font-size: $fz-h6;
+	}
+}
+
+.logo-text {
+	position: absolute;
+	top: 50%; left: 0;
+	width: 100%;
+	transform: translateY(-50%);
+
+	a {
+		color: $c-black;
+		user-select: none;
+		font-family: $ff-title;
+		font-size: $fz-h4;
 	}
 }

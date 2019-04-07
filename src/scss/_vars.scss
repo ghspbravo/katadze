@@ -10,26 +10,34 @@ $c-blue: #41bfef;
 $c-yellow: #ffbb00;
 
 $c-gray: #ececec;
+$c-gray-dark: #9e9e9e;
+
+$c-info: $c-gray;
+
+$c-form-label: $c-gray-dark;
+$c-form-input: $c-gray-dark;
 
 $c-links: $c-blue;
 $c-links-border: $c-black;
 $c-disabled: #acacac;
 
+$c-icons: #B6E1F4;
+
 /* adaptive font size */
-$fz-h1: 6rem;
-$fz-h2: 3.75rem;
+$fz-h1: 4rem;
+$fz-h2: 3.5rem;
 $fz-h3: 3rem;
 $fz-h4: 2.125rem;
 $fz-h5: 1.5rem;
 $fz-h6: 1.25rem;
 
-$fz-subtitle-1: 1rem;
-$fz-subtitle-2: 0.875rem;
+$fz-subtitle-1: 1.25rem;
+$fz-subtitle-2: 1rem;
 
-$fz-body-1: 1rem;
-$fz-body-2: 0.875rem;
+$fz-body-1: 1.25rem;
+$fz-body-2: 1rem;
 
-$fz-button: 0.875rem;
+$fz-button: 1rem;
 
 $fz-caption: 0.75rem;
 $fz-overline: 0.625rem;
@@ -50,4 +58,5 @@ $br-standart: 5px;
 
 $bshadow-standart: 0px 4px 16px rgba(0, 0, 0, 0.25);
 
-$header-height: 100px;
+$header-height: 13vh;
+$header-height-mobile: 5vh;
