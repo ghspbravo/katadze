@@ -1,0 +1,39 @@
+@import '../../scss/vars';
+@import '../../scss/templates';
+
+.mobile-nav-menu {
+	&-wrapper {
+		position: fixed;
+		left: 0; top: 0;
+		width: 100%; height: 100%;
+		background: rgba($color: $c-blue, $alpha: 0.9);
+		z-index: 11;
+	}
+
+	// display: flex;
+	// flex-direction: column;
+	background-color: #fff;
+	height: 100%; width: 320px;
+	margin-left: auto;
+	padding: 0 15px;
+
+	&__header {
+		border-bottom: 1px solid $c-gray;
+		height: $header-height-mobile;
+		min-height: 75px;
+	}
+
+	&__items {
+		.nav-item {
+			@extend %list-items;
+			a {
+				color: $c-black;
+			}
+		}
+	}
+
+	&-close {
+		font-size: $header-mobile-control-size;
+		color: $c-black;
+	}
+}

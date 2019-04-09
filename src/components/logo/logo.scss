@@ -19,10 +19,9 @@
 }
 
 .logo-brand {
-	position: absolute;
-	top: 0; left: 0;
 	background-color: $c-blue;
 	height: 230px; width: 100%;
+	max-width: 120px;
 	clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 	padding: 20px 10px;
 
@@ -48,10 +47,8 @@
 }
 
 .logo-text {
-	position: absolute;
-	top: 50%; left: 0;
 	width: 100%;
-	transform: translateY(-50%);
+	max-width: 120px;
 
 	a {
 		color: $c-black;

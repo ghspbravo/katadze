@@ -20,8 +20,8 @@ $offset-width: 10px;
 	}
 }
 
-a .bgicon {
-	&:hover, &:focus {
+a:hover, a:focus {
+	.bgicon {
 		background-color: $c-yellow;
 
 		img {

@@ -1,7 +1,7 @@
 {
   "name": "katadze",
   "version": "0.1.0",
-  "homepage":"https://ghspbravo.github.io/katadze",
+  "homepage": "https://ghspbravo.github.io/katadze",
   "private": true,
   "dependencies": {
     "easy-peasy": "^2.1.5",
@@ -15,7 +15,8 @@
     "react-scripts": "^2.1.8",
     "react-spring": "^8.0.19",
     "react-testing-library": "^6.1.2",
-    "react-use": "^7.3.1"
+    "react-use": "^7.3.1",
+    "react-useportal": "^0.1.17"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,0 +1,7 @@
+%list-items {
+  padding: 10px 0;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $c-gray;
+  }
+}

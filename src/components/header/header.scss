@@ -11,6 +11,17 @@
 		width: 120px; height: $header-height;
 		min-height: 75px;
 		transition: height $tr-standart;
+
+		.logo-brand {
+			position: absolute;
+			top: 0; left: 0;
+		}
+
+		.logo-text {
+			position: absolute;
+			top: 50%; left: 0;
+			transform: translateY(-50%);
+		}
 	}
 
 	&-wrapper {
@@ -48,7 +59,10 @@
 		height: $header-height-mobile;
 	}
 
-	.header-nav a {
+	.header-nav a,
+	.header-profile p,
+	.header-profile i,
+	.header-mobile-open {
 		color: black;
 	}
 }
@@ -61,7 +75,20 @@
 		height: $header-height;
 	}
 
-	.header-nav a {
+	.header-logo a {
+		@media (max-width: $m-xs-max) {
+			color: white;
+		}
+	}
+
+	.header-nav a,
+	.header-profile p,
+	.header-profile i,
+	.header-mobile-open {
 		color: white;
 	}
+}
+
+.header-mobile-open {
+	font-size: $header-mobile-control-size;
 }
