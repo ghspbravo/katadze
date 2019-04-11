@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react'
 import './res/about/about.scss'
+import aboutBg from './res/about/aboutHeader.svg'
 
 import { useSpring, animated as a } from 'react-spring'
 import useEvent from 'react-use/lib/useEvent'
@@ -20,20 +21,24 @@ export default function about() {
 		<main>
 			<div className="container">
 				<div className="row no-gutters">
-					<div className="col-md-6 pt-5">
-						<h1 className="title_page">Создай свою историю!</h1>
-						<p><b>KatadZe</b> — это клуб активного образа жизни
-						<br /> для молодежи Урала и России. Это удобная
-						<br /> площадка для совершенствования,
-						<br /> интеллектуального роста, путешествий
-						<br /> и ярких впечатлений!
-						<br /> А также официальный туроператор
-						<br /> Единого федерального реестра.
-						</p>
+					<div className="col-lg-6 col-12">
+						<div className="about-header-inner pt-5">
+							<h1 className="title_page">Создай свою историю!</h1>
+							<p><b>KatadZe</b> — это клуб активного образа жизни
+							<br className="d-none d-lg-block" /> для молодежи Урала и России. Это удобная
+							<br className="d-none d-lg-block" /> площадка для совершенствования,
+							<br className="d-none d-lg-block" /> интеллектуального роста, путешествий
+							<br className="d-none d-lg-block" /> и ярких впечатлений!
+							<br className="d-none d-lg-block" /> А также официальный туроператор
+							<br className="d-none d-lg-block" /> Единого федерального реестра.
+							</p>
+						</div>
+
+						<div className="d-lg-none faq-header-figure_bg" style={{backgroundImage: `url(${aboutBg})`}}></div>
 					</div>
 
-					<div className="col-md-6">
-						<svg id="about-header" width="856" height="795" viewBox="0 0 856 795" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<div className="col-md-6 d-none d-lg-block">
+						<svg className="about-header-figure" width="856" height="795" viewBox="0 0 856 795" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<a.g style={{ transform: props.xy.interpolate(trans1) }}>
 								<path d="M673.478 792.797H583V737.436H673.478V792.797Z" stroke="#212930" strokeWidth="3.87" strokeLinecap="round" />
 								<path d="M585.179 737L628.312 773.762L671.445 737" stroke="#212930" strokeWidth="3.87" strokeLinecap="round" />

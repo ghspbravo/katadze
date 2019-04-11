@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import useTitle from 'react-use/lib/useTitle';
+import isMobile from '../detectMobileBrowser';
 
 export default function home() {
 	useTitle('KATADZE')
@@ -11,6 +12,7 @@ export default function home() {
 			<ol>
 				<li><Link to='/events/'>Events</Link></li>
 			</ol>
+			<p>This browser is {isMobile() ? 'Mobile' : 'Desktop'}</p>
 		</main>
 	)
 }

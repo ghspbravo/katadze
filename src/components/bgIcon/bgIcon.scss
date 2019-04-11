@@ -20,7 +20,7 @@ $offset-width: 10px;
 	}
 }
 
-a:hover, a:focus {
+body:not(.touch) a:hover, body:not(.touch) a:focus {
 	.bgicon {
 		background-color: $c-yellow;
 

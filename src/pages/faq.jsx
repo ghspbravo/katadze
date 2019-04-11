@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import './res/faq/faq.scss'
+import faqBg from './res/faq/faq.svg'
 
 import { useSpring, animated as a } from 'react-spring'
 import useEvent from 'react-use/lib/useEvent'
@@ -19,20 +20,22 @@ export default function faq() {
 	return (
 		<main>
 			<div className="container">
-				<div className="row no-gutters">
-					<div className="col-md-6 pt-5">
-						<h1 className="title_page">Ответы на все твои вопросы</h1>
-						<p className="mb-3">Листай ниже! Все, о чем ты не знал и боялся спросить</p>
-						<div className="row no-gutters">
-							<div className="secondary mr-2">Не нашел ответа на свой вопрос?</div>
-							<div>
-								<Link to='/' className="button">Cпроси тут</Link>
+				<div className="row no-gutters faq-header">
+					<div className="col-12 col-lg-6">
+						<div className="faq-header-inner pt-5">
+							<h1 className="title_page mt-0">Ответы на все твои вопросы</h1>
+							<p className="mb-3">Листай ниже! Все, о чем ты не знал и боялся спросить</p>
+							<div className="row no-gutters">
+								<div className="secondary mr-2">Не нашел ответа на свой вопрос?</div>
+								<Link to='/contacts' className="button">Cпроси тут</Link>
 							</div>
 						</div>
+
+						<div className="d-lg-none faq-header-figure_bg" style={{backgroundImage: `url(${faqBg})`}}></div>
 					</div>
 
-					<div className="col-md-6">
-						<svg id="faq-header" width="811" height="900" viewBox="0 0 811 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<div className="col-lg-6 d-none d-lg-block">
+						<svg className="faq-header-figure" width="811" height="900" viewBox="0 0 811 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path opacity="0.38" d="M42.7934 273.591C42.7934 273.591 26.2889 52.664 202.425 86.6704C346.118 114.281 253.153 242.069 529.89 282.627C806.628 323.186 856.116 510.414 778.656 730.405C701.196 950.396 335.637 806.206 281.144 755.364C166.984 648.968 56.5591 445.829 42.7934 273.591Z" fill="url(#paint0_linear)" />
 							<a.path style={{ transform: props.xy.interpolate(trans1) }} opacity="0.94" d="M199.217 659.983L195.874 585.168C195.57 578.477 200.737 572.395 207.423 571.786L311.055 562.359C334.152 560.23 352.387 541.982 354.514 518.868L369.405 358.898C371.533 335.176 356.337 313.583 333.24 307.805L93.1535 247.284C63.3706 239.68 34.4994 261.577 33.2838 292.294L25.0783 527.992C24.1666 556.58 47.8713 579.694 76.4386 577.565L136.916 573.611C141.475 573.307 146.033 575.436 148.465 579.694L199.217 659.983Z" fill="#FCC100" />
 							<a.path style={{ transform: props.xy.interpolate(trans2) }} opacity="0.94" d="M270.028 193.757L511.938 158.783C539.594 154.829 564.514 176.422 564.514 204.402V399.347C564.514 424.893 543.848 445.574 518.32 445.574H476.381C469.999 445.574 464.225 448.615 460.578 453.481L417.423 510.961L413.472 457.739C412.56 447.703 404.355 439.796 394.326 439.491L289.174 435.842C266.077 434.929 246.931 417.29 244.803 394.177L230.824 243.938C228.392 219.304 245.715 197.407 270.028 193.757Z" fill="#004162" />

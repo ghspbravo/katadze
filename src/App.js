@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { Route, Switch } from "react-router-dom";
 
 import demo from './pages/demo';
@@ -12,6 +12,7 @@ import footer from './components/footer/footer';
 import about from './pages/about';
 import faq from './pages/faq';
 import contacts from './pages/contacts';
+import isMobile from './detectMobileBrowser';
 
 export default function App(router) {
 
@@ -31,8 +32,13 @@ export default function App(router) {
   })
 
   useEffect(() => {
-    window.scroll(0,0)
+    window.scroll(0, 0)
   }, [router.location.pathname])
+
+  // Disable hover on mobile
+  useEffect(() => {
+    if (isMobile()) document.body.classList.add('touch')
+  }, [])
 
   return (
     <div id="body">

@@ -34,7 +34,7 @@ export default function header(pathName) {
 	})
 
 	const [scrollPosition, setScrollPosition] = useState(window.scrollY)
-	const [screenWidth, setScreenWidth] = useState(window.outerWidth)
+	const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
 	useEffect(() => {
 		setLogoBrand(pathName.match(/(events|partners)/) !== null)
@@ -42,7 +42,7 @@ export default function header(pathName) {
 	}, [pathName])
 
 	const scrollHeaderClassChangeHadler = useCallback(e => setScrollPosition(e.target.scrollingElement.scrollTop))
-	const screenWidthChangeHadler = useCallback(e => setScreenWidth(e.target.outerWidth))
+	const screenWidthChangeHadler = useCallback(e => setScreenWidth(e.target.innerWidth))
 	useEvent('scroll', scrollHeaderClassChangeHadler, window)
 	useEvent('resize', screenWidthChangeHadler, window)
 

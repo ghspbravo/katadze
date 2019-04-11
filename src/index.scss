@@ -59,7 +59,7 @@ html {
 }
 
 main {
-	padding-top: 10vh;
+	padding-top: 80px;
 }
 
 header {
@@ -147,7 +147,7 @@ h1, .h1{
 	margin: 30px 0;
 
 	@media (max-width: $m-sm-max) {
-		font-size: $fz-h2;
+		font-size: $fz-h3;
 	}
 }
 
@@ -157,7 +157,7 @@ h2, .h2{
 	margin: 20px 0;
 
 	@media (max-width: $m-sm-max) {
-		font-size: $fz-h3;
+		font-size: $fz-h4;
 	}
 }
 h3, .h3{
@@ -166,7 +166,7 @@ h3, .h3{
 	margin: 20px 0;
 
 	@media (max-width: $m-sm-max) {
-		font-size: $fz-h4;
+		font-size: $fz-h5;
 	}
 }
 h4, .h4{
@@ -175,7 +175,7 @@ h4, .h4{
 	margin: 15px 0;
 
 	@media (max-width: $m-sm-max) {
-		font-size: $fz-h5;
+		font-size: $fz-h6;
 	}
 }
 h5, .h5 {
@@ -242,23 +242,27 @@ a, .link {
 		transition: border-bottom $tr-standart;
 	}
 
-	&:hover, &:focus {
-		span {border-bottom-color: transparent;}
-	}
-
-	&:hover {
-		color: darken($c-links, 20%);
-	}
-
-	&:focus {
-		color: darken($c-links, 60%);
-		outline: none;
-	}
-
 	&.disabled {
 		&, &:focus, &:hover{
 			cursor: default;
 			color: $c-disabled;
+		}
+	}
+}
+
+body:not(.touch) {
+	a, .link {
+		&:hover, &:hover {
+			color: darken($c-links, 20%);
+		}
+
+		&:hover, &:focus {
+			span {border-bottom-color: transparent;}
+		}
+	
+		&:focus {
+			color: darken($c-links, 60%);
+			outline: none;
 		}
 	}
 }
@@ -283,16 +287,6 @@ input[type=reset], input[type=button], input[type=submit] {
 		border: 1px solid $c-gray;
 		letter-spacing: 1.25px;
 		padding: 10px 10px 5px 10px;
-
-		&:hover, &:focus {
-			background: $c-blue;
-			color: white;
-		}
-	
-		&:focus {
-			outline: 0;
-			background: darken($c-blue, 40%);
-		}
 	}
 
 	font-size: $fz-button;
@@ -313,15 +307,6 @@ input[type=reset], input[type=button], input[type=submit] {
 
 	transition: all $tr-standart;
 
-	&:hover, &:focus {
-		background: linear-gradient(180deg, #ffbb00 0%, #ff9100 100%);
-		color: white;
-	}
-
-	&:focus {
-		outline: 0;
-	}
-
 	&:disabled {
 		cursor: not-allowed;
 		color: $c-disabled;
@@ -330,6 +315,32 @@ input[type=reset], input[type=button], input[type=submit] {
 		&:focus, &:hover {
 			background: white;
 			color: $c-disabled;
+		}
+	}
+}
+
+body:not(.touch) {
+	button:not(.link), .button,
+	input[type=reset], input[type=button], input[type=submit] {
+		&:hover, &:focus {
+			background: linear-gradient(180deg, #ffbb00 0%, #ff9100 100%);
+			color: white;
+		}
+	
+		&:focus {
+			outline: 0;
+		}
+
+		.alter {
+			&:hover, &:focus {
+				background: $c-blue;
+				color: white;
+			}
+		
+			&:focus {
+				outline: 0;
+				background: darken($c-blue, 40%);
+			}
 		}
 	}
 }
@@ -390,6 +401,9 @@ label {
 	border: none;
 	border-bottom: 2px solid $c-form-label;
 	color: $c-form-label;
+	background-color: transparent;
+
+	margin: 10px 0;
 
 	&:hover, &:focus {
 		outline: none;

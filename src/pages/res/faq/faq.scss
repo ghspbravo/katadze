@@ -1,7 +1,18 @@
-#faq-header {
-  position: absolute;
-  left: 0;
-  top: 0;
-	min-width: 600px;
-	max-width: 40vw;
+@import '../../../scss/templates';
+
+.faq-header {
+  min-height: 70vh;
+  &-figure {
+    @extend %figure-header;
+    &_bg {
+      @extend %figure-header-bg;
+    }
+  }
+
+  &-inner {
+    background: rgba($color: white, $alpha: 0.8);
+    height: 100%;
+    z-index: 2;
+  }
+  
 }
