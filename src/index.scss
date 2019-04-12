@@ -316,10 +316,6 @@ input[type=reset], input[type=button], input[type=submit] {
 		color: $c-disabled;
 		border: 1px solid $c-gray;
 		background: white;
-		&:focus, &:hover {
-			background: white;
-			color: $c-disabled;
-		}
 	}
 }
 
@@ -335,7 +331,7 @@ body:not(.touch) {
 			outline: 0;
 		}
 
-		.alter {
+		&.alter {
 			&:hover, &:focus {
 				background: $c-blue;
 				color: white;
@@ -344,6 +340,12 @@ body:not(.touch) {
 			&:focus {
 				outline: 0;
 				background: darken($c-blue, 40%);
+			}
+		}
+		&:disabled {
+			&:focus, &:hover {
+				background: white;
+				color: $c-disabled;
 			}
 		}
 	}

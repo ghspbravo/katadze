@@ -1,0 +1,43 @@
+@import '../../scss/templates';
+@import '../../scss/vars';
+
+.loader-logo-wrapper {
+  @extend %fixed-full;
+  background-color: $c-black;
+
+  @extend %flex-center;
+}
+
+.loader-logo-inner {
+  position: relative;
+	border-radius: 50%;
+	padding: 25px;
+	background-color: #fff;
+
+  box-shadow: 0 0 0 rgba($color: white, $alpha: 0.4);
+  animation: pulse 2s infinite;
+
+  svg {
+    width: 150px;
+    height: 150px;
+
+    path {
+      fill: $c-black;
+    }
+  }
+}
+
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba($color: white, $alpha: 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 100px rgba($color: white, $alpha: 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba($color: white, $alpha: 0);
+  }
+}

@@ -43,7 +43,7 @@ export default function homeItemsDesktop(
 			</div>
 
 			<div key={1} onMouseEnter={activateHandlers[1]} onMouseLeave={deactivateHandlers[1]} className="home-item">
-				<div className="home-item__title"><h3>партнеры<span>.</span></h3></div>
+				<div className="home-item__title"><h3>события<span>.</span></h3></div>
 
 				<a.div style={springs[1]} className="home-item-inner">
 					<Link className="home-item__link" to='/events'>Перейти</Link>
