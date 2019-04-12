@@ -29,8 +29,9 @@ export default function homeItemsMobile() {
 					<div className="home-item-mobile__title"><h2>FRIENDS</h2></div>
 					<div className="home-item-mobile__description">
 						<p>Создавать пространство для возможностей — наша цель.
-						<br /> Добиваться её нам помогают наши <b>партнеры</b>:
-						<br /> постоянные скидки и бонусы от друзей <b>KatadZe</b>.</p>
+						<br /> Добиваться её нам помогают наши <b>партнеры</b>.
+						<br />
+							<br />Постоянные скидки и бонусы от друзей <b>KatadZe</b>.</p>
 					</div>
 
 					<div className="mt-5 home-item-mobile__link">
@@ -47,7 +48,8 @@ export default function homeItemsMobile() {
 					<div className="home-item-mobile__title"><h2>EVENTS</h2></div>
 					<div className="home-item-mobile__description">
 						<p>Объединяя людей по всему миру, мы создаем уникальные проекты самой разной направленности.
-					<br />Присоединяйся: <b>погнали KatadZe</b>
+							<br />
+							<br />Присоединяйся: <b>погнали KatadZe</b>
 						</p>
 					</div>
 

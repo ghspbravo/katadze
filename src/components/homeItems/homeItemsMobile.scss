@@ -26,6 +26,7 @@
 	&-inner {
 		position: relative;
 		z-index: 2;
+		max-width: 450px;
 	}
 
 	&__title {
@@ -48,6 +49,8 @@
 		padding: 5px 50px 0 50px;
 		clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
 		text-align: center;
+		max-width: 300px;
+		margin: 0 auto;
 
 		a {
 			color: $c-black;

@@ -38,6 +38,7 @@ export default function homeItemsDesktop(
 				<a.div style={springs[0]} className="home-item-description">
 					<p>Создавать пространство для возможностей — наша цель.
 						<br /> Добиваться её нам помогают наши <b>партнеры</b>:
+						<br/>
 						<br /> постоянные скидки и бонусы от друзей <b>KatadZe</b>.</p>
 				</a.div>
 			</div>
@@ -63,6 +64,7 @@ export default function homeItemsDesktop(
 
 				<a.div style={springs[1]} className="home-item-description">
 					<p>Объединяя людей по всему миру, мы создаем уникальные проекты самой разной направленности.
+					<br/>
 					<br />Присоединяйся: <b>погнали KatadZe</b>
 					</p>
 				</a.div>

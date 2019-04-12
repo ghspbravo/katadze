@@ -16,6 +16,7 @@ export default function mobileNavMenu(Portal, closePortal, isOpen) {
 
 	useEffect(() => {
 		document.body.style.overflowY = isOpen ? 'hidden' : 'scroll'
+		return(() => document.body.style.overflowY = 'scroll')
 	}, [isOpen])
 	return (
 		<Portal>
