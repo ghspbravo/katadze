@@ -2,8 +2,10 @@ import React from 'react'
 import './res/contacts/contacts.scss'
 
 import contactsPath from './res/contacts/contacts.png'
+import useTitle from 'react-use/lib/useTitle';
 
 export default function contacts() {
+	useTitle('KATADZE | Контакты')
 	return (
 		<main>
 			<div className="container">

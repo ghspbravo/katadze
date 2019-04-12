@@ -1,4 +1,5 @@
 $grid-gutter: 10px;
+$grid-gutter-5: 100px;
 
 .m-0 {
   margin: 0 !important;
@@ -121,27 +122,27 @@ $grid-gutter: 10px;
 }
 
 .m-5 {
-  margin: $grid-gutter*5 !important;
+  margin: $grid-gutter-5 !important;
 }
 
 .mt-5,
 .my-5 {
-  margin-top: $grid-gutter*5 !important;
+  margin-top: $grid-gutter-5 !important;
 }
 
 .mr-5,
 .mx-5 {
-  margin-right: $grid-gutter*5 !important;
+  margin-right: $grid-gutter-5 !important;
 }
 
 .mb-5,
 .my-5 {
-  margin-bottom: $grid-gutter*5 !important;
+  margin-bottom: $grid-gutter-5 !important;
 }
 
 .ml-5,
 .mx-5 {
-  margin-left: $grid-gutter*5 !important;
+  margin-left: $grid-gutter-5 !important;
 }
 
 .p-0 {
@@ -265,27 +266,27 @@ $grid-gutter: 10px;
 }
 
 .p-5 {
-  padding: $grid-gutter*5 !important;
+  padding: $grid-gutter-5 !important;
 }
 
 .pt-5,
 .py-5 {
-  padding-top: $grid-gutter*5 !important;
+  padding-top: $grid-gutter-5 !important;
 }
 
 .pr-5,
 .px-5 {
-  padding-right: $grid-gutter*5 !important;
+  padding-right: $grid-gutter-5 !important;
 }
 
 .pb-5,
 .py-5 {
-  padding-bottom: $grid-gutter*5 !important;
+  padding-bottom: $grid-gutter-5 !important;
 }
 
 .pl-5,
 .px-5 {
-  padding-left: $grid-gutter*5 !important;
+  padding-left: $grid-gutter-5 !important;
 }
 
 .m-n1 {
@@ -385,27 +386,27 @@ $grid-gutter: 10px;
 }
 
 .m-n5 {
-  margin: -$grid-gutter*5 !important;
+  margin: -$grid-gutter-5 !important;
 }
 
 .mt-n5,
 .my-n5 {
-  margin-top: -$grid-gutter*5 !important;
+  margin-top: -$grid-gutter-5 !important;
 }
 
 .mr-n5,
 .mx-n5 {
-  margin-right: -$grid-gutter*5 !important;
+  margin-right: -$grid-gutter-5 !important;
 }
 
 .mb-n5,
 .my-n5 {
-  margin-bottom: -$grid-gutter*5 !important;
+  margin-bottom: -$grid-gutter-5 !important;
 }
 
 .ml-n5,
 .mx-n5 {
-  margin-left: -$grid-gutter*5 !important;
+  margin-left: -$grid-gutter-5 !important;
 }
 
 .m-auto {
@@ -529,23 +530,23 @@ $grid-gutter: 10px;
     margin-left: $grid-gutter*4 !important;
   }
   .m-sm-5 {
-    margin: $grid-gutter*5 !important;
+    margin: $grid-gutter-5 !important;
   }
   .mt-sm-5,
   .my-sm-5 {
-    margin-top: $grid-gutter*5 !important;
+    margin-top: $grid-gutter-5 !important;
   }
   .mr-sm-5,
   .mx-sm-5 {
-    margin-right: $grid-gutter*5 !important;
+    margin-right: $grid-gutter-5 !important;
   }
   .mb-sm-5,
   .my-sm-5 {
-    margin-bottom: $grid-gutter*5 !important;
+    margin-bottom: $grid-gutter-5 !important;
   }
   .ml-sm-5,
   .mx-sm-5 {
-    margin-left: $grid-gutter*5 !important;
+    margin-left: $grid-gutter-5 !important;
   }
   .p-sm-0 {
     padding: 0 !important;
@@ -643,23 +644,23 @@ $grid-gutter: 10px;
     padding-left: $grid-gutter*4 !important;
   }
   .p-sm-5 {
-    padding: $grid-gutter*5 !important;
+    padding: $grid-gutter-5 !important;
   }
   .pt-sm-5,
   .py-sm-5 {
-    padding-top: $grid-gutter*5 !important;
+    padding-top: $grid-gutter-5 !important;
   }
   .pr-sm-5,
   .px-sm-5 {
-    padding-right: $grid-gutter*5 !important;
+    padding-right: $grid-gutter-5 !important;
   }
   .pb-sm-5,
   .py-sm-5 {
-    padding-bottom: $grid-gutter*5 !important;
+    padding-bottom: $grid-gutter-5 !important;
   }
   .pl-sm-5,
   .px-sm-5 {
-    padding-left: $grid-gutter*5 !important;
+    padding-left: $grid-gutter-5 !important;
   }
   .m-sm-n1 {
     margin: -$grid-gutter !important;
@@ -738,23 +739,23 @@ $grid-gutter: 10px;
     margin-left: -$grid-gutter*4 !important;
   }
   .m-sm-n5 {
-    margin: -$grid-gutter*5 !important;
+    margin: -$grid-gutter-5 !important;
   }
   .mt-sm-n5,
   .my-sm-n5 {
-    margin-top: -$grid-gutter*5 !important;
+    margin-top: -$grid-gutter-5 !important;
   }
   .mr-sm-n5,
   .mx-sm-n5 {
-    margin-right: -$grid-gutter*5 !important;
+    margin-right: -$grid-gutter-5 !important;
   }
   .mb-sm-n5,
   .my-sm-n5 {
-    margin-bottom: -$grid-gutter*5 !important;
+    margin-bottom: -$grid-gutter-5 !important;
   }
   .ml-sm-n5,
   .mx-sm-n5 {
-    margin-left: -$grid-gutter*5 !important;
+    margin-left: -$grid-gutter-5 !important;
   }
   .m-sm-auto {
     margin: auto !important;
@@ -874,23 +875,23 @@ $grid-gutter: 10px;
     margin-left: $grid-gutter*4 !important;
   }
   .m-md-5 {
-    margin: $grid-gutter*5 !important;
+    margin: $grid-gutter-5 !important;
   }
   .mt-md-5,
   .my-md-5 {
-    margin-top: $grid-gutter*5 !important;
+    margin-top: $grid-gutter-5 !important;
   }
   .mr-md-5,
   .mx-md-5 {
-    margin-right: $grid-gutter*5 !important;
+    margin-right: $grid-gutter-5 !important;
   }
   .mb-md-5,
   .my-md-5 {
-    margin-bottom: $grid-gutter*5 !important;
+    margin-bottom: $grid-gutter-5 !important;
   }
   .ml-md-5,
   .mx-md-5 {
-    margin-left: $grid-gutter*5 !important;
+    margin-left: $grid-gutter-5 !important;
   }
   .p-md-0 {
     padding: 0 !important;
@@ -988,23 +989,23 @@ $grid-gutter: 10px;
     padding-left: $grid-gutter*4 !important;
   }
   .p-md-5 {
-    padding: $grid-gutter*5 !important;
+    padding: $grid-gutter-5 !important;
   }
   .pt-md-5,
   .py-md-5 {
-    padding-top: $grid-gutter*5 !important;
+    padding-top: $grid-gutter-5 !important;
   }
   .pr-md-5,
   .px-md-5 {
-    padding-right: $grid-gutter*5 !important;
+    padding-right: $grid-gutter-5 !important;
   }
   .pb-md-5,
   .py-md-5 {
-    padding-bottom: $grid-gutter*5 !important;
+    padding-bottom: $grid-gutter-5 !important;
   }
   .pl-md-5,
   .px-md-5 {
-    padding-left: $grid-gutter*5 !important;
+    padding-left: $grid-gutter-5 !important;
   }
   .m-md-n1 {
     margin: -$grid-gutter !important;
@@ -1083,23 +1084,23 @@ $grid-gutter: 10px;
     margin-left: -$grid-gutter*4 !important;
   }
   .m-md-n5 {
-    margin: -$grid-gutter*5 !important;
+    margin: -$grid-gutter-5 !important;
   }
   .mt-md-n5,
   .my-md-n5 {
-    margin-top: -$grid-gutter*5 !important;
+    margin-top: -$grid-gutter-5 !important;
   }
   .mr-md-n5,
   .mx-md-n5 {
-    margin-right: -$grid-gutter*5 !important;
+    margin-right: -$grid-gutter-5 !important;
   }
   .mb-md-n5,
   .my-md-n5 {
-    margin-bottom: -$grid-gutter*5 !important;
+    margin-bottom: -$grid-gutter-5 !important;
   }
   .ml-md-n5,
   .mx-md-n5 {
-    margin-left: -$grid-gutter*5 !important;
+    margin-left: -$grid-gutter-5 !important;
   }
   .m-md-auto {
     margin: auto !important;
@@ -1219,23 +1220,23 @@ $grid-gutter: 10px;
     margin-left: $grid-gutter*4 !important;
   }
   .m-lg-5 {
-    margin: $grid-gutter*5 !important;
+    margin: $grid-gutter-5 !important;
   }
   .mt-lg-5,
   .my-lg-5 {
-    margin-top: $grid-gutter*5 !important;
+    margin-top: $grid-gutter-5 !important;
   }
   .mr-lg-5,
   .mx-lg-5 {
-    margin-right: $grid-gutter*5 !important;
+    margin-right: $grid-gutter-5 !important;
   }
   .mb-lg-5,
   .my-lg-5 {
-    margin-bottom: $grid-gutter*5 !important;
+    margin-bottom: $grid-gutter-5 !important;
   }
   .ml-lg-5,
   .mx-lg-5 {
-    margin-left: $grid-gutter*5 !important;
+    margin-left: $grid-gutter-5 !important;
   }
   .p-lg-0 {
     padding: 0 !important;
@@ -1333,23 +1334,23 @@ $grid-gutter: 10px;
     padding-left: $grid-gutter*4 !important;
   }
   .p-lg-5 {
-    padding: $grid-gutter*5 !important;
+    padding: $grid-gutter-5 !important;
   }
   .pt-lg-5,
   .py-lg-5 {
-    padding-top: $grid-gutter*5 !important;
+    padding-top: $grid-gutter-5 !important;
   }
   .pr-lg-5,
   .px-lg-5 {
-    padding-right: $grid-gutter*5 !important;
+    padding-right: $grid-gutter-5 !important;
   }
   .pb-lg-5,
   .py-lg-5 {
-    padding-bottom: $grid-gutter*5 !important;
+    padding-bottom: $grid-gutter-5 !important;
   }
   .pl-lg-5,
   .px-lg-5 {
-    padding-left: $grid-gutter*5 !important;
+    padding-left: $grid-gutter-5 !important;
   }
   .m-lg-n1 {
     margin: -$grid-gutter !important;
@@ -1428,23 +1429,23 @@ $grid-gutter: 10px;
     margin-left: -$grid-gutter*4 !important;
   }
   .m-lg-n5 {
-    margin: -$grid-gutter*5 !important;
+    margin: -$grid-gutter-5 !important;
   }
   .mt-lg-n5,
   .my-lg-n5 {
-    margin-top: -$grid-gutter*5 !important;
+    margin-top: -$grid-gutter-5 !important;
   }
   .mr-lg-n5,
   .mx-lg-n5 {
-    margin-right: -$grid-gutter*5 !important;
+    margin-right: -$grid-gutter-5 !important;
   }
   .mb-lg-n5,
   .my-lg-n5 {
-    margin-bottom: -$grid-gutter*5 !important;
+    margin-bottom: -$grid-gutter-5 !important;
   }
   .ml-lg-n5,
   .mx-lg-n5 {
-    margin-left: -$grid-gutter*5 !important;
+    margin-left: -$grid-gutter-5 !important;
   }
   .m-lg-auto {
     margin: auto !important;
@@ -1564,23 +1565,23 @@ $grid-gutter: 10px;
     margin-left: $grid-gutter*4 !important;
   }
   .m-xl-5 {
-    margin: $grid-gutter*5 !important;
+    margin: $grid-gutter-5 !important;
   }
   .mt-xl-5,
   .my-xl-5 {
-    margin-top: $grid-gutter*5 !important;
+    margin-top: $grid-gutter-5 !important;
   }
   .mr-xl-5,
   .mx-xl-5 {
-    margin-right: $grid-gutter*5 !important;
+    margin-right: $grid-gutter-5 !important;
   }
   .mb-xl-5,
   .my-xl-5 {
-    margin-bottom: $grid-gutter*5 !important;
+    margin-bottom: $grid-gutter-5 !important;
   }
   .ml-xl-5,
   .mx-xl-5 {
-    margin-left: $grid-gutter*5 !important;
+    margin-left: $grid-gutter-5 !important;
   }
   .p-xl-0 {
     padding: 0 !important;
@@ -1678,23 +1679,23 @@ $grid-gutter: 10px;
     padding-left: $grid-gutter*4 !important;
   }
   .p-xl-5 {
-    padding: $grid-gutter*5 !important;
+    padding: $grid-gutter-5 !important;
   }
   .pt-xl-5,
   .py-xl-5 {
-    padding-top: $grid-gutter*5 !important;
+    padding-top: $grid-gutter-5 !important;
   }
   .pr-xl-5,
   .px-xl-5 {
-    padding-right: $grid-gutter*5 !important;
+    padding-right: $grid-gutter-5 !important;
   }
   .pb-xl-5,
   .py-xl-5 {
-    padding-bottom: $grid-gutter*5 !important;
+    padding-bottom: $grid-gutter-5 !important;
   }
   .pl-xl-5,
   .px-xl-5 {
-    padding-left: $grid-gutter*5 !important;
+    padding-left: $grid-gutter-5 !important;
   }
   .m-xl-n1 {
     margin: -$grid-gutter !important;
@@ -1773,23 +1774,23 @@ $grid-gutter: 10px;
     margin-left: -$grid-gutter*4 !important;
   }
   .m-xl-n5 {
-    margin: -$grid-gutter*5 !important;
+    margin: -$grid-gutter-5 !important;
   }
   .mt-xl-n5,
   .my-xl-n5 {
-    margin-top: -$grid-gutter*5 !important;
+    margin-top: -$grid-gutter-5 !important;
   }
   .mr-xl-n5,
   .mx-xl-n5 {
-    margin-right: -$grid-gutter*5 !important;
+    margin-right: -$grid-gutter-5 !important;
   }
   .mb-xl-n5,
   .my-xl-n5 {
-    margin-bottom: -$grid-gutter*5 !important;
+    margin-bottom: -$grid-gutter-5 !important;
   }
   .ml-xl-n5,
   .mx-xl-n5 {
-    margin-left: -$grid-gutter*5 !important;
+    margin-left: -$grid-gutter-5 !important;
   }
   .m-xl-auto {
     margin: auto !important;

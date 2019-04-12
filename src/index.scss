@@ -40,6 +40,10 @@ body {
 		font-size: $fz-body-2;
 		letter-spacing: 0.25;
 	}
+
+	&.no-scroll {
+		overflow: hidden !important;
+	}
 }
 
 html {

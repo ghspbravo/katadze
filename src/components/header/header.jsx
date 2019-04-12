@@ -10,10 +10,8 @@ import useEvent from 'react-use/lib/useEvent';
 import headerProfile from './headerProfile';
 import mobileNavMenu from '../mobileNavMenu/mobileNavMenu';
 
-/**
- * @param {string} pathName /path
- */
-export default function header(pathName) {
+export default function header(router) {
+	let pathName = router.location.pathname
 	const [showLogoBrand, setLogoBrand] = useState(false)
 
 	const logoBrandTransitions = useTransition(showLogoBrand, showLogoBrand, {

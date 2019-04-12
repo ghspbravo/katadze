@@ -5,6 +5,7 @@ import faqBg from './res/faq/faq.svg'
 
 import { useSpring, animated as a } from 'react-spring'
 import useEvent from 'react-use/lib/useEvent'
+import useTitle from 'react-use/lib/useTitle';
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
 const trans1 = (x, y) => `translate3d(${x / 30}px,${y / 28}px,0)`
@@ -17,6 +18,8 @@ export default function faq() {
 
 	const mouseMoveHandler = useCallback(({ clientX: x, clientY: y }) => set({ xy: calc(x, y) }))
 	useEvent('mousemove', mouseMoveHandler, window)
+
+	useTitle('KATADZE | FAQ')
 	return (
 		<main>
 			<div className="container">

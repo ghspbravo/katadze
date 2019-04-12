@@ -1,0 +1,101 @@
+@import '../../scss/vars';
+@import '../../scss/templates';
+
+.home-wrapper {
+	@extend %fixed-full;
+	background-size: cover;
+}
+
+.home-item {
+	position: relative;
+	height: 100%; width: 33.3vw;
+
+	padding: 25px;
+
+	&__link {
+		color: $c-black;
+		font-size: $fz-h3;
+		font-weight: bold;
+		font-family: $ff-title;
+		letter-spacing: 5px;
+	}
+
+	&__title {
+		color: white;
+		position: absolute;
+		top: 50%; left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 0;
+	}
+
+	&-description {
+		position: absolute;
+		top: 50%; right: -400px;
+		transform: translateY(-50%);
+		width: 425px; height: 250px;
+		background: rgba($color: white, $alpha: 0.8);
+		padding: 25px;
+		padding-left: 25px + 25px;
+		clip-path: polygon(25px 0, 100% 0, 100% 100%, 25px 100%, 25px 60%, 0% 50%, 25px 40%);
+		border-radius: 25px;
+
+		pointer-events: none;
+
+		z-index: 2;
+
+		&_revert {
+			right: unset; left: -400px;
+			padding-left: 25px;
+			padding-right: 25px + 25px;
+			clip-path: polygon(0 0, 400px 0, 400px 40%, 425px 50%, 400px 60%, 400px 100%, 0 100%);
+		}
+	}
+
+	&:not(:last-child)::before {
+		content: "";
+    display: block;
+    width: 1px;
+    height: 100%;
+    background: #fff;
+    z-index: 1;
+    position: absolute;
+    top: 0; right: 0;
+    opacity: .5;
+		pointer-events: none;
+		z-index: 0;
+	}
+	&-inner {
+		position: absolute;
+		z-index: 3;
+
+		bottom: 25%;
+		left: 50%;
+		transform: translateX(-50%);
+
+		background-color: #fff;
+		padding: 5px 50px 0 50px;
+		clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+	}
+
+	&-bg {
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%; height: 100%;
+		z-index: 2;
+	}
+
+	&-image {
+		@extend %fixed-full;
+		background-size: cover;
+		z-index: 1;
+		pointer-events: none;
+	}
+
+	&__transparent-title {
+		font-size: 6rem;
+		@media (max-width: $m-lg-max) {
+			font-size: 4rem;
+		}
+		font-weight: bold;
+	}
+}

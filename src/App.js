@@ -43,7 +43,10 @@ export default function App(router) {
   return (
     <div id="body">
       <header>
-        {header(router.location.pathname)}
+        <Switch>
+          <Route exact path='/' />
+          <Route component={header} />
+        </Switch>
       </header>
       {pageTransitions.map(({ item, props, key }) => (
         <animated.div className="wrapper" key={key} style={props}>
@@ -60,7 +63,10 @@ export default function App(router) {
           </Switch>
 
           <footer>
-            {footer()}
+            <Switch>
+              <Route exact path='/' />
+              <Route component={footer} />
+            </Switch>
           </footer>
         </animated.div>
       ))}

@@ -1,0 +1,60 @@
+@import '../../scss/vars';
+@import '../../scss/templates';
+
+.home-wrapper-mobile {}
+
+.home-item-mobile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	background-size: cover;
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%; height: 100%;
+		background: rgba($color: $c-black, $alpha: 0.65);
+		pointer-events: none;
+	}
+
+	min-height: 100vh;
+	padding: 25px;
+
+	&-inner {
+		position: relative;
+		z-index: 2;
+	}
+
+	&__title {
+		color: #fff;
+		text-align: center;
+
+		h2 {
+			font-size: $fz-h2;
+			font-weight: bold;
+			letter-spacing: 3px;
+		}
+	}
+
+	&__description {
+		color: #fff;
+	}
+
+	&__link {
+		background-color: #fff;
+		padding: 5px 50px 0 50px;
+		clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+		text-align: center;
+
+		a {
+			color: $c-black;
+			font-size: $fz-h3;
+			font-weight: bold;
+			font-family: $ff-title;
+			letter-spacing: 5px;
+		}
+	}
+}
