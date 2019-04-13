@@ -16,7 +16,7 @@ export default function homeItemsDesktop(
 ) {
 	return (
 		<div className="home-wrapper row no-gutters" style={{ backgroundImage: `url(${mainBg})` }}>
-			<div key={0} onMouseEnter={activateHandlers[0]} onMouseLeave={deactivateHandlers[0]} className="home-item">
+			<div onMouseOver={activateHandlers[0]} onMouseLeave={deactivateHandlers[0]} className="home-item">
 				<div className="home-item__title"><h3>друзья<span>.</span></h3></div>
 
 				<a.div style={springs[0]} className="home-item-inner">
@@ -43,7 +43,7 @@ export default function homeItemsDesktop(
 				</a.div>
 			</div>
 
-			<div key={1} onMouseEnter={activateHandlers[1]} onMouseLeave={deactivateHandlers[1]} className="home-item">
+			<div onMouseOver={activateHandlers[1]} onMouseLeave={deactivateHandlers[1]} className="home-item">
 				<div className="home-item__title"><h3>события<span>.</span></h3></div>
 
 				<a.div style={springs[1]} className="home-item-inner">
@@ -70,7 +70,7 @@ export default function homeItemsDesktop(
 				</a.div>
 			</div>
 
-			<div key={2} onMouseEnter={activateHandlers[2]} onMouseLeave={deactivateHandlers[2]} className="home-item">
+			<div onMouseOver={activateHandlers[2]} onMouseLeave={deactivateHandlers[2]} className="home-item">
 				<div className="home-item__title"><h3>гиды<span>.</span></h3></div>
 
 				<a.svg style={springs[2]} className="home-item-bg" width="100%" height="100%">

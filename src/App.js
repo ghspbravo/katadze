@@ -13,6 +13,7 @@ import about from './pages/about';
 import faq from './pages/faq';
 import contacts from './pages/contacts';
 import isMobile from './detectMobileBrowser';
+import empty from './pages/empty';
 
 export default function App(router) {
 
@@ -60,6 +61,8 @@ export default function App(router) {
             <Route path="/faq/" component={faq} />
             <Route path="/contacts/" component={contacts} />
             <Route path="/demo/" component={demo} />
+
+            <Route component={empty} />
           </Switch>
 
           <footer>

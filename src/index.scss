@@ -115,6 +115,14 @@ b {
 	color: $c-gray-dark;
 }
 
+.primary {
+	color: $c-blue;
+}
+
+.text-center {
+	text-align: center;
+}
+
 /* titles */
 
 .title_page {
@@ -246,6 +254,10 @@ a, .link {
 		transition: border-bottom $tr-standart;
 	}
 
+	&.hide {
+		color: $c-black;
+	}
+
 	&.disabled {
 		&, &:focus, &:hover{
 			cursor: default;
@@ -256,7 +268,7 @@ a, .link {
 
 body:not(.touch) {
 	a, .link {
-		&:hover, &:hover {
+		&:hover {
 			color: darken($c-links, 20%);
 		}
 
@@ -267,6 +279,13 @@ body:not(.touch) {
 		&:focus {
 			color: darken($c-links, 60%);
 			outline: none;
+		}
+
+		&.hide {
+			&:hover, &:focus {
+				color: black;
+				text-decoration: underline;
+			}
 		}
 	}
 }
@@ -409,14 +428,17 @@ label {
 	color: $c-form-label;
 	background-color: transparent;
 
+
 	margin: 10px 0;
 
-	&:hover, &:focus {
+	body:not(.touch) &:hover {
 		outline: none;
 		border-color: $c-yellow;
 	}
 
 	&:focus {
+		outline: none;
+		border-color: $c-yellow;
 		color: black;
 	}
 }

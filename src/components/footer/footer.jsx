@@ -7,7 +7,7 @@ import mailIcon from './mail.svg'
 
 export default function footer() {
 	return (
-		<div className="container mb-2">
+		<div className="container mt-5 mb-2">
 			<div className="mb-1">
 				<p><b>Ищи нас тут:</b></p>
 			</div>

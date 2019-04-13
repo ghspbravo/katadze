@@ -23,7 +23,7 @@ export default function about() {
 	return (
 		<main>
 			<div className="container">
-				<div className="row no-gutters">
+				<div className="row no-gutters about-header">
 					<div className="col-lg-6 col-12">
 						<div className="about-header-inner pt-5">
 							<h1 className="title_page">Создай свою историю!</h1>

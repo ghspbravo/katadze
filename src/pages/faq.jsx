@@ -26,7 +26,7 @@ export default function faq() {
 				<div className="row no-gutters faq-header">
 					<div className="col-12 col-lg-6">
 						<div className="faq-header-inner pt-5">
-							<h1 className="title_page mt-0">Ответы на все твои вопросы</h1>
+							<h1 className="title_page">Ответы на все твои вопросы</h1>
 							<p className="mb-3">Листай ниже! Все, о чем ты не знал и боялся спросить</p>
 							<div className="row no-gutters">
 								<div className="secondary mr-2">Не нашел ответа на свой вопрос?</div>
@@ -34,7 +34,7 @@ export default function faq() {
 							</div>
 						</div>
 
-						<div className="d-lg-none faq-header-figure_bg" style={{backgroundImage: `url(${faqBg})`}}></div>
+						<div className="d-lg-none faq-header-figure_bg" style={{ backgroundImage: `url(${faqBg})` }}></div>
 					</div>
 
 					<div className="col-lg-6 d-none d-lg-block">
@@ -58,7 +58,49 @@ export default function faq() {
 
 					</div>
 				</div>
+
+				<section className="sbox">
+					<div className="col-lg-10 col-12 px-0">
+						<h2 className="primary">KATADZE.FRIENDS</h2>
+						<div className="faq-question">
+							<h4>Какие организации интересны вам в разрезе партнерства?</h4>
+							<p>Как и в случае с нашими клиентами – мы не ставим никаких барьеров. Вы производите машинное масло? – мы ездим на автомобилях. Ваш продукт – уроки английского? – завтра мы будем покорять Эверест – пригодится!</p>
+						</div>
+	
+						<div className="faq-question">
+							<h4>Моя компания тоже туроператор. Как сотрудничать?</h4>
+							<p>Прекрасно! Создадим коллаборацию туроператоров. Сделаем совместный тур. Поделимся опытом. Заполняйте <Link to='/contacts'>заявку</Link> – мы найдем, где применить Ваш талант.</p>
+						</div>
+	
+						<div className="faq-question">
+							<h4>Моя организация не из Екатеринбурга, есть смысл сотрудничать?</h4>
+							<p>Есть. Хотя бы потому что наш идейный вдохновитель – с Кавказа. А креативный менеджер – из Киргизии. А наши планы – охватить весь мир. Вместе с Вами</p>
+						</div>
+
+						<h2 className="primary">KATADZE.EVENTS</h2>
+						<div className="faq-question">
+							<h4>Как стать участником события?</h4>
+							<p>Для того, чтобы принять участие в любом из наших проектов достаточно <Link to='/register'>зарегистрироваться</Link> на нашем портале, выбрать интересное событие и оплатить участие в нем, кликнув по соответствующей кнопке.</p>
+						</div>
+						
+						<div className="faq-question">
+							<h4>Стать участником события может любой желающий?</h4>
+							<p>Да, мы считаем, что привлекать к активному образу жизни можно и нужно людей всех возрастов, пола и убеждений. Никаких ограничений и фильтров. Только Вы и События Katadze.</p>
+						</div>
+						
+						<div className="faq-question">
+							<h4>Где узнать еще больше про отдельное мероприятие?</h4>
+							<p>Специально для каждого проекта мы создаем отдельную группу в социальной сети в Вконтакте, где размещаем всю информацию: от расписания до фото-отчетов. Следите за нами на нашей <a href="https://vk.com/katadzzze" target="_blank" rel="noopener noreferrer">официальной страничке</a></p>
+						</div>
+						
+						<div className="faq-question">
+							<h4>Можно ли самому стать организатором события?</h4>
+							<p>Можно и нужно! Специально для этого мы создаем сервис <b>Katadze Guide</b>, благодаря которому у каждого появится возможность организовать с нашей помощью свой Event.</p>
+						</div>
+					</div>
+				</section>
 			</div>
+
 		</main>
 	)
 }

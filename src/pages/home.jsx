@@ -64,10 +64,10 @@ export default function home() {
 	const eventsSpring = useSpring({ opacity: activeEvents ? 1 : 0 })
 	const gidsSpring = useSpring({ opacity: activeGids ? 1 : 0 })
 
-	const [main, mainStatus] = useImage(mainBg);
-	const [partners, partnersStatus] = useImage(partnersBg);
-	const [events, eventsStatus] = useImage(eventsBg);
-	const [gids, gidsStatus] = useImage(gidsBg);
+	const mainStatus = useImage(mainBg)[1];
+	const partnersStatus = useImage(partnersBg)[1];
+	const eventsStatus = useImage(eventsBg)[1];
+	const gidsStatus = useImage(gidsBg)[1];
 
 	useEffect(() => {
 		if ([mainStatus, partnersStatus, eventsStatus, gidsStatus]
