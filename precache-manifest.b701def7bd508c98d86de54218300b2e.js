@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "c3a6eb67c7a76538066a",
-    "url": "/katadze/static/css/main.5e362f16.chunk.css"
+    "revision": "d037cc363a2ddab4ca33",
+    "url": "/katadze/static/css/main.b0798f8b.chunk.css"
   },
   {
-    "revision": "c3a6eb67c7a76538066a",
-    "url": "/katadze/static/js/main.3fa969fb.chunk.js"
+    "revision": "d037cc363a2ddab4ca33",
+    "url": "/katadze/static/js/main.d44b012a.chunk.js"
   },
   {
     "revision": "33a17e73df59a2f191b4",
     "url": "/katadze/static/js/runtime~main.64e1696d.js"
   },
   {
-    "revision": "0613464546bfce265d1d",
+    "revision": "d9d906c181375d5e7bb9",
     "url": "/katadze/static/css/2.b7a6e721.chunk.css"
   },
   {
-    "revision": "0613464546bfce265d1d",
-    "url": "/katadze/static/js/2.de05afe0.chunk.js"
+    "revision": "d9d906c181375d5e7bb9",
+    "url": "/katadze/static/js/2.474961c7.chunk.js"
   },
   {
     "revision": "fd35ca31d5c048c09833cd0628c966bc",
@@ -34,10 +34,6 @@ self.__precacheManifest = [
   {
     "revision": "12b27ebce43d57ecc4956c5100128260",
     "url": "/katadze/static/media/gids.12b27ebc.jpg"
-  },
-  {
-    "revision": "33c258e38ec9d3aa814092d0e2e6667e",
-    "url": "/katadze/static/media/contacts.33c258e3.png"
   },
   {
     "revision": "04f4cd07c1e9fd093cd47e48a082fd28",
@@ -60,12 +56,20 @@ self.__precacheManifest = [
     "url": "/katadze/static/media/faq.1a01b91c.svg"
   },
   {
-    "revision": "d06936a0e4feb6da22401a268a797ae2",
-    "url": "/katadze/static/media/bebasneuebook.d06936a0.woff2"
+    "revision": "40f36dfc1ccac1095bd3fb783b062761",
+    "url": "/katadze/static/media/contacts.40f36dfc.svg"
+  },
+  {
+    "revision": "0a46f7b4d3a09666307101d605788b68",
+    "url": "/katadze/static/media/city.0a46f7b4.png"
   },
   {
     "revision": "a7c6c96bd21227e0ade223071d0ae01c",
     "url": "/katadze/static/media/bebasneueregular.a7c6c96b.woff2"
+  },
+  {
+    "revision": "d06936a0e4feb6da22401a268a797ae2",
+    "url": "/katadze/static/media/bebasneuebook.d06936a0.woff2"
   },
   {
     "revision": "5323deef1c0595240ad371633a5f19d9",
@@ -84,7 +88,7 @@ self.__precacheManifest = [
     "url": "/katadze/static/media/bebasneueregular.1e49b741.ttf"
   },
   {
-    "revision": "f4d08ae902f54c8ee584bd459d72bf18",
+    "revision": "533d00904709973fdbf69d415effd6d1",
     "url": "/katadze/index.html"
   }
 ];
