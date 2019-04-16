@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "6a84fe5387bb2e22422d",
-    "url": "/katadze/static/css/main.35bc1418.chunk.css"
+    "revision": "08f307faf0547f6292bd",
+    "url": "/katadze/static/css/main.84ab9e9c.chunk.css"
   },
   {
-    "revision": "6a84fe5387bb2e22422d",
-    "url": "/katadze/static/js/main.9391aedd.chunk.js"
+    "revision": "08f307faf0547f6292bd",
+    "url": "/katadze/static/js/main.c7bf9287.chunk.js"
   },
   {
     "revision": "33a17e73df59a2f191b4",
     "url": "/katadze/static/js/runtime~main.64e1696d.js"
   },
   {
-    "revision": "08d04a59e77ef97038fa",
+    "revision": "f1b80ce685192b6faa54",
     "url": "/katadze/static/css/2.4b9df278.chunk.css"
   },
   {
-    "revision": "08d04a59e77ef97038fa",
-    "url": "/katadze/static/js/2.2203c972.chunk.js"
+    "revision": "f1b80ce685192b6faa54",
+    "url": "/katadze/static/js/2.89c320d9.chunk.js"
   },
   {
     "revision": "fd35ca31d5c048c09833cd0628c966bc",
@@ -36,12 +36,8 @@ self.__precacheManifest = [
     "url": "/katadze/static/media/gids.12b27ebc.jpg"
   },
   {
-    "revision": "407863dfdf9463f79bf521af9abde51a",
-    "url": "/katadze/static/media/activities.407863df.svg"
-  },
-  {
-    "revision": "0d90fcd253dfd05175f7f3d4f6d4e121",
-    "url": "/katadze/static/media/banner.0d90fcd2.jpg"
+    "revision": "5fa27093df07f33eedd6c0d57844b1e6",
+    "url": "/katadze/static/media/banner.5fa27093.jpg"
   },
   {
     "revision": "cdf52f3786e11a88231c3f8ec9a6cdf8",
@@ -76,8 +72,8 @@ self.__precacheManifest = [
     "url": "/katadze/static/media/city.0a46f7b4.png"
   },
   {
-    "revision": "039c46ab2d5c54acd131504c585a4162",
-    "url": "/katadze/static/media/campBanner.039c46ab.jpg"
+    "revision": "f271380276f0bbf86c71610fa69cecc2",
+    "url": "/katadze/static/media/campBanner.f2713802.jpg"
   },
   {
     "revision": "4461b1a10d10ef091964f727dd0a823f",
@@ -140,16 +136,44 @@ self.__precacheManifest = [
     "url": "/katadze/static/media/balance.006398cb.svg"
   },
   {
-    "revision": "ce247b8f493b9385b045fad698079730",
-    "url": "/katadze/static/media/banner.ce247b8f.jpg"
+    "revision": "55bd88d7cd8e5cdf168fc00f5be068ee",
+    "url": "/katadze/static/media/banner.55bd88d7.jpg"
   },
   {
-    "revision": "5323deef1c0595240ad371633a5f19d9",
-    "url": "/katadze/static/media/bebasneuebook.5323deef.woff"
+    "revision": "407863dfdf9463f79bf521af9abde51a",
+    "url": "/katadze/static/media/activities.407863df.svg"
+  },
+  {
+    "revision": "ff0495789ca0d00e1de9d8a1d09618e6",
+    "url": "/katadze/static/media/beauty.ff049578.svg"
+  },
+  {
+    "revision": "a43605fb89a2803c6193402527a815b3",
+    "url": "/katadze/static/media/cafe.a43605fb.svg"
+  },
+  {
+    "revision": "1ee8110ed0f5bacfa881985fba31911e",
+    "url": "/katadze/static/media/dev.1ee8110e.svg"
+  },
+  {
+    "revision": "26abcf66d8a2ff4bd5cd1e26c890e73b",
+    "url": "/katadze/static/media/learning.26abcf66.svg"
+  },
+  {
+    "revision": "05581902a92125cbbe14a4e3737cdca7",
+    "url": "/katadze/static/media/shops.05581902.svg"
+  },
+  {
+    "revision": "e5bd63bc261b9813f8b11a1276796971",
+    "url": "/katadze/static/media/ski.e5bd63bc.svg"
   },
   {
     "revision": "d06936a0e4feb6da22401a268a797ae2",
     "url": "/katadze/static/media/bebasneuebook.d06936a0.woff2"
+  },
+  {
+    "revision": "5323deef1c0595240ad371633a5f19d9",
+    "url": "/katadze/static/media/bebasneuebook.5323deef.woff"
   },
   {
     "revision": "a7c6c96bd21227e0ade223071d0ae01c",
@@ -160,15 +184,15 @@ self.__precacheManifest = [
     "url": "/katadze/static/media/bebasneueregular.3216eb8b.woff"
   },
   {
-    "revision": "1e49b741ab3430b2adb941ae55a99ef0",
-    "url": "/katadze/static/media/bebasneueregular.1e49b741.ttf"
-  },
-  {
     "revision": "682d7d56abc15c568f25d0bcb2656c9d",
     "url": "/katadze/static/media/bebasneuebook.682d7d56.ttf"
   },
   {
-    "revision": "b6275400c27f87151a494e8802d9f53b",
+    "revision": "1e49b741ab3430b2adb941ae55a99ef0",
+    "url": "/katadze/static/media/bebasneueregular.1e49b741.ttf"
+  },
+  {
+    "revision": "e8808ca06218f1bb496b2db8e72f1765",
     "url": "/katadze/index.html"
   }
 ];
