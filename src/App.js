@@ -5,7 +5,6 @@ import demo from './pages/demo';
 import header from './components/header/header';
 import home from './pages/home';
 import events from './pages/events';
-import eventSingle from './pages/eventSingle';
 
 import { useTransition, animated } from 'react-spring'
 import footer from './components/footer/footer';
@@ -14,6 +13,10 @@ import faq from './pages/faq';
 import contacts from './pages/contacts';
 import isMobile from './detectMobileBrowser';
 import empty from './pages/empty';
+import camp from './pages/res/events/camp/camp';
+import partners from './pages/partners';
+import partnersSingle from './pages/partnersSingle';
+import profile from './pages/profile';
 
 export default function App(router) {
 
@@ -54,13 +57,18 @@ export default function App(router) {
           <Switch location={item}>
             <Route exact path="/" component={home} />
 
-            <Route exact path="/events/" component={events} />
-            <Route exact path="/events/:id" render={props => eventSingle(props)} />
+            <Route path="/partners/" component={partners} />
+            <Route exact path="/partner/:id" component={partnersSingle} />
 
-            <Route path="/about/" component={about} />
-            <Route path="/faq/" component={faq} />
-            <Route path="/contacts/" component={contacts} />
-            <Route path="/demo/" component={demo} />
+            <Route exact path="/events/" component={events} />
+            <Route exact path="/events/camp" component={camp} />
+
+            <Route path="/profile/" component={profile} />
+
+            <Route exact path="/about/" component={about} />
+            <Route exact path="/faq/" component={faq} />
+            <Route exact path="/contacts/" component={contacts} />
+            <Route exact path="/demo/" component={demo} />
 
             <Route component={empty} />
           </Switch>

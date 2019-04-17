@@ -7,7 +7,7 @@ export default function empty() {
 			<div className="container pt-5">
 				<h1 className="title_page">Страницы не существует</h1>
 				<p>Как ты сюда попал? <Link to='/contacts'>
-					<span>Поделись</span>
+					Поделись
 				</Link> своей историей с нами</p>
 				<Link to='/' className="button">Вернуться на главную</Link>
 			</div>

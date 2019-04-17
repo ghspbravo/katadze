@@ -1,0 +1,14 @@
+@import '../../scss/vars';
+
+.profile-navigation {
+
+
+	&__item {
+		margin: 15px 0;
+		a, .link {
+			color: $c-black;
+			font-family: $ff-title;
+			font-size: $fz-h5;
+		}
+	}
+}

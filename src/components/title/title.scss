@@ -1,0 +1,64 @@
+@import '../../scss/vars';
+
+.title-underline {
+	&__title, &__subtitle {
+		text-align: center;
+	}
+
+	&__subtitle {
+		@media (max-width: $m-sm-max) {
+			text-align: left;
+		}
+	}
+
+	&__title-wrapper {
+		position: relative;
+		padding-bottom: 55px;
+		margin-bottom: 40px;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0; left: 50%;
+			transform: translateX(-50%);
+			width: 80vw; max-width: 400px;
+			height: 2px;
+			background-color: #aaaaaa;
+		}
+	}
+
+	&__title {
+		h1 {
+			font-weight: 800;
+			text-transform: uppercase;
+			color: $c-gray-dark;
+			margin: 0;
+		}
+	}
+
+	&__subtitle {
+		h5 {
+			color: $c-gray-dark;
+			font-weight: normal;
+			margin: 0;
+		}
+	}
+}
+
+.title-bg {
+	display: inline-block;
+	text-align: center;
+	background-color: $c-blue;
+	padding: 0 40px;
+	clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+
+	&__title {
+		color: white;
+		font-weight: bold;
+		margin: 0;
+		text-transform: uppercase;
+		@media (max-width: $m-xs-max) {
+			font-size: 10vw;	
+		}
+	}
+}

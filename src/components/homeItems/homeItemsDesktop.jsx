@@ -30,7 +30,7 @@ export default function homeItemsDesktop(
 							<text className="home-item__transparent-title" dy=".25em" x="50%" y="50%" textAnchor="middle">FRIENDS</text>
 						</mask>
 					</defs>
-					<rect className="knockout-text-bg" width="100%" height="100%" fill="#41bfef" x="0" y="0" fillOpacity="0.95" mask="url(#knockout-text-0)"></rect>
+					<rect className="knockout-text-bg" width="100%" height="100%" fill="#41bfef" x="0" y="0" fillOpacity="0.7" mask="url(#knockout-text-0)"></rect>
 				</a.svg>
 
 				<a.div className="home-item-image" style={{ ...springs[0], backgroundImage: `url(${partnersBg})` }}></a.div>
@@ -57,10 +57,10 @@ export default function homeItemsDesktop(
 							<text className="home-item__transparent-title" dy=".25em" x="50%" y="50%" textAnchor="middle">EVENTS</text>
 						</mask>
 					</defs>
-					<rect className="knockout-text-bg" width="100%" height="100%" fill="#41bfef" x="0" y="0" fillOpacity="0.9" mask="url(#knockout-text-1)"></rect>
+					<rect className="knockout-text-bg" width="100%" height="100%" fill="#41bfef" x="0" y="0" fillOpacity="0.7" mask="url(#knockout-text-1)"></rect>
 				</a.svg>
 
-				<a.div className="home-item-image" style={{ ...springs[1], backgroundImage: `url(${eventsBg})` }}></a.div>
+				<a.div className="home-item-image" style={{ ...springs[1], backgroundImage: `url(${eventsBg})`, backgroundPositionY: 'bottom' }}></a.div>
 
 				<a.div style={springs[1]} className="home-item-description">
 					<p>Объединяя людей по всему миру, мы создаем уникальные проекты самой разной направленности.
@@ -77,10 +77,10 @@ export default function homeItemsDesktop(
 					<defs>
 						<mask id="knockout-text-2" x="0" y="0" width="100%" height="100%">
 							<rect x="0" y="0" width="100%" height="100%" fill="#fff"></rect>
-							<text className="home-item__transparent-title" dy=".25em" x="50%" y="50%" textAnchor="middle">GIDS</text>
+							<text className="home-item__transparent-title" dy=".25em" x="50%" y="50%" textAnchor="middle">GUIDES</text>
 						</mask>
 					</defs>
-					<rect className="knockout-text-bg" width="100%" height="100%" fill="#41bfef" x="0" y="0" fillOpacity="0.9" mask="url(#knockout-text-2)"></rect>
+					<rect className="knockout-text-bg" width="100%" height="100%" fill="#41bfef" x="0" y="0" fillOpacity="0.7" mask="url(#knockout-text-2)"></rect>
 				</a.svg>
 
 				<a.div className="home-item-image" style={{ ...springs[2], backgroundImage: `url(${gidsBg})` }}></a.div>

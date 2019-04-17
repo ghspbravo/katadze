@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react'
+import {Link} from 'react-router-dom'
 import './res/about/about.scss'
 import aboutBg from './res/about/aboutHeader.svg'
 
@@ -8,8 +9,8 @@ import useTitle from 'react-use/lib/useTitle';
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
 const trans1 = (x, y) => `translate3d(${x / 30}px,${y / 28}px,0)`
-const trans2 = (x, y) => `translate3d(${x / 24 }px,${y / 40 }px,0)`
-const trans3 = (x, y) => `translate3d(${x / 35 }px,${y / 23 }px,0)`
+const trans2 = (x, y) => `translate3d(${x / 24}px,${y / 40}px,0)`
+const trans3 = (x, y) => `translate3d(${x / 35}px,${y / 23}px,0)`
 const trans4 = (x, y) => `translate3d(${x / 18}px,${y / 22}px,0)`
 const trans5 = (x, y) => `translate3d(0,${y / 10}px,0)`
 
@@ -37,7 +38,7 @@ export default function about() {
 							</p>
 						</div>
 
-						<div className="d-lg-none faq-header-figure_bg" style={{backgroundImage: `url(${aboutBg})`}}></div>
+						<div className="d-lg-none faq-header-figure_bg" style={{ backgroundImage: `url(${aboutBg})` }}></div>
 					</div>
 
 					<div className="col-md-6 d-none d-lg-block">
@@ -134,6 +135,88 @@ export default function about() {
 						</svg>
 					</div>
 				</div>
+
+				<section className="sbox">
+					<div className="col-lg-10 col-12 px-0">
+						<p><b>Вместе с нами тебе доступно только самое лучшее:</b></p>
+						<p>
+							— Активный отдых и спорт в любой сезон
+							<br /> — Масштабные события на лучших горнолыжных курортах страны
+							<br /> — Скидки на покупки и развлечения до 50% от наших партнеров
+							<br /> — Полное организационное сопровождение в выездах
+							<br /> — Сотни единомышленников по всей России
+							<br /> — Возможность путешествовать по миру с личным гидом
+						</p>
+
+						<h2>Наши возможности</h2>
+
+						<h3 className="lead">KatadZe<span className="primary">.EVENTS</span></h3>
+
+						<p>Мы организуем молодежные выезды по Уралу и России круглый год. Поездки с нами всегда яркие, интересные и выгодные. А наша особенность – это атмосфера драйва и тусовки, которую мы создаем в каждом туре. Интересная программа, фишки, фотографы, конкурсы и развлечения – это то, что есть в каждом нашем выезде.</p>
+						<p>Наши проекты:</p>
+
+						<ul>
+							<li>
+								Всероссийский горнолыжный фестиваль <b>#KatadZeРКВ</b> (пос. Домбай)
+							</li>
+							<li>
+								Молодежный спортивно-образовательный лагерь <b>#KATADZEcamp</b> (с. Архыз)
+							</li>
+							<li>
+								Туры на фестиваль музыки и технологий «Alfa Future People»
+							</li>
+							<li>
+								Открытие и закрытие сезона на Урале
+							</li>
+							<li>
+								Снежный тур в Шерегеш
+							</li>
+							<li>
+								Выезды на ГЛК Урала весь зимний сезон
+							</li>
+							<li>
+								Тусовки на озерах, походы, рафтинг и многое другое
+							</li>
+						</ul>
+
+						<h3 className="lead">
+							KatadZe<span className="primary">.FRIENDS</span>
+						</h3>
+
+						<p>Мы создаем условия для доступного активного отдыха, покупок, обучений и занятий спортом.</p>
+						<p>Наш сервис KatadZe.FRIENDS позволяет получать скидки до 50% студентам в лучших заведениях и магазинах города Екатеринбурга. При постоянном пользовании сервисом студент может экономить от 1000 рублей на покупках и развлечениях.
+							<br/> Сейчас в нашем сервисе более 35 партнеров. Чтобы получать скидки – нужно <Link to='/profile/membership'>оформить подписку</Link> и следовать инструкциям в личном кабинете.</p>
+						<p>В будущем, сервис будет работать в других городах страны.</p>
+
+						<h3 className="lead">
+							KatadZe<span className="primary">.GUIDES</span>
+						</h3>
+
+						<p>
+							Мы объединяем путешественников по всему миру, давая КАЖДОМУ возможность найти местного гида в любой точке планеты или стать гидом по желаемой цене. KatadZe.GUIDES – это удобный сервис для поиска гида и уникальная платформа для путешествий, познания мира и новых знакомств.
+						</p>
+						<p>
+							На данный момент сервис находится в доработке.
+						</p>
+
+						<h3 className="lead">
+							KatadZe<span className="primary">.TEAM</span>
+						</h3>
+
+						<p>
+							<b>Аслан Кагиев</b> <br className="d-md-none"/> (Вдохновляю)
+							<br/> <b>Анастасия Преснякова</b> <br className="d-md-none"/> (Управляю)
+							<br/> <b>Екатерина Витюк</b> <br className="d-md-none"/> (Организую деятельность| KatadZe)
+							<br/> <b>Михаил Кочнев</b> <br className="d-md-none"/> (Создаю возможности для партнерства| KatadZe.FRIENDS)
+							<br/> <b>Юлия Махрова</b> <br className="d-md-none"/> (Руковожу проектами| KatadZe.EVENTS)
+							<br/> <b>Екатерина Агафонова</b> <br className="d-md-none"/> (Информирую и продвигаю| KatadZe.MEDIA)
+							<br/> <b>Никита Зотов</b> <br className="d-md-none"/> (Разрабатываю| KatadZe.DIGITAL)
+							<br/> <b>Наталия Севостьянова</b> <br className="d-md-none"/> (создаю стиль)
+							<br/> <b>Асалик Партов</b> <br className="d-md-none"/> (Креативлю)
+						</p>
+
+					</div>
+				</section>
 			</div>
 		</main>
 	)

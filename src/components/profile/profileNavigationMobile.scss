@@ -1,0 +1,12 @@
+@import '../../scss/vars';
+
+.profile-navigation-mobile {
+	&-wrapper {
+		position: absolute;
+		background-color: #fff;
+		z-index: 2;
+		padding: 15px 25px;
+    width: 250px;
+    box-shadow: $bshadow-modal;
+	}
+}

@@ -4,10 +4,8 @@ import useEvent from 'react-use/lib/useEvent';
 import './topbanner.scss'
 
 const defaultContent =
-	<div>
-		<h2>Default page title</h2>
-	</div>
-const defaultImageUrl = 'http://sportstardom.com/wp-content/uploads/2016/11/toughest-sports.jpg'
+	<div></div>
+const defaultImageUrl = ''
 
 export default function topbanner(content = defaultContent, imageUrl = defaultImageUrl) {
 
@@ -29,7 +27,7 @@ export default function topbanner(content = defaultContent, imageUrl = defaultIm
 	}, [])
 
 	return (
-		<section ref={bannerContainer} className="sbox topbanner" style={{ zIndex: 0 }}>
+		<section ref={bannerContainer} className="sbox topbanner topbanner_fixed" style={{ zIndex: 0 }}>
 			<div className="sbox_bg" style={{
 				backgroundImage: `url(${imageUrl})`,
 				width: '100%', height: bannerHeight,

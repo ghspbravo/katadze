@@ -17,6 +17,7 @@
     "react-testing-library": "^6.1.2",
     "react-use": "^7.3.1",
     "react-useportal": "^0.1.17",
+    "swiper": "^4.5.0",
     "use-image": "^1.0.3"
   },
   "scripts": {

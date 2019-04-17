@@ -4,6 +4,7 @@
   min-height: 70vh;
   &-figure {
     @extend %figure-header;
+    height: 100%;
     &_bg {
       @extend %figure-header-bg;
     }

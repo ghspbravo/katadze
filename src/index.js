@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import 'normalize.css';
 import './bootstrap-grid.css'
 import './index.scss';
+import 'swiper/dist/css/swiper.css'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

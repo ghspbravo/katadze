@@ -63,7 +63,7 @@ html {
 }
 
 main {
-	padding-top: 80px;
+	padding-top: 90px;
 }
 
 header {
@@ -123,6 +123,15 @@ b {
 	text-align: center;
 }
 
+.text-big {
+	font-size: $fz-h5;
+}
+
+.lead {
+	font-family: $ff-title;
+	line-height: 1.2;
+}
+
 /* titles */
 
 .title_page {
@@ -133,10 +142,6 @@ b {
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	font-family: $ff-main;
-
-	&.lead {
-		font-family: $ff-title;
-	}
 }
 
 h1, .h1, h2, .h2 {
@@ -249,6 +254,11 @@ a, .link {
 	text-decoration: none;
 	transition: color $tr-standart;
 
+	&.no-style {
+		display: block;
+		color: inherit;
+	}
+
 	span {
 		border-bottom: 1px solid $c-links-border;
 		transition: border-bottom $tr-standart;
@@ -267,7 +277,7 @@ a, .link {
 }
 
 body:not(.touch) {
-	a, .link {
+	a:not(.no-style, .button), .link {
 		&:hover {
 			color: darken($c-links, 20%);
 		}
