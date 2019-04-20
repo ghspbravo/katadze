@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "08f307faf0547f6292bd",
-    "url": "/katadze/static/css/main.84ab9e9c.chunk.css"
+    "revision": "29f6b0b5ba3df5821bce",
+    "url": "/katadze/static/css/main.42fbd3f2.chunk.css"
   },
   {
-    "revision": "08f307faf0547f6292bd",
-    "url": "/katadze/static/js/main.c7bf9287.chunk.js"
+    "revision": "29f6b0b5ba3df5821bce",
+    "url": "/katadze/static/js/main.6d9fffdc.chunk.js"
   },
   {
     "revision": "33a17e73df59a2f191b4",
     "url": "/katadze/static/js/runtime~main.64e1696d.js"
   },
   {
-    "revision": "f1b80ce685192b6faa54",
+    "revision": "0e124e6a31c8930d1f9b",
     "url": "/katadze/static/css/2.4b9df278.chunk.css"
   },
   {
-    "revision": "f1b80ce685192b6faa54",
-    "url": "/katadze/static/js/2.89c320d9.chunk.js"
+    "revision": "0e124e6a31c8930d1f9b",
+    "url": "/katadze/static/js/2.bf7c80b8.chunk.js"
   },
   {
     "revision": "fd35ca31d5c048c09833cd0628c966bc",
@@ -168,20 +168,20 @@ self.__precacheManifest = [
     "url": "/katadze/static/media/ski.e5bd63bc.svg"
   },
   {
-    "revision": "d06936a0e4feb6da22401a268a797ae2",
-    "url": "/katadze/static/media/bebasneuebook.d06936a0.woff2"
-  },
-  {
     "revision": "5323deef1c0595240ad371633a5f19d9",
     "url": "/katadze/static/media/bebasneuebook.5323deef.woff"
   },
   {
-    "revision": "a7c6c96bd21227e0ade223071d0ae01c",
-    "url": "/katadze/static/media/bebasneueregular.a7c6c96b.woff2"
+    "revision": "d06936a0e4feb6da22401a268a797ae2",
+    "url": "/katadze/static/media/bebasneuebook.d06936a0.woff2"
   },
   {
     "revision": "3216eb8b241526bd0e409cf060a8fa03",
     "url": "/katadze/static/media/bebasneueregular.3216eb8b.woff"
+  },
+  {
+    "revision": "a7c6c96bd21227e0ade223071d0ae01c",
+    "url": "/katadze/static/media/bebasneueregular.a7c6c96b.woff2"
   },
   {
     "revision": "682d7d56abc15c568f25d0bcb2656c9d",
@@ -192,7 +192,7 @@ self.__precacheManifest = [
     "url": "/katadze/static/media/bebasneueregular.1e49b741.ttf"
   },
   {
-    "revision": "e8808ca06218f1bb496b2db8e72f1765",
+    "revision": "6a467dbda580d896f670bc96f55a2a94",
     "url": "/katadze/index.html"
   }
 ];
