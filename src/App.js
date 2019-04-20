@@ -23,6 +23,7 @@ import { useStore, useActions } from 'easy-peasy';
 import register from './pages/auth/register';
 import activate from './pages/auth/activate';
 import acquiring from './pages/orderSuccess';
+import social from './pages/auth/socials';
 
 
 export default function App(router) {
@@ -77,6 +78,8 @@ export default function App(router) {
 
             <Route exact path="/login" component={login} />
             <Route exact path="/register" component={register} />
+            
+            <Route exact path="/login/:provider" component={social} />
 
             <Route path="/partners/" component={partners} />
             <Route exact path="/partner/:id" component={partnersSingle} />

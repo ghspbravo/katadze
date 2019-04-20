@@ -4,6 +4,7 @@ import { profile } from "./models/profile";
 import { membership } from "./models/membership";
 import { orders } from "./models/orders";
 import { partners } from "./models/partners";
+import { authSocials } from "./models/authSocials";
 
 
 export const model = {
@@ -12,5 +13,6 @@ export const model = {
 	profile,
 	membership,
 	orders,
-	partners
+	partners,
+	socials: authSocials,
 }

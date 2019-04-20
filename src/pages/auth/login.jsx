@@ -3,6 +3,9 @@ import { useFormState } from 'react-use-form-state';
 import { useStore, useActions } from 'easy-peasy';
 import { Redirect, Link } from 'react-router-dom'
 
+import {vkAuthApp} from '../../models/constants'
+import badgeExperimental from '../../components/badges/badgeExperimental';
+
 export default function login() {
 
 	const errors = useStore(state => state.auth.errors)
@@ -70,6 +73,12 @@ export default function login() {
 						</form>
 
 						<p>Нет аккаунта? <Link to='/register'>Создать</Link></p>
+
+						<div className="row no-gutters mt-4">
+							<a href={vkAuthApp} className="button mx-auto">
+							{badgeExperimental()}
+							Войти через ВК</a>
+						</div>
 					</div>
 				</div>
 			</section>
