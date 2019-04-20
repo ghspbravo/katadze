@@ -47,6 +47,48 @@ export const partners = {
 			})
 	}),
 
+	getSinglePartner: thunk(async (actions, payload) => {
+		actions.setLoading(true)
+		const partner = await fetch(server + `partner/${payload}`, {
+			method: 'get',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json',
+			},
+		}).then(response => {
+			if (!response.ok) {
+				throw response.status
+			}
+			return response
+		}).then(response => response.json())
+			.then(data => {
+				actions.setLoading(false)
+				return {
+					id: data.id,
+					title: data.title,
+					image: data.img,
+					description: data.content
+				}
+			})
+			.catch((code) => {
+				switch (code) {
+					case 400:
+						alert('Ошибка получения данных о партнерах')
+						break;
+					case 500:
+						alert('Сервер не отвечает')
+						break;
+
+					default:
+						break;
+				}
+
+				actions.setLoading(false)
+				return false
+			})
+			return partner
+	}),
+
 	getCoupons: thunk(async (actions, payload) => {
 		// actions.setLoading(true)
 		await fetch(server + 'coupons/', {

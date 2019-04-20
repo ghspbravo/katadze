@@ -1,54 +1,77 @@
-import React from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
+import { useStore, useActions } from 'easy-peasy';
+import parse from 'html-react-parser'
 
 export default function partnersSingle(router) {
+
+	const isLoading = useStore(store => store.partners.isLoading)
+
+	const [partner, setPartner] = useState({})
+
+	const getSinglePartner = useActions(actions => actions.partners.getSinglePartner)
+
+	const activateCoupon = useActions(actions => actions.partners.activateCoupon)
+	const getCouponsAuth = useActions(actions => actions.partners.getCouponsAuth)
+
+	const handleActivateCoupon = useCallback(id => {
+		activateCoupon(id)
+	})
+
+	const coupons = useStore(store => store.partners.coupons)
+	const isMember = useStore(store => store.membership.expiredAt)
+
+	useEffect(() => {
+		const fetchPartner = async () => {
+			!Object.keys(coupons).length && await getCouponsAuth()
+			const partnerId = router.match.params.id
+			setPartner(await getSinglePartner(partnerId))
+		}
+		fetchPartner()
+	}, [])
 	return (
 		<main>
-			<div className="container">
-					<h1 className="text-center">Уктус</h1>
-					{/* <p>partner ID: {router.match.params.id}</p> */}
-					<img style={{display:'block', width: '100%'}} className="mx-auto" src="https://katadze.ru/media/upload/partner_img/10add650-6ed5-4b5d-98ab-cf4025c73270.jpg" alt=""/>
-	
-				<div className="col-lg-10 col-12 px-0">
-					<p>
-					<b>Укту́с (Уктусский)</b> — жилой район Екатеринбурга. Расположен в Чкаловском административном районе, на южной окраине города по обоим берегам реки Исеть и её правого притока — реки Патрушиха (Уктус), у северных склонов Уктусских гор. С севера Уктус граничит с жилым районом Ботанический, с запада — с жилым районом Вторчермет, с юго-запада — с жилым районом Елизавет, южной границей района является Уктусский лесопарк. Рекой Исеть район делится на две обособленные части: Уктус Правобережный и Уктус Левобережный.
-					</p>
-
-					<h3>История района</h3>
-
-					<h4>
-						XIX — начало XX века
-					</h4>
-					<p>
-						По описанию Уктусского завода 1803 года в нём проживало 1055 человек обоего пола (1 двор купеческий, 17 мещанских, 42 крестьянских, 124 мастеровых). Имелась одна церковь (Преображенская), расположенная на склоне Берёзовой или Преображенской горки (сейчас находится на территории Уктусского лесопарка), два управительских дома и земляная школа на 25 человек. Ярмарок не было[1].
-					</p>
-
-					<p>
-						В 1852—1854 годах, после согласования множества пунктов в разных инстанциях Уктусский завод был упразднён[1].
-					</p>
-
-					<p>
-						В период с осени 1856 по июнь 1857 года на месте деревянного моста через реку Уктусску (современную Патрушиха) был возведён каменный мост[1], сохранившийся до XXI века и причисленный к памятникам архитектуры федерального значения.
-					</p>
-
-					<p>
-						В 1869 году в селе Уктус имелось 262 двора, в которых проживало 1005 мужчин и 1237 женщин. В селе была одна православная церковь и две часовни[2]. Основным родом деятельности местных жителей в 1880-х годах был гончарный промысел, подсобным — скотоводство (скот пасли на выгоне около села), а также земледелие (пашня располагалась в 6 — 15 верстах). Около 3/4 жителей по данным дворовой переписи 1887 года жило ниже среднего достатка, но лучше чем до отмены крепостного права[3].
-					</p>
-					<p>
-					В деревне на 1887 год имелось 20 промышленных заведений и три торговые лавки, трактиров и кабаков не имелось[4].
-					</p>
+			{isLoading
+				? <div className="container">
+					<p>loading...</p>
 				</div>
+				: <div className="container">
+					<h1 className="text-center">{partner.title}</h1>
 
-				<p style={{
-					fontSize: '12px'
-				}} className="secondary">
-					*Участником клуба KatadZe может быть только студент. При активации сикдки необходимо иметь продленный студенческий билет.
-				<br/> При возникновении вопросов — обращайтесь к нашему администратору по телефону <a className="hide secondary" href="tel:+79667090909">+7 (966) 709-09-09</a>
-				</p>
-				
-				<div className="text-center">
-					<h1 style={{fontWeight: '500', letterSpacing: 1.2}} className="lead">ЖИВИ АКТИВНО. С KATADZE – ВЫГОДНО.</h1>
-				</div>
-			</div>
+					<div className="mb-3">
+						<button onClick={() => router.history.goBack()} 
+						className="link hide"><i className="fas fa-angle-double-left"></i> Назад</button>
+					</div>
+
+					<img style={{ display: 'block', width: '100%' }} className="mx-auto" src={partner.image} alt="" />
+					{coupons && coupons[partner.id] && coupons[partner.id].expired
+						? <div className="row no-gutters">
+							<div className="mx-auto">
+								<p>Истекает {coupons[partner.id].expired}</p>
+							</div>
+						</div>
+						: <div className="row no-gutters mt-3">
+							<button className="mx-auto"
+								onClick={() => handleActivateCoupon(partner.id)} disabled={!isMember || isLoading || coupons[partner.id] === undefined}
+							>Активировать</button>
+						</div>
+					}
+
+					<div className="col-lg-10 col-12 px-0">
+						{partner.description
+							&& parse(partner.description)}
+					</div>
+
+					<p style={{
+						fontSize: '12px'
+					}} className="secondary">
+						*Участником клуба KatadZe может быть только студент. При активации сикдки необходимо иметь продленный студенческий билет.
+				<br /> При возникновении вопросов — обращайтесь к нашему администратору по телефону <a className="hide secondary" href="tel:+79667090909">+7 (966) 709-09-09</a>
+					</p>
+
+					<div className="text-center">
+						<h1 style={{ fontWeight: '500', letterSpacing: 1.2 }} className="lead">ЖИВИ АКТИВНО. С KATADZE – ВЫГОДНО.</h1>
+					</div>
+				</div>}
 		</main>
 	)
 }

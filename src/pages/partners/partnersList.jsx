@@ -22,9 +22,7 @@ export default function partnersList(router) {
 	
 	const activateCoupon = useActions(actions => actions.partners.activateCoupon)
 	const handleActivateCoupon = useCallback(id => {
-		activateCoupon(id).then(isSuccess => {
-			isSuccess && getCouponsAuth()
-		})
+		activateCoupon(id)
 	})
 
 	useEffect(() => {
