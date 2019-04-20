@@ -4,7 +4,22 @@ import { useStore } from 'easy-peasy';
 
 import './profileNavigation.scss'
 
+import { useActions } from 'easy-peasy';
+
 export default function profileNavigation() {
+
+
+	const logoutAuth = useActions(actions => actions.auth.logout)
+	const logoutProfile = useActions(actions => actions.profile.logout)
+	const logoutPartners = useActions(actions => actions.partners.logout)
+	const logoutMembership = useActions(actions => actions.membership.logout)
+
+	const exitHandler = () => {
+		logoutAuth()
+		logoutProfile()
+		logoutMembership()
+		logoutPartners()
+	}
 	const membershipExpired = useStore(store => store.membership.expiredAt)
 
 	return (
@@ -23,7 +38,7 @@ export default function profileNavigation() {
 				<NavLink to='/contacts'>Дать обратную связь</NavLink>
 			</div>
 			<div className="profile-navigation__item">
-				<button className="link">Выйти</button>
+				<button onClick={exitHandler} className="link">Выйти</button>
 			</div>
 		</div>
 	)
