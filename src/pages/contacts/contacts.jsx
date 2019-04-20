@@ -54,7 +54,7 @@ export default function contacts() {
 					</div>
 
 					<div className="col-md-6 d-none d-lg-block">
-						<svg className="contacts-header-figure mt-5" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 522.17 460.55">
+						<svg className="contacts-header-figure mt-5" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="522" height="460" viewBox="0 0 522 460">
 							<defs>
 								<linearGradient id="gr-1" x1="31.14" y1="267.73" x2="553.31" y2="267.73" gradientUnits="userSpaceOnUse">
 									<stop offset="0" stopColor="#31abe2" /><stop offset="1" stopColor="#f2f2f2" /></linearGradient>
@@ -101,7 +101,7 @@ export default function contacts() {
 					</div>
 				</div>
 
-				<section className="sbox">
+				<section className="py-3">
 					<div className="row no-gutters justify-content-center">
 						<div className="col-12">
 							<img style={{

@@ -136,7 +136,7 @@ export default function about() {
 					</div>
 				</div>
 
-				<section className="sbox">
+				<section className="py-3">
 					<div className="col-lg-10 col-12 px-0">
 						<p><b>Вместе с нами тебе доступно только самое лучшее:</b></p>
 						<p>

@@ -59,7 +59,7 @@ export default function faq() {
 					</div>
 				</div>
 
-				<section className="sbox">
+				<section className="py-3">
 					<div className="col-lg-10 col-12 px-0">
 						<h3 className="lead">KatadZe<span className="primary">.FRIENDS</span></h3>
 						<div className="faq-question">
