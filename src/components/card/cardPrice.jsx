@@ -1,19 +1,38 @@
 import React from 'react'
+import parse from 'html-react-parser'
 
 import './card.scss'
 
-export default function cardPrice(imgSrc, title, description, price, eventLink ) {
+export default function cardPrice(
+	id,
+	imgSrc,
+	title,
+	description,
+	price,
+	eventLink,
+	paymentHandler,
+	isAllowed,
+	parts
+) {
 	return (
 		<div className="card-price card">
-			<img className="card__photo" src={imgSrc} alt="eventPrew"/>
+			<img className="card__photo" src={imgSrc} alt="eventPrew" />
 
 			<div className="card__inner">
 				<div className="card__title">{title}</div>
 
-				<div className="card__description">{description}</div>
+				<div className="card__description">{parse(description)}</div>
 
 				<div className="card__price">
-					<button>{price} руб.</button>
+					<button disabled={!isAllowed} onClick={() => paymentHandler(id, null)}>{price} руб.</button>
+
+					{parts.length && 
+						parts.map((part, index) => <div key={index} className="row no-gutters mt-2">
+							<span>{part.name}</span>
+							<button className="ml-2" disabled={!isAllowed} onClick={() => paymentHandler(id, part.id)}>{part.price} руб.</button>
+						</div> )
+
+					}
 				</div>
 			</div>
 

@@ -51,15 +51,15 @@
 
 .card-price .card {
   &__photo {
-    height: 250px;
+    height: 350px;
     transition: height $tr-standart;
 
     @media (max-width: $m-sm-max) {
-      height: 200px;
+      height: 250px;
     }
 
     @media (min-width: $m-lg-min) and (max-width: $m-lg-max) {
-      height: 200px;
+      height: 250px;
     }
   }
 

@@ -59,6 +59,49 @@ export const orders = {
 			})
 	}),
 
+	orderEvent: thunk(async (actions, payload, { getStoreState, dispatch }) => {
+		actions.setLoading(true)
+		await dispatch.auth.refreshTokens()
+		await fetch(server + 'order/event/', {
+			method: 'post',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json',
+				'Authorization': `Bearer ${getStoreState().auth.access}`
+			},
+			body: JSON.stringify({
+				event_tariff: payload.id,
+				event_tariff_part: payload.idPart
+			})
+		}).then(response => {
+			if (!response.ok) {
+				throw response.status
+			}
+			return response
+		})
+			.then(response => response.json())
+			.then(data => {
+				window.location.href = data.form_url
+
+				actions.setLoading(false)
+			})
+			.catch((code) => {
+				switch (code) {
+					case 400:
+						alert('Ошибка формирования заказа')
+						break;
+					case 500:
+						alert('Сервер не отвечает')
+						break;
+
+					default:
+						break;
+				}
+
+				actions.setLoading(false)
+			})
+	}),
+
 	submit: thunk(async (actions, payload, { getStoreState, dispatch }) => {
 		actions.setLoading(true)
 		await dispatch.auth.refreshTokens()

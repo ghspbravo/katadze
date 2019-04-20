@@ -5,7 +5,7 @@ import { membership } from "./models/membership";
 import { orders } from "./models/orders";
 import { partners } from "./models/partners";
 import { authSocials } from "./models/authSocials";
-
+import { events } from "./models/events";
 
 export const model = {
 	auth,
@@ -15,4 +15,5 @@ export const model = {
 	orders,
 	partners,
 	socials: authSocials,
+	events
 }
