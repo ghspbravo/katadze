@@ -7,7 +7,6 @@
   &__thumb {
     width: 50px;
     height: 50px;
-    height: 100%;
     object-fit: contain;
     border-radius: 50%;
   }
@@ -15,6 +14,20 @@
   &__controls {
     position: absolute;
     right: 0;
+  }
+
+  &__login {
+    color: $c-black;
+    font-family: $ff-title;
+    letter-spacing: 1.5px;
+    font-size: 1.3rem;
+  }
+
+  &__name {
+    text-overflow: ellipsis;
+    max-width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
   }
 }
 

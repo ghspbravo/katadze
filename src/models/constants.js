@@ -1,0 +1,1 @@
+export default 'https://katadze.ru/api/'

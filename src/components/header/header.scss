@@ -34,14 +34,12 @@
 
 .header-nav {
 	.nav-item {
-		a {
-			color: $c-black;
-			font-family: $ff-title;
-			font-size: $fz-h5;
+		color: $c-black;
+		font-family: $ff-title;
+		font-size: $fz-h5;
 
-			&.active {
-				color: $c-blue;
-			}
+		&.active {
+			color: $c-blue;
 		}
 
 		&:not(:last-child) {
@@ -62,7 +60,8 @@
 	.header-nav a,
 	.header-profile p,
 	.header-profile i,
-	.header-mobile-open {
+	.header-mobile-open,
+	.header-profile__login {
 		color: black;
 	}
 }
@@ -84,7 +83,8 @@
 	.header-nav a,
 	.header-profile p,
 	.header-profile i,
-	.header-mobile-open {
+	.header-mobile-open,
+	.header-profile__login {
 		color: white;
 	}
 }

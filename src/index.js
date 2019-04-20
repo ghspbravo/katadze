@@ -8,9 +8,32 @@ import 'swiper/dist/css/swiper.css'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import { StoreProvider, createStore } from 'easy-peasy';
+import { model } from './model';
+
+const logger = store => next => action => {
+  console.log(action)
+  return next(action)
+}
+
+const store = createStore(model, {
+	initialState: {
+		auth: {
+			// access: localStorage.getItem('access'),
+			refresh: localStorage.getItem('refresh'),
+		},
+		profile: {
+			id: localStorage.getItem('user'),
+		}
+	},
+	// middleware: [logger]
+})
+
 ReactDOM.render((
 	<BrowserRouter>
-	 <Route component={App} />
+	 <StoreProvider store={store}>
+		 <Route component={App} />
+	 </StoreProvider>
 	</BrowserRouter>
 ), document.getElementById('root'))
 

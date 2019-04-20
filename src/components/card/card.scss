@@ -124,16 +124,7 @@
 	}
 	.card {
 		&__photo {
-      height: 350px;
-      transition: height $tr-standart;
-
-      @media (max-width: $m-xs-max) {
-        height: 250px;
-      }
-
-      @media (min-width: $m-md-min) and (max-width: $m-lg-max) {
-        height: 250px;
-      }
+      height: 100%;
 		}
 		
 		&__title {
@@ -146,12 +137,22 @@
 		}
 
 		&__photo-wrapper {
-			position: relative;
+      position: relative;
+      height: 350px;
+      transition: height $tr-standart;
+
+      @media (max-width: $m-xs-max) {
+        height: 250px;
+      }
+
+      @media (min-width: $m-md-min) and (max-width: $m-lg-max) {
+        height: 250px;
+      }
 		}
 
 		&__price {
 			position: absolute; 
-			bottom: 0; right: -2px;
+			bottom: -2px; right: -2px;
 			background-size: contain;
 			background-position: right bottom;
 			width: 50%; height: 50%;

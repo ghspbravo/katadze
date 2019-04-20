@@ -1,0 +1,64 @@
+@import '../../../scss/vars';
+
+.camp-banner {
+	color: white;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	// height: 80vh;
+	// min-height: 600px;
+	height: 700px;
+
+	@media (min-width: 1800px) {
+		height: 1000px;
+	}
+	@media (max-width: $m-lg-max) {
+		height: 600px;
+		background-size: 1200px 600px;
+	}
+	@media (max-width: $m-md-max) {
+		height: 450px;
+		background-size: 992px 450px;
+	}
+	@media (max-width: $m-xs-max) {
+		height: 250px;
+		background-size: 600px 250px;
+	}
+
+	// display: flex;
+	// flex-direction: column;
+	// justify-content: center;
+	// align-items: center;
+
+	// &__inner {
+	// 	position: relative;
+	// 	padding: 10px;
+	// 	@media (min-width: $m-sm-min) and (max-width: $m-sm-max) {
+	// 		padding-left: 50px;
+	// 	}
+	// }
+
+	// &__title {
+	// 	font-size: 7rem;
+	// 	@media (max-width: $m-sm-max) {
+	// 		font-size: 5rem;
+	// 	}
+	// }
+
+	// &__subtitle {
+	// 	font-size: 2rem;
+	// 	@media (max-width: $m-sm-max) {
+	// 		font-size: 1.8rem;
+	// 	}
+	// }
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%; height: 100%;
+		background: rgba($color: #000000, $alpha: 0.3);
+	}
+
+}

@@ -25,10 +25,9 @@
 
 	&__items {
 		.nav-item {
+			display: block;
 			@extend %list-items;
-			a {
-				color: $c-black;
-			}
+			color: $c-black;
 		}
 	}
 

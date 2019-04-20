@@ -6,7 +6,9 @@
   "dependencies": {
     "easy-peasy": "^2.1.5",
     "gh-pages": "^2.0.1",
+    "html-react-parser": "^0.7.0",
     "jest-dom": "^3.1.3",
+    "jwt-decode": "^2.2.0",
     "node-sass": "^4.11.0",
     "normalize.css": "^8.0.1",
     "react": "^16.8.6",
@@ -15,8 +17,9 @@
     "react-scripts": "^2.1.8",
     "react-spring": "^8.0.19",
     "react-testing-library": "^6.1.2",
-    "react-use": "^7.3.1",
-    "react-useportal": "^0.1.17",
+    "react-use": "^7.6.0",
+    "react-use-form-state": "^0.9.0",
+    "react-useportal": "^0.1.23",
     "swiper": "^4.5.0",
     "use-image": "^1.0.3"
   },

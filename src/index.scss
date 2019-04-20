@@ -127,6 +127,10 @@ b {
 	font-size: $fz-h5;
 }
 
+.text-small {
+	font-size: 12px;
+}
+
 .lead {
 	font-family: $ff-title;
 	line-height: 1.2;
@@ -152,7 +156,7 @@ h1, .h1, h2, .h2 {
 }
 
 h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-	font-weight: 800;
+	font-weight: 600;
 	&.lead {
 		font-weight: 400;
 	}
@@ -259,20 +263,13 @@ a, .link {
 		color: inherit;
 	}
 
-	span {
-		border-bottom: 1px solid $c-links-border;
-		transition: border-bottom $tr-standart;
-	}
-
 	&.hide {
 		color: $c-black;
 	}
 
 	&.disabled {
-		&, &:focus, &:hover{
-			cursor: default;
-			color: $c-disabled;
-		}
+		color: $c-disabled;
+		pointer-events: none;
 	}
 }
 
@@ -280,10 +277,6 @@ body:not(.touch) {
 	a:not(.no-style, .button), .link {
 		&:hover {
 			color: darken($c-links, 20%);
-		}
-
-		&:hover, &:focus {
-			span {border-bottom-color: transparent;}
 		}
 	
 		&:focus {
@@ -295,6 +288,14 @@ body:not(.touch) {
 			&:hover, &:focus {
 				color: black;
 				text-decoration: underline;
+			}
+		}
+
+		&.disabled {
+			&:focus, &:hover {
+				cursor: not-allowed;
+				background: white;
+				color: $c-disabled;
 			}
 		}
 	}
@@ -345,6 +346,7 @@ input[type=reset], input[type=button], input[type=submit] {
 		color: $c-disabled;
 		border: 1px solid $c-gray;
 		background: white;
+		pointer-events: none;
 	}
 }
 
@@ -455,4 +457,9 @@ label {
 
 .form-group {
 	margin: 10px 0;
+}
+
+.form-error {
+	font-size: 14px;
+	color: red;
 }

@@ -9,31 +9,31 @@ const navItemClass = 'nav-item'
  */
 export default function navItems() {
 	return [
-		<div key={0} className={navItemClass}>
+		<NavLink exact to="/" key={0} className={navItemClass}>
 			<i className="fas fa-home mr-1 d-lg-none"></i>
-			<NavLink exact to="/">Главная</NavLink>
-		</div>,
-		<div key={1} className={navItemClass}>
-			<NavLink to="/events">Мероприятия</NavLink>
-		</div>,
-		<div key={6} className={navItemClass}>
+			<span>Главная</span>
+		</NavLink>,
+		<NavLink to="/events" key={1} className={navItemClass}>
+			<span >Мероприятия</span>
+		</NavLink>,
+		<NavLink to="/partners" key={6} className={navItemClass}>
 			<i className="fas fa-percent mr-1 d-lg-none"></i>		
-			<NavLink to="/partners">Партнеры</NavLink>
-		</div>,
-		<div key={2} className={navItemClass}>
-			<NavLink to="/demo">Demo</NavLink>
-		</div>,
-		<div key={3} className={navItemClass}>
+			<span>Партнеры</span>
+		</NavLink>,
+		// <NavLink to="/demo" key={2} className={navItemClass}>
+		// 	<span >Demo</span>
+		// </NavLink>,
+		<NavLink to="/about" key={3} className={navItemClass}>
 			<i className="fas fa-info mr-1 d-lg-none"></i>
-			<NavLink to="/about">О нас</NavLink>
-		</div>,
-		<div key={4} className={navItemClass}>
+			<span>О нас</span>
+		</NavLink>,
+		<NavLink to="/faq" key={4} className={navItemClass}>
 			<i className="fas fa-question-circle mr-1 d-lg-none"></i>
-			<NavLink to="/faq">FAQ</NavLink>
-		</div>,
-		<div key={5} className={navItemClass}>
+			<span>FAQ</span>
+		</NavLink>,
+		<NavLink to="/contacts" key={5} className={navItemClass}>
 			<i className="fas fa-address-card mr-1 d-lg-none"></i>
-			<NavLink to="/contacts">Контакты</NavLink>
-		</div>,
+			<span>Контакты</span>
+		</NavLink>,
 	]
 }

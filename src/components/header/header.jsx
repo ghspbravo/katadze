@@ -75,7 +75,7 @@ export default function header(router) {
 		return classModify.toString().replace(',', ' ')
 	}
 
-	const { openPortal, closePortal, isOpen, Portal } = usePortal({})
+	const { openPortal, closePortal, isOpen, Portal } = usePortal()
 
 	return (
 		<div className={`header-wrapper ${getHeaderPrefix(pathName, scrollPosition, screenWidth)}`}>
@@ -90,7 +90,7 @@ export default function header(router) {
 					<nav className="row no-gutters header-nav d-lg-flex d-none">
 						{navItems()}
 					</nav>
-					<div className="ml-auto">
+					<div className="ml-auto col">
 						{headerProfile()}
 					</div>
 					<div className="ml-2 d-lg-none">

@@ -11,7 +11,7 @@ export default function mobileNavMenu(Portal, closePortal, isOpen) {
 		if (e.target === wrapper.current) closePortal()
 	}
 
-	const springOpacity = useSpring({ opacity: isOpen ? 0.95 : 0 })
+	const springOpacity = useSpring({ opacity: isOpen ? 0.95 : 0, visibility: isOpen ? 'visible' : 'hidden' })
 	const springPosition = useSpring({ transform: `translateX(${isOpen ? 0 : 100}%)` })
 
 	useEffect(() => {
