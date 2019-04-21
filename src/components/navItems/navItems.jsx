@@ -14,6 +14,7 @@ export default function navItems() {
 			<span>Главная</span>
 		</NavLink>,
 		<NavLink to="/events" key={1} className={navItemClass}>
+			<i className="fas fa-snowboarding mr-1 d-lg-none"></i>
 			<span >Мероприятия</span>
 		</NavLink>,
 		<NavLink to="/partners" key={6} className={navItemClass}>
