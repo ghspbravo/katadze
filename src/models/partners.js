@@ -89,44 +89,7 @@ export const partners = {
 			return partner
 	}),
 
-	getCoupons: thunk(async (actions, payload) => {
-		// actions.setLoading(true)
-		await fetch(server + 'coupons/', {
-			method: 'get',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json',
-			},
-		}).then(response => {
-			if (!response.ok) {
-				throw response.status
-			}
-			return response
-		}).then(response => response.json())
-			.then(data => {
-				actions.setCoupons(data)
-
-				// actions.setLoading(false)
-			})
-			.catch((code) => {
-				switch (code) {
-					case 400:
-						alert('Ошибка получения данных о купонах')
-						break;
-					case 500:
-						alert('Сервер не отвечает')
-						break;
-
-					default:
-						break;
-				}
-
-				// actions.setLoading(false)
-			})
-	}),
-
 	getCouponsAuth: thunk(async (actions, payload, {getStoreState, dispatch}) => {
-		// actions.setLoading(true)
 		getStoreState().auth.refresh && await dispatch.auth.refreshTokens()
 		await fetch(server + 'coupons/', {
 			method: 'get',
@@ -148,8 +111,6 @@ export const partners = {
 		}).then(response => response.json())
 			.then(data => {
 				actions.setCoupons(data)
-
-				// actions.setLoading(false)
 			})
 			.catch((code) => {
 				switch (code) {
@@ -163,8 +124,6 @@ export const partners = {
 					default:
 						break;
 				}
-
-				// actions.setLoading(false)
 			})
 	}),
 
@@ -232,7 +191,8 @@ export const partners = {
 	setPartners: action((state, payload) => {
 		payload.forEach(category => {
 			partners.partnersCategories[category.id] = {
-				title: category.name
+				title: category.name,
+				count: category.partners.length
 			}
 			partners.partners[category.id] = category.partners
 		})
