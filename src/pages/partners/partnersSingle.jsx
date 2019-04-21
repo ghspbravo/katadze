@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { useStore, useActions } from 'easy-peasy';
 import parse from 'html-react-parser'
+import activatedPartner from '../../components/activatedPartner/activatedPartner';
 
 export default function partnersSingle(router) {
 
@@ -48,9 +49,9 @@ export default function partnersSingle(router) {
 
 					<img style={{ display: 'block', width: '100%' }} className="mx-auto" src={partner.image} alt="" />
 					{coupons && coupons[partner.id] && coupons[partner.id].expired
-						? <div className="row no-gutters">
+						? <div className="row no-gutters mt-3">
 							<div className="mx-auto">
-								<p>Истекает {coupons[partner.id].expired}</p>
+								{activatedPartner(coupons[partner.id].expired)}
 							</div>
 						</div>
 						: <div className="row no-gutters mt-3">

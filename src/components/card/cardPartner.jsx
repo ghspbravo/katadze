@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import corner from './partnersCorner.png'
+import activatedPartner from '../activatedPartner/activatedPartner';
 
 export default function cardPartner(id, imgSrc, title, description, coupon, isMember, activateCoupon, isLoading) {
 	return (
@@ -26,7 +27,7 @@ export default function cardPartner(id, imgSrc, title, description, coupon, isMe
 
 			<div className="card__footer">
 				{coupon && coupon.expired 
-				? <p>Истекает {coupon.expired}</p>
+				? activatedPartner(coupon.expired)
 				: <button onClick={() => activateCoupon(id)} disabled={!isMember || isLoading || coupon === undefined} >Активировать</button>
 				}
 			</div>

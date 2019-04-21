@@ -1,0 +1,16 @@
+@import '../../scss/vars';
+
+.activated {
+	&__label {
+		margin: 0 auto;
+		font-size: 1rem;
+		background-color: $c-yellow;
+		padding: 2px 5px;
+		text-transform: uppercase;
+	}
+
+	&__date {
+		font-size: 0.7rem;
+		text-align: center;
+	}
+}
