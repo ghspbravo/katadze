@@ -1,5 +1,7 @@
 import React, { useCallback } from 'react'
 import './contacts.scss'
+import { useActions } from 'easy-peasy';
+import { useFormState } from 'react-use-form-state';
 
 import contactsPath from './contacts.svg'
 import cityPath from './city.png'
@@ -7,6 +9,7 @@ import cityPath from './city.png'
 import { useSpring, animated as a } from 'react-spring'
 import useEvent from 'react-use/lib/useEvent'
 import useTitle from 'react-use/lib/useTitle';
+import useModal from '../../hooks/useModal';
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
 const trans5 = (x, y) => `translate3d(0,${y / 30}px,0)`
@@ -17,6 +20,27 @@ export default function contacts() {
 	const mouseMoveHandler = useCallback(({ clientX: x, clientY: y }) => set({ xy: calc(x, y) }))
 	useEvent('mousemove', mouseMoveHandler, window)
 
+	const [modal, openModal] = useModal()
+
+	const [formState, { text, textarea, email }] = useFormState();
+
+	const contact = useActions(actions => actions.tickets.contact)
+
+	const submitHandler = async (e) => {
+		e.preventDefault()
+		const result = await contact({
+			question: formState.values.question,
+			name: formState.values.name,
+			email: formState.values.email
+		})
+		if (result.success) {
+			openModal(<div>
+				<h2>Спасибо за ваш ответ!</h2>
+				<p>Вопрос будет рассмотрен модераторами в ближайшее время</p>
+			</div>, null)
+		}
+	}
+
 	useTitle('KATADZE | Контакты')
 	return (
 		<main>
@@ -26,27 +50,35 @@ export default function contacts() {
 						<div className="contacts-header-inner pt-5">
 							<h1 className="title_page">У тебя остался вопрос?</h1>
 
-							<form>
-								<div className="form-group ">
+							<button onClick={(e) => openModal(<p>content modals</p>, e)}>MODAL</button>
+							{modal}
+							<form onSubmit={submitHandler}>
+								<div className="form-group">
 									<label className="mr-1" htmlFor="contacts-question">Твой вопрос</label>
-									<textarea id="contacts-question" className="col px-0" type="text" autoComplete="none" />
+									<textarea required {...textarea('question')} id="contacts-question" className="col px-0" type="text" autoComplete="none" />
+									{!formState.validity.question &&
+										<div className="form-error col-12 px-0">{formState.errors.question}</div>}
 								</div>
 								<div className="row no-gutters">
 									<div className="col-md col-12">
 										<div className="form-group row no-gutters">
 											<label className="mr-1" htmlFor="contacts-name">Имя</label>
-											<input className="col" id="contacts-name" type="text" />
+											<input required {...text('name')} className="col" id="contacts-name" type="text" />
+											{!formState.validity.name &&
+												<div className="form-error col-12 px-0">{formState.errors.name}</div>}
 										</div>
 									</div>
 									<div className="col-md col-12">
 										<div className="form-group row no-gutters">
 											<label className="mr-1" htmlFor="contacts-mail">Почта</label>
-											<input className="col" id="contacts-mail" type="email" />
+											<input required {...email('email')} className="col" id="contacts-mail" type="email" />
+											{!formState.validity.email &&
+												<div className="form-error col-12 px-0">{formState.errors.email}</div>}
 										</div>
 									</div>
 								</div>
 
-								<button className="mt-2" type="button">Отправить</button>
+								<button className="mt-2">Отправить</button>
 							</form>
 						</div>
 
@@ -108,7 +140,7 @@ export default function contacts() {
 								width: '300px',
 								margin: '0 auto',
 								display: 'block'
-							}} src={cityPath} alt="city"/>
+							}} src={cityPath} alt="city" />
 
 						</div>
 						<div className="mt-4 text-center">
@@ -123,14 +155,14 @@ export default function contacts() {
 				</section>
 
 			</div>
-				<section className="sbox_info py-5">
-					<div className="container text-center">
-						<h2>
-							Напишите нам
-							<br/> <a className="hide" href="mailto:katadzeguide@mail.ru">katadzeguide@mail.ru</a>
-						</h2>
-					</div>
-				</section>
+			<section className="sbox_info py-5">
+				<div className="container text-center">
+					<h2>
+						Напишите нам
+							<br /> <a className="hide" href="mailto:katadzeguide@mail.ru">katadzeguide@mail.ru</a>
+					</h2>
+				</div>
+			</section>
 		</main >
 	)
 }

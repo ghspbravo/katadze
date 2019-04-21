@@ -321,7 +321,7 @@ button {
 	user-select: none;
 }
 
-button:not(.link), .button,
+button:not(.link):not(.no-style), .button,
 input[type=reset], input[type=button], input[type=submit] {
 
 	&.alter {
@@ -361,7 +361,7 @@ input[type=reset], input[type=button], input[type=submit] {
 }
 
 body:not(.touch) {
-	button:not(.link), .button,
+	button:not(.link):not(.no-style), .button,
 	input[type=reset], input[type=button], input[type=submit] {
 		&:hover, &:focus {
 			background: linear-gradient(180deg, #ffbb00 0%, #ff9100 100%);
