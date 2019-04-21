@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import cardPartner from '../../components/card/cardPartner';
 import { useStore, useActions } from 'easy-peasy';
 
+import useTitle from 'react-use/lib/useTitle';
+
 export default function partnersList(router) {
 
 	const isLoading = useStore(store => store.partners.isLoading)
@@ -30,6 +32,7 @@ export default function partnersList(router) {
 		!Object.keys(coupons).length && getCouponsAuth()
 	}, [])
 
+	useTitle('KATADZE.FRIENDS')
 	return isLoading
 	? (
 		<p>loading...</p>

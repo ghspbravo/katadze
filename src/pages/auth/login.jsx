@@ -6,6 +6,8 @@ import { Redirect, Link } from 'react-router-dom'
 import {vkAuthApp} from '../../models/constants'
 import badgeExperimental from '../../components/badges/badgeExperimental';
 
+import useTitle from 'react-use/lib/useTitle';
+
 export default function login() {
 
 	const errors = useStore(state => state.auth.errors)
@@ -31,6 +33,8 @@ export default function login() {
 			})
 		})
 	})
+
+	useTitle('KATADZE | Вход')
 	return (
 		<main>
 			{isLoggedIn && <Redirect to='/profile' />}

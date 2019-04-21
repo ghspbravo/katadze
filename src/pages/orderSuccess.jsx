@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import { useStore, useActions } from 'easy-peasy';
+import useTitle from 'react-use/lib/useTitle';
 
 export default function acquiring(router) {
 	const submitOrder = useActions(actions => actions.orders.submit)
@@ -15,6 +16,8 @@ export default function acquiring(router) {
 
 		submitOrder(uuid)
 	}, [])
+
+	useTitle('KATADZE | Подтверждение заказа')
 	return (
 		<main>
 			<div className="container pt-5">

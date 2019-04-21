@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import useTitle from 'react-use/lib/useTitle';
 
 export default function empty() {
+	
+	useTitle('KATADZE | Страница не найдена')
 	return (
 		<main>
 			<div className="container pt-5">

@@ -3,6 +3,8 @@ import { useFormState } from 'react-use-form-state';
 import { useStore, useActions } from 'easy-peasy';
 import { Redirect, Link } from 'react-router-dom'
 
+import useTitle from 'react-use/lib/useTitle';
+
 export default function register() {
 
 	const [formState, { 
@@ -68,6 +70,7 @@ export default function register() {
 		fr.readAsDataURL(file)
 	}
 
+	useTitle('KATADZE | Регистрация')
 	return (
 		<main>
 			{isLoggedIn && <Redirect to='/profile' />}

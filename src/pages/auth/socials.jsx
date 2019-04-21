@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react'
 import { useStore, useActions } from 'easy-peasy'
 import { Redirect } from 'react-router-dom'
 
+import useTitle from 'react-use/lib/useTitle';
+
 export default function social(router) {
 	const [isSuccess, setSuccess] = useState()
 	const [shouldRedirect, setRedirect] = useState(false)
@@ -32,12 +34,14 @@ export default function social(router) {
 		isLoggedIn &&
 			setTimeout(() => setRedirect(true), 3000)
 	}, [isLoggedIn])
+
+	useTitle('KATADZE | Авторизация')
 	return (
 		<main>
 			{shouldRedirect && <Redirect to='/profile' />}
 			<section className="sbox">
 				<div className="container">
-					<h1 className="title_page">Активация аккаунта</h1>
+					<h1 className="title_page">Авторизация</h1>
 
 					{isLoading &&
 						<p>На ваших глазах <b>творится</b> магия авторизации через соц. сеть...</p>

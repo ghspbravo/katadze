@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useStore, useActions } from 'easy-peasy'
 
+import useTitle from 'react-use/lib/useTitle';
+
 export default function activate(router) {
 
 	const errors = useStore(state => state.register.errors)
@@ -26,6 +28,7 @@ export default function activate(router) {
 		}
 	}, [isActivated])
 
+	useTitle('KATADZE | Активация аккаунта')
 	return (
 		<main>
 			<section className="sbox">

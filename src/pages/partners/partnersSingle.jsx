@@ -28,6 +28,10 @@ export default function partnersSingle(router) {
 		}
 		fetchPartner()
 	}, [])
+
+	useEffect(() => {
+		document.title = `KATADZE.FRIENDS | ${partner && partner.title ? partner.title : ''}`
+	}, [partner])
 	return (
 		<main>
 			{isLoading
