@@ -3,10 +3,12 @@ import { useFormState } from 'react-use-form-state';
 import { useStore, useActions } from 'easy-peasy';
 import { Redirect, Link } from 'react-router-dom'
 
-import {vkAuthApp} from '../../models/constants'
+import {vkAuthApp, fbAuthApp} from '../../models/constants'
 import badgeExperimental from '../../components/badges/badgeExperimental';
 
 import useTitle from 'react-use/lib/useTitle';
+
+import './auth.scss'
 
 export default function login() {
 
@@ -40,16 +42,16 @@ export default function login() {
 			{isLoggedIn && <Redirect to='/profile' />}
 			<section className="sbox">
 				<div className="container">
-					<div className="col-lg-5 col-md-10 px-0 mx-auto">
-						<h1 className="title_page">
+					<div className="col-lg-5 col-md-10 mx-auto auth-wrapper">
+						<h1 className="auth__title title_page">
 							Вход
 						</h1>
 
-						<div className="mb-4">
-							<p>Войдите на сайт для доступа к партнерской программе, оплаты мероприятий</p>
+						<div className="mb-4 auth__message">
+							<p>Войдите на сайт для доступа к партнерской программе и оплаты мероприятий</p>
 						</div>
 
-						<form onSubmit={submitHandler} method="post" className="mb-3">
+						<form onSubmit={submitHandler} method="post" className="mb-3 auth__form">
 							<div className="form-group">
 								<label htmlFor="identifier">Логин или почта</label>
 								<input className="col-12 px-0" id="identifier" required
@@ -71,7 +73,7 @@ export default function login() {
 							</div>}
 
 							<div className="row no-gutters">
-								<button className={`ml-auto ${isLoading ? 'disabled' : ''}`}>
+								<button className={`ml-auto auth-button ${isLoading ? 'disabled' : ''}`}>
 									{isLoading ? "..." : "Войти"}</button>
 							</div>
 						</form>
@@ -79,9 +81,14 @@ export default function login() {
 						<p>Нет аккаунта? <Link to='/register'>Создать</Link></p>
 
 						<div className="row no-gutters mt-4">
-							<a href={vkAuthApp} className="button mx-auto">
+							<a href={vkAuthApp} className="button mx-auto auth-social auth-social_vk">
+							Авторизация через ВК</a>
+						</div>
+
+						<div className="row no-gutters mt-2">
+							<a href={fbAuthApp} className="button mx-auto auth-social auth-social_fb">
 							{badgeExperimental()}
-							Войти через ВК</a>
+							Войти через Facebook</a>
 						</div>
 					</div>
 				</div>

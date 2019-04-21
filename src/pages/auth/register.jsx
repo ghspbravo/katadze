@@ -1,19 +1,19 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react'
 import { useFormState } from 'react-use-form-state';
 import { useStore, useActions } from 'easy-peasy';
 import { Redirect, Link } from 'react-router-dom'
 
 import useTitle from 'react-use/lib/useTitle';
+import IMask from 'imask';
+import { useDropzone } from 'react-dropzone'
 
 export default function register() {
 
-	const [formState, { 
+	const [formState, {
 		text,
 		password,
 		email,
-		date,
 		select,
-		tel
 	}] = useFormState();
 	const [photo, setPhoto] = useState()
 
@@ -32,15 +32,16 @@ export default function register() {
 	const register = useActions(actions => actions.register.register)
 	const login = useActions(actions => actions.auth.login)
 	const sendActivate = useActions(actions => actions.register.sendActivate)
-  const getUserInfo = useActions(actions => actions.profile.getUserInfo)
+	const getUserInfo = useActions(actions => actions.profile.getUserInfo)
 
 	const submitHandler = useCallback(async e => {
 		e.preventDefault()
 
+		const date = formState.values.birthdate.split('.')
 		const isSuccess = await register({
 			email: formState.values.email,
 			password: formState.values.password,
-			date_birth: formState.values.birthdate,
+			date_birth: `${date[2]}-${date[1]}-${date[0]}`,
 			gender: formState.values.gender,
 			last_name: formState.values.surname,
 			first_name: formState.values.name,
@@ -59,16 +60,50 @@ export default function register() {
 		}
 	})
 
-	const handleFileLoad = (event) => {
-		// let input = event.target
-		let file = event.target.files[0]
-		let fr = new FileReader()
-		fr.onloadend = info => {
-			// document.querySelector('.avatar-container img').src = info.target.result
-			setPhoto(info.target.result)
+	const onDrop = useCallback(acceptedFiles => {
+		try {
+			const reader = new FileReader();
+			reader.onload = () => {
+				const fileAsBinaryString = reader.result;
+				console.log(fileAsBinaryString)
+				setPhoto(fileAsBinaryString)
+			};
+			reader.onabort = () => console.log('file reading was aborted');
+			reader.onerror = () => console.log('file reading has failed');
+	
+			reader.readAsDataURL(acceptedFiles[0])
+		} catch {
+			alert('Ошибка считывания файла')
 		}
-		fr.readAsDataURL(file)
-	}
+
+	}, [])
+	const { getRootProps, getInputProps, isDragActive, isDragAccept, isDragReject } = useDropzone({ 
+		onDrop, 
+		multiple: false,
+	accept: 'image/*' })
+
+	const dateInput = useRef()
+	const phoneInput = useRef()
+
+	useEffect(() => {
+		const dateMask = new IMask(dateInput.current, {
+			mask: Date,
+			blocks: {
+				Y: {
+					mask: IMask.MaskedRange,
+					from: 1950,
+					to: new Date().getFullYear() - 18,
+				}
+			},
+		});
+		const phoneMask = new IMask(phoneInput.current, {
+			mask: '+{7} (000) 000-00-00',
+		});
+		return () => {
+			dateMask.destroy()
+			phoneMask.destroy()
+		}
+	}, [])
 
 	useTitle('KATADZE | Регистрация')
 	return (
@@ -76,13 +111,15 @@ export default function register() {
 			{isLoggedIn && <Redirect to='/profile' />}
 			<section className="sbox">
 				<div className="container">
-					<div className="col-lg-5 col-md-10 px-0 mx-auto">
-						<h1 className="title_page">Регистрируйся</h1>
+					<div className="col-lg-5 col-md-10 mx-auto auth-wrapper">
+						<h1 className="auth__title title_page">Регистрация</h1>
 
-						<p>Регистрируйся и получай возможность оплачивать мероприятия и пользоваться партнерской программой!</p>
-						<p>Уже зарегистрированы? <Link to='/login'>Войти</Link></p>
+						<div className="auth__message">
+							<p>Регистрируйся и получай возможность оплачивать мероприятия и пользоваться партнерской программой!</p>
+							<p>Уже зарегистрированы? <Link to='/login'>Войти</Link></p>
+						</div>
 
-						<form onSubmit={submitHandler} method="post">
+						<form className="auth__form" onSubmit={submitHandler} method="post">
 							<div className="form-group">
 								<label htmlFor="username">Имя пользователя</label>
 								<input required id="username" className="col-12 px-0" {...text({
@@ -140,7 +177,8 @@ export default function register() {
 
 							<div className="form-group">
 								<label htmlFor="birthdate">Дата рождения</label>
-								<input required id="birthdate" className="col-12 px-0" {...date('birthdate')} />
+
+								<input ref={dateInput} required id="birthdate" className="col-12 px-0" {...text('birthdate')} />
 								{!formState.validity.birthdate &&
 									<div className="form-error col-12 px-0">{formState.errors.birthdate}</div>}
 								{fieldErrors.date_birth &&
@@ -171,7 +209,7 @@ export default function register() {
 
 							<div className="form-group">
 								<label htmlFor="phonenumber">Номер телефона</label>
-								<input id="phonenumber" className="col-12 px-0" {...tel({
+								<input placeholder="+7" ref={phoneInput} id="phonenumber" className="col-12 px-0" {...text({
 									name: 'phonenumber',
 									onBlur: (e) => checkPhone(e.target.value),
 									validateOnBlur: true,
@@ -186,7 +224,18 @@ export default function register() {
 
 							<div className="form-group">
 								<label htmlFor="photo">Ваша фотография</label>
-								<input onChange={handleFileLoad} required type="file" name="photo" id="photo" accept=".jpg, .jpeg, .png" />
+
+								<img className="photo-preview" src={photo} alt="" />
+								<div style={{
+									borderColor: isDragAccept ? '#00e676' : isDragActive ? '#2196f3' : isDragReject ? '#ff1744' : ''
+								}} className="dropzone" {...getRootProps()}>
+									<input {...getInputProps()} />
+									{
+										isDragActive
+											? <p>Перетащите сюда фотографии</p>
+											: <p>Перетащите сюда фотографии или нажмите, чтобы выбрать</p>
+									}
+								</div>
 								{fieldErrors.avatar &&
 									<div className="form-error col-12 px-0">{fieldErrors.avatar}</div>}
 							</div>
@@ -195,8 +244,8 @@ export default function register() {
 								{errors}
 							</div>}
 
-							<div className="row no-gutters">
-								<button className={`ml-auto ${isLoading ? 'disabled' : ''}`}>
+							<div className="row no-gutters mt-2">
+								<button className={`auth-button ml-auto ${isLoading ? 'disabled' : ''}`}>
 									{isLoading ? "..." : "Зарегистрироваться"}</button>
 							</div>
 
