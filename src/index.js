@@ -26,7 +26,7 @@ const store = createStore(model, {
 			id: localStorage.getItem('user'),
 		}
 	},
-	// middleware: [logger]
+	middleware: [logger]
 })
 
 ReactDOM.render((
