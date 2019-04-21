@@ -211,7 +211,7 @@ export default function about() {
 							<br/> <b>Юлия Махрова</b> <br className="d-md-none"/> (Руковожу проектами| KatadZe.EVENTS)
 							<br/> <b>Екатерина Агафонова</b> <br className="d-md-none"/> (Информирую и продвигаю| KatadZe.MEDIA)
 							<br/> <b>Никита Зотов</b> <br className="d-md-none"/> (Разрабатываю| KatadZe.DIGITAL)
-							<br/> <b>Наталия Севостьянова</b> <br className="d-md-none"/> (создаю стиль)
+							<br/> <b>Наталия Севостьянова</b> <br className="d-md-none"/> (Создаю стиль)
 							<br/> <b>Асалик Партов</b> <br className="d-md-none"/> (Креативлю)
 						</p>
 
