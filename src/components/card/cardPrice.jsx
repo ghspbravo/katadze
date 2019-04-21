@@ -27,9 +27,9 @@ export default function cardPrice(
 					<button disabled={!isAllowed} onClick={() => paymentHandler(id, null)}>{price} руб.</button>
 
 					{parts.length && 
-						parts.map((part, index) => <div key={index} className="row no-gutters mt-2">
-							<span>{part.name}</span>
-							<button className="ml-2" disabled={!isAllowed} onClick={() => paymentHandler(id, part.id)}>{part.price} руб.</button>
+						parts.map((part, index) => <div key={index} className="row no-gutters align-items-center mt-2 card__subprice">
+							<span className="col">{part.name}</span>
+							<button className="ml-auto" disabled={!isAllowed} onClick={() => paymentHandler(id, part.id)}>{part.price} руб.</button>
 						</div> )
 
 					}

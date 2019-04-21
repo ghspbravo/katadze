@@ -12,14 +12,14 @@ export default function cardEvent(imgSrc, title, description, date, place, event
 				<div className="card__description">{description}</div>
 
 				<div className="row align-items-center mb-3">
-					<div className="col">
+					<div className="col-12 col-sm mb-2 mb-sm-0">
 						<div className="row no-gutters align-items-center">
 							<i className="fas fa-calendar-alt mr-1"></i>
 							<div className="card__dates col">{date}</div>
 						</div>
 					</div>
 
-					<div className="col">
+					<div className="col-12 col-sm">
 						<div className="row no-gutters align-items-center">
 							<i className="fas fa-map-marker-alt mr-1"></i>
 							<div className="card__place col">{place}</div>

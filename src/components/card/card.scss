@@ -76,6 +76,13 @@
     text-align: center;
   }
 
+  &__subprice {
+    span {
+      font-size: 0.8rem;
+      text-align: left;
+    }
+  }
+
   &__link {
     text-transform: uppercase;
     font-size: 1rem;
@@ -93,7 +100,7 @@
       transition: height $tr-standart;
 
       @media (max-width: $m-sm-max) {
-        height: 250px;
+        height: 200px;
       }
 
       @media (min-width: $m-lg-min) and (max-width: $m-lg-max) {
@@ -103,6 +110,9 @@
 
     &__title {
       font-size: 2rem;
+      @media (max-width: $m-sm-max) {
+        font-size: 1.5rem;
+      }
     }
 
     &__description p,
@@ -110,6 +120,10 @@
     &__place {
       font-size: 1.5rem;
       color: $c-gray-dark;
+
+      @media (max-width: $m-sm-max) {
+        font-size: 1rem;
+      }
     }
   }
 }
