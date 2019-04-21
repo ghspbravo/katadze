@@ -55,7 +55,8 @@ export default function header(router) {
 				}
 				classModify.push('header_mobile')
 			}
-			if (scrollPosition < window.innerHeight / 2 - 75) //50vh - banner height
+			const banner = document.querySelector('.js-banner')
+			if (banner && scrollPosition < banner.offsetHeight - 75) //banner height - heade height / 2
 			{
 				if (showLogoText && screenWidth >= 576) {
 					setLogoBrand(true)

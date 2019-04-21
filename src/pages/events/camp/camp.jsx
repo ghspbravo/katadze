@@ -62,7 +62,7 @@ export default function camp() {
 	})
 	return (
 		<main className="pt-0">
-			<section className="camp-banner" style={{ backgroundImage: `url(${campBanner})`, }}></section>
+			<section className="js-banner camp-banner" style={{ backgroundImage: `url(${campBanner})`, }}></section>
 
 			<section className="sbox">
 				<div className="container">
