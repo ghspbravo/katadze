@@ -16,7 +16,11 @@ export default function modal(content, Portal, closePortal, isOpen) {
 				<div className="modal-inner">
 					{content}
 
-					<button onClick={closePortal} className="modal-close no-style">
+					<div className="d-sm-none mt-3 row no-gutters">
+						<button onClick={closePortal} className="mx-auto">Закрыть</button>
+					</div>
+
+					<button onClick={closePortal} className="d-none d-sm-block modal-close no-style">
 						<i className="fas fa-times"></i>
 					</button>
 				</div>
