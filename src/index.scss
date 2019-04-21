@@ -277,6 +277,11 @@ a, .link {
 		color: $c-black;
 	}
 
+	&.underline {
+		color: $c-black;
+		text-decoration: underline;
+	}
+
 	&.disabled {
 		color: $c-disabled;
 		pointer-events: none;
@@ -296,8 +301,15 @@ body:not(.touch) {
 
 		&.hide {
 			&:hover, &:focus {
-				color: black;
+				color: $c-black;
 				text-decoration: underline;
+			}
+		}
+
+		&.underline {
+			&:hover, &:focus {
+				color: $c-black;
+				text-decoration: none;
 			}
 		}
 
