@@ -49,8 +49,6 @@ export default function contacts() {
 					<div className="col-lg-6 col-12">
 						<div className="contacts-header-inner pt-5">
 							<h1 className="title_page">У тебя остался вопрос?</h1>
-
-							<button onClick={(e) => openModal(<p>content modals</p>, e)}>MODAL</button>
 							{modal}
 							<form onSubmit={submitHandler}>
 								<div className="form-group">
