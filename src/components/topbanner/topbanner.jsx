@@ -16,7 +16,7 @@ export default function topbanner(content = defaultContent, imageUrl = defaultIm
 	
 	const bannerContainer = useRef(null)
 	
-	useEvent('scroll', onScroll, window, {capture: true})
+	useEvent('scroll', onScroll, window)
 	const [bannerHeight, setBannerHeight] = useState(0)
 	const changeBannerImageHeightOnResize = useCallback(() => setBannerHeight(bannerContainer.current.offsetHeight))
 	
