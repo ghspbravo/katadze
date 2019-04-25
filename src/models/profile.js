@@ -67,6 +67,9 @@ export const profile = {
 		state.photo = payload.avatar
 		state.thumbnail = payload.thumb
 		state.activated = !payload.is_suspended
+
+		state.email = payload.email
+		state.phone = payload.phones && payload.phones[0].number
 	}),
 
 	setErrors: action((state, payload) => {

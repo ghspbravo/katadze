@@ -17,7 +17,10 @@ export default function partners() {
 		<main className='pt-0'>
 			{topbanner(<div className="text-center">
 				<h2 className="lead"><b>katadze<span className="primary">.friends</span></b></h2>
-				<p>Живи активно. С KatadZe — выгодно.</p>
+				<h4 style={{
+					fontWeight: '900'
+				}}>Живи активно. 
+				<br/> С KatadZe — выгодно.</h4>
 				<p>Получай скидки от наших партнеров</p>
 			</div>, banner)}
 

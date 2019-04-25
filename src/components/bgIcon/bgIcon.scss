@@ -1,6 +1,7 @@
 @import '../../scss/vars';
 
 $offset-width: 10px;
+$offset-width-big: 50px;
 
 .bgicon {
 	background-color: $c-icons;
@@ -17,6 +18,15 @@ $offset-width: 10px;
 		object-fit: contain;
 		transform: translateX(-$offset-width);
 		transition: transform $tr-standart;
+	}
+
+	&_big {
+		width: 135px; height: 135px;
+		margin-left: $offset-width-big;
+
+		img {
+			transform: translateX(-$offset-width-big);
+		}
 	}
 }
 

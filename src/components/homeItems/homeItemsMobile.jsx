@@ -7,6 +7,7 @@ import gidsBg from './gids.jpg'
 import mainBg from './main.jpg'
 
 import './homeItemsMobile.scss'
+import scrolldown from '../scrolldown/scrolldown';
 
 export default function homeItemsMobile() {
 	return (
@@ -19,6 +20,8 @@ export default function homeItemsMobile() {
 				<div className="home-item-mobile-inner">
 					<div className="home-item-mobile__title"><h2>KATADZE</h2></div>
 				</div>
+
+				{scrolldown()}
 			</div>
 
 			<div className="home-item-mobile" style={{
@@ -49,8 +52,11 @@ export default function homeItemsMobile() {
 					<div className="home-item-mobile__description">
 						<p>Объединяя людей по всему миру, мы создаем уникальные проекты самой разной направленности.
 							<br />
-							<br />Присоединяйся: <b>погнали KatadZe</b>
+							<br />Присоединяйся!
 						</p>
+						<h5 style={{
+							textTransform: 'uppercase'
+						}}>погнали KatadZe</h5>
 					</div>
 
 					<div className="mt-5 home-item-mobile__link">

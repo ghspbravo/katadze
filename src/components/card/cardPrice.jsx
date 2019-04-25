@@ -24,12 +24,12 @@ export default function cardPrice(
 				<div className="card__description">{parse(description)}</div>
 
 				<div className="card__price">
-					<button disabled={!isAllowed} onClick={() => paymentHandler(id, null)}>{price} руб.</button>
+					<button disabled={!isAllowed} onClick={() => paymentHandler(id, null)}>{price} <i className="fas fa-ruble-sign"></i></button>
 
 					{parts.length && 
 						parts.map((part, index) => <div key={index} className="row no-gutters align-items-center mt-2 card__subprice">
 							<span className="col">{part.name}</span>
-							<button className="ml-auto" disabled={!isAllowed} onClick={() => paymentHandler(id, part.id)}>{part.price} руб.</button>
+							<button className="ml-auto" disabled={!isAllowed} onClick={() => paymentHandler(id, part.id)}>{part.price} <i className="fas fa-ruble-sign"></i></button>
 						</div> )
 
 					}

@@ -21,7 +21,16 @@ export const events = {
 			return response
 		}).then(response => response.json())
 			.then(data => {
-				actions.setCamp(data)
+
+				actions.setCamp(data.tariffs.map(event => {
+					event.price = event.price.split('.')[0]
+					event.parts = event.parts.map(part => {
+						part.price = part.price.split('.')[0]
+						return part
+					})
+
+					return event
+				}))
 
 				actions.setLoading(false)
 			})
@@ -44,7 +53,7 @@ export const events = {
 
 	setCamp: action((state, payload) => {
 		// payload.tariffs.forEach(tariff => state.camp.push(tariff))
-		state.camp = payload.tariffs
+		state.camp = payload
 	}),
 
 	setLoading: action((state, payload) => {

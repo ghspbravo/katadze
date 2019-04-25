@@ -157,7 +157,7 @@ export default function contacts() {
 				<div className="container text-center">
 					<h2>
 						Напишите нам
-							<br /> <a className="hide" href="mailto:katadzeguide@mail.ru">katadzeguide@mail.ru</a>
+							<br /> <a className="hide" href="mailto:info@katadze.ru">info@katadze.ru</a>
 					</h2>
 				</div>
 			</section>

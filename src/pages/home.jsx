@@ -14,6 +14,8 @@ import homeItemsDesktop from '../components/homeItems/homeItemsDesktop';
 import homeItemsMobile from '../components/homeItems/homeItemsMobile';
 import loaderLogo from '../components/loader/loaderLogo';
 
+import { useStore } from 'easy-peasy';
+
 export default function home() {
 
 	const [width, setWidth] = useState(window.innerWidth)
@@ -75,6 +77,10 @@ export default function home() {
 			setLoader(false)
 	}, [mainStatus, partnersStatus, eventsStatus, gidsStatus])
 
+	const isLoggedIn = useStore(state => state.auth.isLoggedIn)
+	const name = useStore(state => state.profile.name)
+	const surname = useStore(state => state.profile.surname)
+
 	useTitle('KATADZE')
 	return isReady
 		? contentTransition.map(({ item, key, props }) =>
@@ -82,7 +88,12 @@ export default function home() {
 				width > 991
 					? homeItemsDesktop([activateActivePartners, activateActiveEvents, activateActiveGids],
 						[deactivateActivePartners, deactivateActiveEvents, deactivateActiveGids],
-						[partnersSpring, eventsSpring, gidsSpring])
+						[partnersSpring, eventsSpring, gidsSpring],
+						{
+							isLoggedIn,
+							name,
+							surname
+						})
 					: homeItemsMobile()
 			}</a.div>)
 		: loaderTransition.map(({ item, key, props }) =>

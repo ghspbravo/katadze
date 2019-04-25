@@ -25,6 +25,10 @@
 				width: 60%;
 				height: 90%;
 
+				@media (max-width: $m-lg-max) {
+					height: 75%;
+					width: 50%;
+				}
 				@media (max-width: $m-md-max) {
 					height: 80%;
 					width: 100%;
@@ -40,6 +44,10 @@
 				bottom: unset;
 				top: 50%;
 				transform: translateY(-50%);
+
+				@media (max-width: $m-lg-max) {
+					left: 48%;
+				}
 
 				@media (max-width: $m-md-max) {
 					left: 50%;

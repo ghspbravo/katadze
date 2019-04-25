@@ -1,0 +1,34 @@
+@import '../../scss/vars';
+
+.profile-card {
+	box-shadow: $bshadow-standart;
+	padding: 25px 15px;
+
+	display: flex;
+	justify-content: center;
+
+	@media (max-width: $m-sm-max) {
+    box-shadow: none;
+    border: 1px solid black;
+  }
+
+	background-color: #fff;
+
+	&__photo {
+		img {
+			max-width: 250px;
+			border-radius: 50%;
+			border: 1px solid;
+			width: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__name {
+		text-align: center;
+	}
+
+	&__contacts-item {
+		font-size: 0.875rem;
+	}
+}

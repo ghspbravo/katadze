@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
+import {Link} from 'react-router-dom'
 import { useStore, useActions } from 'easy-peasy';
 import parse from 'html-react-parser'
 import activatedPartner from '../../components/activatedPartner/activatedPartner';
@@ -58,6 +59,13 @@ export default function partnersSingle(router) {
 							<button className="mx-auto"
 								onClick={() => handleActivateCoupon(partner.id)} disabled={!isMember || isLoading || coupons[partner.id] === undefined}
 							>Активировать</button>
+							{!isMember && 
+								<div className="col-12 my-3">
+									<div className="text-center">
+										<Link to='/profile/membership' className="button">Начать пользоваться скидками</Link>
+									</div>
+								</div>
+							}
 						</div>
 					}
 

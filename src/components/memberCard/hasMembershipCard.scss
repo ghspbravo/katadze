@@ -1,0 +1,25 @@
+.membership-card {
+	user-select: none;
+
+	width: 400px; height: 220px;
+	background-color: black;
+	padding: 25px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__inner {
+		color: white;
+		font-weight: bold;
+		text-align: center;
+
+		font-size: 2rem;
+		text-transform: uppercase;
+
+		span {
+			letter-spacing: 5px;
+			font-size: 2.5rem;
+		}
+	}
+}

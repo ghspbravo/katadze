@@ -12,10 +12,23 @@ import './homeItemsDesktop.scss'
 export default function homeItemsDesktop(
 	activateHandlers,
 	deactivateHandlers,
-	springs
+	springs,
+	user
 ) {
+
 	return (
 		<div className="home-wrapper row no-gutters" style={{ backgroundImage: `url(${mainBg})` }}>
+			<div className="home-profile">
+				<p className="text-small text-center">Добро пожаловать{user.name && user.surname ? `, ${user.name} ${user.surname}` : ''}!</p>
+				{user.isLoggedIn
+				? <p className="text-small text-center">Проверить состояние подписки можно в <Link to='/profile'>
+					личном кабинете
+				</Link></p>
+				: <p className="text-small text-center">Чтобы воспользоваться возможностями сервиса, <Link to='/login'>
+					войдите в аккаунт
+				</Link></p>}
+			</div>
+
 			<div onMouseOver={activateHandlers[0]} onMouseLeave={deactivateHandlers[0]} className="home-item">
 				<div className="home-item__title"><h3>друзья<span>.</span></h3></div>
 
@@ -38,7 +51,7 @@ export default function homeItemsDesktop(
 				<a.div style={springs[0]} className="home-item-description">
 					<p>Создавать пространство для возможностей — наша цель.
 						<br /> Добиваться её нам помогают наши <b>партнеры</b>:
-						<br/>
+						<br />
 						<br /> постоянные скидки и бонусы от друзей <b>KatadZe</b>.</p>
 				</a.div>
 			</div>
@@ -64,9 +77,12 @@ export default function homeItemsDesktop(
 
 				<a.div style={springs[1]} className="home-item-description">
 					<p>Объединяя людей по всему миру, мы создаем уникальные проекты самой разной направленности.
-					<br/>
-					<br />Присоединяйся: <b>погнали KatadZe</b>
+					<br />
+						<br />Присоединяйся!
 					</p>
+					<h5 style={{
+						textTransform: 'uppercase'
+					}}>погнали KatadZe</h5>
 				</a.div>
 			</div>
 
@@ -88,8 +104,8 @@ export default function homeItemsDesktop(
 				<a.div style={springs[2]} className="home-item-description home-item-description_revert">
 					<p>Удобный и быстрый сервис для поиска гида и ярких впечатлений
 					<br /> Регистрируйся и наслаждайся!
-					<br/>
-					<br /> * <i>Проект находится в разработке</i>
+					<br />
+						<br /> * <i>Проект находится в разработке</i>
 					</p>
 				</a.div>
 			</div>

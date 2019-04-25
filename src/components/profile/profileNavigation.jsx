@@ -6,7 +6,7 @@ import './profileNavigation.scss'
 
 import { useActions } from 'easy-peasy';
 
-export default function profileNavigation() {
+export default function profileNavigation(closeModal) {
 
 
 	const logoutAuth = useActions(actions => actions.auth.logout)
@@ -19,6 +19,8 @@ export default function profileNavigation() {
 		logoutProfile()
 		logoutMembership()
 		logoutPartners()
+
+		closeModal()
 	}
 	const membershipExpired = useStore(store => store.membership.expiredAt)
 
@@ -34,6 +36,12 @@ export default function profileNavigation() {
 				<div className="profile-navigation__item">
 					<NavLink to='/profile/membership'>Приобрести подписку</NavLink>
 				</div>}
+			<div className="profile-navigation__item">
+				<NavLink to='/partners'>Воспользоваться партнерской программой</NavLink>
+			</div>
+			<div className="profile-navigation__item">
+				<NavLink to='/events'>Участвовать в мероприятиях</NavLink>
+			</div>
 			<div className="profile-navigation__item">
 				<NavLink to='/contacts'>Дать обратную связь</NavLink>
 			</div>

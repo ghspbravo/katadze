@@ -3,6 +3,8 @@ import Swiper from "swiper";
 
 import './camp.scss'
 
+import campTariffThumb from './campTariffThumb.jpg'
+
 import campBanner from './campBanner.jpg'
 import titleSubtitleUnderline from '../../../components/title/titleSubtitleUnderline';
 import bgIcon from '../../../components/bgIcon/bgIcon';
@@ -190,16 +192,16 @@ export default function camp() {
 					<div className="container">
 						<div className="row justify-content-center">
 
-							{tariffs.length && tariffs.map((tariff, index) =>
+							{tariffs.map((tariff, index) =>
 								<div key={index} className="col-lg-6 col-12 mb-3">
 									{
 										cardPrice(
 											tariff.id,
-											'https://twentysix.ru/uploads/images/00/96/83/2018/03/14/0cc0a0e55d.jpg',
+											campTariffThumb,
 											tariff.name,
 											tariff.description,
 											tariff.price,
-											'https://vk.com/katadze_camp',
+											'https://vk.com/app5708398_-165049356',
 											paymentHandler,
 											isLoggedIn && isActivated,
 											tariff.parts,

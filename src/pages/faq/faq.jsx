@@ -2,10 +2,13 @@ import React, { useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import './faq.scss'
 import faqBg from './faq.svg'
+import question from './question.svg'
 
 import { useSpring, animated as a } from 'react-spring'
 import useEvent from 'react-use/lib/useEvent'
 import useTitle from 'react-use/lib/useTitle';
+
+import bgIcon from '../../components/bgIcon/bgIcon'
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
 const trans1 = (x, y) => `translate3d(${x / 30}px,${y / 28}px,0)`
@@ -63,64 +66,124 @@ export default function faq() {
 					<div className="col-lg-10 col-12 px-0">
 						<h3 className="lead">KatadZe<span className="primary">.FRIENDS</span></h3>
 						<div className="faq-question">
-							<h4>Какие организации интересны вам в разрезе партнерства?</h4>
+							<div className="row no-gutters">
+								<div className="d-none d-sm-block mt-2">
+									{bgIcon(question)}
+								</div>
+								<h4 className="col ml-sm-3">Какие организации интересны вам в разрезе партнерства?</h4>
+							</div>
 							<p>Нам интересны организации, которые могут быть интересны студентам: кафе, рестораны, бары, магазины модной одежды и аксессуаров для активной жизни, различные развлечения и обучения, услуги из категории красоты и ухода за собой и многое другое. Если вы считаете, что можете быть полезны студенческой аудитории – напишите нам.</p>
 						</div>
 	
 						<div className="faq-question">
-							<h4>Моя компания тоже туроператор. Как сотрудничать?</h4>
+						<div className="row no-gutters">
+								<div className="d-none d-sm-block mt-2">
+									{bgIcon(question)}
+								</div>
+								<h4 className="col ml-sm-3">Моя компания тоже туроператор. Как сотрудничать?</h4>
+							</div>
 							<p>Прекрасно! Создадим коллаборацию туроператоров. Сделаем совместный тур. Поделимся опытом. <Link to='/contacts'>Напишите нам</Link> – мы обсудим варианты сотрудничества.</p>
 						</div>
 	
 						<div className="faq-question">
-							<h4>Моя организация не из Екатеринбурга, есть смысл сотрудничать?</h4>
+						<div className="row no-gutters">
+								<div className="d-none d-sm-block mt-2">
+									{bgIcon(question)}
+								</div>
+								<h4 className="col ml-sm-3">Моя организация не из Екатеринбурга, есть смысл сотрудничать?</h4>
+							</div>
 							<p>Есть. Хотя бы потому что наш идейный вдохновитель – с Кавказа. А креативный менеджер – из Киргизии. А наши планы – охватить весь мир. Вместе с Вами</p>
 						</div>
 	
 						<div className="faq-question">
-							<h4>Я активировал скидку, но мне её не предоставили, что делать?</h4>
+						<div className="row no-gutters">
+								<div className="d-none d-sm-block mt-2">
+									{bgIcon(question)}
+								</div>
+								<h4 className="col ml-sm-3">Я активировал скидку, но мне её не предоставили, что делать?</h4>
+							</div>
 							<p>Видимо, в заведении партнера новый сотрудник и он ещё не узнал про наш сервис. Если вы отметили, что не получили скидку в раздле «Партнеры», то мы уже спешим связаться с Вами. Или <Link to='/contacts'>напишите нам</Link> напрямую, или позвоните на горячую линию по номеру <a href="tel:+79667090909">+ 7 (966) 709-09-09</a>.</p>
 						</div>
 	
 						<div className="faq-question">
-							<h4>Я приобрел подписку на год, но не могу/не хочу ей больше пользоваться, могу ли я вернуть средства?</h4>
+						<div className="row no-gutters">
+								<div className="d-none d-sm-block mt-2">
+									{bgIcon(question)}
+								</div>
+								<h4 className="col ml-sm-3">Я приобрел подписку на год, но не могу/не хочу ей больше пользоваться, могу ли я вернуть средства?</h4>
+							</div>
 							<p>Приобретенная подписка на любой срок не подлежит отмене или обмену. Надеемся, что у Вас ещё появится возможность использовать подписку и получить выгодные скидки у наших партнеров.</p>
 						</div>
 	
 						<div className="faq-question">
-							<h4>Я не студент, но очень хочу пользоваться скидками, что-то можно сделать?</h4>
+						<div className="row no-gutters">
+								<div className="d-none d-sm-block mt-2">
+									{bgIcon(question)}
+								</div>
+								<h4 className="col ml-sm-3">Я не студент, но очень хочу пользоваться скидками, что-то можно сделать?</h4>
+							</div>
 							<p>На данный момент сервис работает только для аудитории обучающихся вузов и сузов. В будущем мы планируем создать скидочную систему для других категорий. Оставайтесь с нами и принимайте участие в наших бомбических выездах.</p>
 						</div>
 	
 						<div className="faq-question">
-							<h4>Я – аспирант, могу ли я получать скидки в KatadZe.FRIENDS?</h4>
+						<div className="row no-gutters">
+								<div className="d-none d-sm-block mt-2">
+									{bgIcon(question)}
+								</div>
+								<h4 className="col ml-sm-3">Я – аспирант, могу ли я получать скидки в KatadZe.FRIENDS?</h4>
+							</div>
 							<p>Да, можете! Наш сервис распространяется на всех обучающихся вузов и сузов. Аспиранты попадают в эту категорию.</p>
 						</div>
 
 						<h3 className="lead">KatadZe<span className="primary">.EVENTS</span></h3>
 
 						<div className="faq-question">
-							<h4>Как стать участником события?</h4>
+						<div className="row no-gutters">
+								<div className="d-none d-sm-block mt-2">
+									{bgIcon(question)}
+								</div>
+								<h4 className="col ml-sm-3">Как стать участником события?</h4>
+							</div>
 							<p>Для того, чтобы принять участие в любом из наших проектов достаточно <Link to='/register'>зарегистрироваться</Link> на нашем портале, выбрать интересное событие и оплатить участие в нем, кликнув по соответствующей кнопке.</p>
 						</div>
 						
 						<div className="faq-question">
-							<h4>Стать участником события может любой желающий?</h4>
+						<div className="row no-gutters">
+								<div className="d-none d-sm-block mt-2">
+									{bgIcon(question)}
+								</div>
+								<h4 className="col ml-sm-3">Стать участником события может любой желающий?</h4>
+							</div>
 							<p>Все наши события ориентированы на аудиторию от 18 до 35 лет. Но, если Вы старше – это не станет сложностью, и мы с удовольствием примем Вас в нашу компанию. А если Вы младше 18 лет, то придется подождать немного, чтобы стать участником наших событий.</p>
 						</div>
 						
 						<div className="faq-question">
-							<h4>Где узнать еще больше про отдельное мероприятие?</h4>
+						<div className="row no-gutters">
+								<div className="d-none d-sm-block mt-2">
+									{bgIcon(question)}
+								</div>
+								<h4 className="col ml-sm-3">Где узнать еще больше про отдельное мероприятие?</h4>
+							</div>
 							<p>Специально для каждого проекта мы создаем отдельную группу в социальной сети в Вконтакте, где размещаем всю информацию: от расписания до фото-отчетов. Следите за нами на нашей <a href="https://vk.com/katadzzze" target="_blank" rel="noopener noreferrer">официальной страничке</a></p>
 						</div>
 						
 						<div className="faq-question">
-							<h4>Можно ли самому стать организатором события?</h4>
+						<div className="row no-gutters">
+								<div className="d-none d-sm-block mt-2">
+									{bgIcon(question)}
+								</div>
+								<h4 className="col ml-sm-3">Можно ли самому стать организатором события?</h4>
+							</div>
 							<p>Можно и нужно! Специально для этого мы создаем сервис <b>Katadze Guide</b>, благодаря которому у каждого появится возможность организовать с нашей помощью свой Event или тур.</p>
 						</div>
 						
 						<div className="faq-question">
-							<h4>Как я могу получить подтверждение участия, если внесу оплату?</h4>
+						<div className="row no-gutters">
+								<div className="d-none d-sm-block mt-2">
+									{bgIcon(question)}
+								</div>
+								<h4 className="col ml-sm-3">Как я могу получить подтверждение участия, если внесу оплату?</h4>
+							</div>
 							<p>При оплате через сайт Вы получаете электронный чек об оплате, который является подтверждением оплаты и участия в событии. Для участия в крупных проектах (РКВ, KatadZe Camp, AFP), обязательным условием является заключение договора, который Вам предложат заключить наши администраторы.</p>
 						</div>
 

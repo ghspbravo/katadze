@@ -26,7 +26,7 @@ export default function footer() {
 					<a className="mr-1" href="https://vk.com/katadzzze" target="_blank" rel="noopener noreferrer">
 						{bgIcon(vkIcon)}
 					</a>
-					<a href="mailto:katadzeguide@mail.ru" target="_blank" rel="noopener noreferrer">
+					<a href="mailto:info@katadze.ru" target="_blank" rel="noopener noreferrer">
 						{bgIcon(mailIcon)}
 					</a>
 				</div>

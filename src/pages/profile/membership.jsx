@@ -1,5 +1,5 @@
 import React, {useEffect, useCallback} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { useStore, useActions } from 'easy-peasy';
 
 import cardMembership from '../../components/card/cardMembership';
@@ -17,12 +17,15 @@ export default function membership() {
 		activateTariff(id)
 	})
 
+	const isMembershipActive = useStore(store => store.membership.isActive)
+
 	useEffect(() => {
 		isActivated && !tariffs.length && getTariffs()
 	}, [])
 
 	return (
 		<div>
+			{isMembershipActive && <Redirect to='/profile' />}
 			<div className="mb-1">
 				<Link className="hide" to="/profile"><i className="fas fa-angle-double-left mr-1"></i>Назад</Link>
 			</div>

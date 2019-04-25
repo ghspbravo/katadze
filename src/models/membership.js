@@ -73,7 +73,10 @@ export const membership = {
 		})
 			.then(response => response.json())
 			.then(data => {
-				actions.setTariffs(data)
+				actions.setTariffs(data.map(tariff => {
+					tariff.price = tariff.price.split('.')[0]
+					return tariff
+				}))
 
 				actions.setLoading(false)
 			})
