@@ -1,8 +1,10 @@
-import React, { useEffect, useState, useCallback } from 'react'
-import {Link} from 'react-router-dom'
+import React, { useEffect, useState, useCallback, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { useStore, useActions } from 'easy-peasy';
 import parse from 'html-react-parser'
 import activatedPartner from '../../components/activatedPartner/activatedPartner';
+
+import useModal from '../../hooks/useModal';
 
 export default function partnersSingle(router) {
 
@@ -15,8 +17,47 @@ export default function partnersSingle(router) {
 	const activateCoupon = useActions(actions => actions.partners.activateCoupon)
 	const getCouponsAuth = useActions(actions => actions.partners.getCouponsAuth)
 
+	const [modal, openModal] = useModal()
+
+	const question = useRef()
+	const success = useRef()
+	const notSuccess = useRef()
+
 	const handleActivateCoupon = useCallback(id => {
-		activateCoupon(id)
+		activateCoupon(id).then(isSuccess => {
+			isSuccess &&
+				openModal(<div>
+					<div className="col-lg-6 col-sm-8 col-10 px-0 mx-auto">
+						<h4 className="text-center">Активировано</h4>
+						<div ref={question}>
+							<p>Получил ли ты скидку?</p>
+
+							<div className="row no-gutters">
+								<button onClick={() => {
+									question.current.style.display = 'none'
+									success.current.style.display = 'block'
+								}}>Да</button>
+
+								<button onClick={() => {
+									question.current.style.display = 'none'
+									notSuccess.current.style.display = 'block'
+								}} className="button ml-auto">Нет</button>
+							</div>
+						</div>
+						<div ref={success} style={{
+							display: 'none'
+						}}>
+							<p>Мы рады создавать возможности для тебя</p>
+						</div>
+						<div ref={notSuccess} style={{
+							display: 'none'
+						}}>
+							<p>Напиши нам в чем причина</p>
+							<Link className="button" to='/contacts'>Написать</Link>
+						</div>
+					</div>
+				</div>)
+		})
 	})
 
 	const coupons = useStore(store => store.partners.coupons)
@@ -29,6 +70,7 @@ export default function partnersSingle(router) {
 			setPartner(await getSinglePartner(partnerId))
 		}
 		fetchPartner()
+
 	}, [])
 
 	useEffect(() => {
@@ -44,11 +86,12 @@ export default function partnersSingle(router) {
 					<h1 className="text-center">{partner.title}</h1>
 
 					<div className="mb-3">
-						<button onClick={() => router.history.goBack()} 
-						className="link hide"><i className="fas fa-angle-double-left"></i> Назад</button>
+						<button onClick={() => router.history.goBack()}
+							className="link hide"><i className="fas fa-angle-double-left"></i> Назад</button>
 					</div>
 
 					<img style={{ display: 'block', width: '100%' }} className="mx-auto" src={partner.image} alt="" />
+					{modal}
 					{coupons && coupons[partner.id] && coupons[partner.id].expired
 						? <div className="row no-gutters mt-3">
 							<div className="mx-auto">
@@ -59,7 +102,7 @@ export default function partnersSingle(router) {
 							<button className="mx-auto"
 								onClick={() => handleActivateCoupon(partner.id)} disabled={!isMember || isLoading || coupons[partner.id] === undefined}
 							>Активировать</button>
-							{!isMember && 
+							{!isMember &&
 								<div className="col-12 my-3">
 									<div className="text-center">
 										<Link to='/profile/membership' className="button">Начать пользоваться скидками</Link>
