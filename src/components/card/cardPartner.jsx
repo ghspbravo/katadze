@@ -28,7 +28,10 @@ export default function cardPartner(id, imgSrc, title, description, coupon, isMe
 			<div className="card__footer">
 				{coupon && coupon.expired 
 				? activatedPartner(coupon.expired)
-				: <button onClick={() => activateCoupon(id)} disabled={!isMember || isLoading || coupon === undefined} >Активировать</button>
+				: <div>
+					<button onClick={() => activateCoupon(id)} disabled={!isMember || isLoading || coupon === undefined} >Активировать</button>
+					<div className="text-small text-center">нажми при оплате</div>
+				</div>
 				}
 			</div>
 		</div>

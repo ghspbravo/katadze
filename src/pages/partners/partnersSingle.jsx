@@ -102,6 +102,7 @@ export default function partnersSingle(router) {
 							<button className="mx-auto"
 								onClick={() => handleActivateCoupon(partner.id)} disabled={!isMember || isLoading || coupons[partner.id] === undefined}
 							>Активировать</button>
+							<div className="col-12 text-small text-center">нажми при оплате</div>
 							{!isMember &&
 								<div className="col-12 my-3">
 									<div className="text-center">
