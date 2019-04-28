@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useRef } from 'react'
+import React, { useEffect, useCallback, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import cardPartner from '../../components/card/cardPartner';
@@ -6,6 +6,8 @@ import { useStore, useActions } from 'easy-peasy';
 
 import useTitle from 'react-use/lib/useTitle';
 import useModal from '../../hooks/useModal';
+
+import placeholder from './placeholder.svg'
 
 export default function partnersList(router) {
 
@@ -73,6 +75,29 @@ export default function partnersList(router) {
 		!Object.keys(coupons).length && getCouponsAuth()
 	}, [])
 
+	const [partnersState, setPartnersState] = useState([])
+	useEffect(() => {
+
+		if (!Object.values(partners).length) return
+		setPartnersState(prevState => {
+
+			partners[partnerId].forEach((item, index) => {
+
+				prevState.push(false)
+
+				const buffer = new Image();
+				buffer.onload = () => setPartnersState(prevState => {
+					prevState[index] = true
+					return { ...prevState }
+				})
+				buffer.src = item.img;
+			})
+
+			return prevState
+		})
+
+	}, [isLoading])
+
 	useTitle('KATADZE.FRIENDS')
 	return isLoading
 		? (
@@ -91,13 +116,13 @@ export default function partnersList(router) {
 							partners[partnerId].map((partner, index) => <div key={index} className="col-md-6 col-12 mb-3">
 								{cardPartner(
 									partner.id,
-									partner.img,
+									{ original: partner.img, placeholder, originalReady: partnersState[index] },
 									partner.title,
 									partner.description,
 									coupons[partner.id],
 									isMember,
 									handleActivateCoupon,
-									SubsciptionLoading
+									SubsciptionLoading,
 								)}
 
 							</div>)}

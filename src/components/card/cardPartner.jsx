@@ -8,7 +8,10 @@ export default function cardPartner(id, imgSrc, title, description, coupon, isMe
 	return (
 		<div className="card-partner card">
 			<div className="card__photo-wrapper">
-				<img className="card__photo" src={imgSrc} alt="partnerPrew" />
+				<img className="card__photo" src={imgSrc.original} alt="partnerPrew" />
+				<img style={{
+					opacity: imgSrc.originalReady ? 0 : 1
+				}} className="card__photo card__photo-placeholder" src={imgSrc.placeholder} alt="partnerPrew" />
 				{coupon && coupon.discount &&
 					<div className="card__price" style={{ backgroundImage: `url(${corner})` }}>
 						<div className="card__price-value">

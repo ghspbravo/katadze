@@ -9,6 +9,7 @@ export const partners = {
 
 	isSubsciptionLoading: false,
 	isLoading: false,
+	isLoadingSingle: false,
 	errors: '',
 
 	getPartners: thunk(async (actions, payload) => {
@@ -48,7 +49,7 @@ export const partners = {
 	}),
 
 	getSinglePartner: thunk(async (actions, payload) => {
-		actions.setLoading(true)
+		actions.setLoadingSingle(true)
 		const partner = await fetch(server + `partner/${payload}`, {
 			method: 'get',
 			headers: {
@@ -62,7 +63,7 @@ export const partners = {
 			return response
 		}).then(response => response.json())
 			.then(data => {
-				actions.setLoading(false)
+				actions.setLoadingSingle(false)
 				return {
 					id: data.id,
 					title: data.title,
@@ -83,7 +84,7 @@ export const partners = {
 						break;
 				}
 
-				actions.setLoading(false)
+				actions.setLoadingSingle(false)
 				return false
 			})
 			return partner
@@ -212,6 +213,10 @@ export const partners = {
 
 	setLoading: action((state, payload) => {
 		state.isLoading = payload
+	}),
+
+	setLoadingSingle: action((state, payload) => {
+		state.isLoadingSingle = payload
 	}),
 
 	logout: action((state, payload) => {

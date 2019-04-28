@@ -144,6 +144,14 @@
 	.card {
 		&__photo {
       height: 100%;
+
+      &-placeholder {
+        transition: opacity $tr-standart;
+
+        position: absolute;
+        top: 0; left: 0;
+        object-fit: cover;
+      }
 		}
 		
 		&__title {

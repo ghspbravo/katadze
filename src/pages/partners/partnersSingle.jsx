@@ -5,10 +5,13 @@ import parse from 'html-react-parser'
 import activatedPartner from '../../components/activatedPartner/activatedPartner';
 
 import useModal from '../../hooks/useModal';
+import placeholder from './placeholder.svg'
+
+import './partnersSingle.scss'
 
 export default function partnersSingle(router) {
 
-	const isLoading = useStore(store => store.partners.isLoading)
+	const isLoading = useStore(store => store.partners.isLoadingSingle)
 
 	const [partner, setPartner] = useState({})
 
@@ -73,6 +76,15 @@ export default function partnersSingle(router) {
 
 	}, [])
 
+	const [partnerImageLoadedState, setPartnerImageLoadedState] = useState(false)
+	useEffect(() => {
+		console.log(partner)
+
+		const buffer = new Image();
+		buffer.onload = () => setPartnerImageLoadedState(true)
+		buffer.src = partner.image;
+	}, [partner])
+
 	useEffect(() => {
 		document.title = `KATADZE.FRIENDS | ${partner && partner.title ? partner.title : ''}`
 	}, [partner])
@@ -90,7 +102,12 @@ export default function partnersSingle(router) {
 							className="link hide"><i className="fas fa-angle-double-left"></i> Назад</button>
 					</div>
 
-					<img style={{ display: 'block', width: '100%' }} className="mx-auto" src={partner.image} alt="" />
+					<div className="partner-image-wrapper">
+						<img className="partner-image" src={partner.image} alt="" />
+						<img src={placeholder} alt="" className="partner-image__placeholder" style={{
+							opacity: partnerImageLoadedState ? 0 : 1	
+						}} />
+					</div>
 					{modal}
 					{coupons && coupons[partner.id] && coupons[partner.id].expired
 						? <div className="row no-gutters mt-3">

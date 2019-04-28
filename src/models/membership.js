@@ -55,9 +55,8 @@ export const membership = {
 			})
 	}),
 
-	getTariffs: thunk(async (actions, payload, { dispatch }) => {
+	getTariffs: thunk(async (actions, payload) => {
 		actions.setLoading(true)
-		await dispatch.auth.refreshTokens()
 		await fetch(server + 'subscription_types/', {
 			method: 'get',
 			headers: {
