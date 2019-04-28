@@ -69,7 +69,7 @@ export const profile = {
 		state.activated = !payload.is_suspended
 
 		state.email = payload.email
-		state.phone = payload.phones && payload.phones[0].number
+		state.phone = payload.phones.length !== 0 && payload.phones[0].number
 	}),
 
 	setErrors: action((state, payload) => {
