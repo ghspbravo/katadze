@@ -147,3 +147,20 @@
 		}
 	}
 }
+
+.partners-feedback {
+
+	&-icon {
+		font-size: 8rem;
+		display: block;
+		text-align: center;
+	}
+
+	&-button {
+		font-size: 5rem;
+
+		body:not(.touch) &:hover {
+			color: $c-yellow;
+		}
+	}
+}
