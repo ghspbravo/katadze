@@ -55,7 +55,7 @@ export const membership = {
 			})
 	}),
 
-	getTariffs: thunk(async (actions, payload, { getStoreState, dispatch }) => {
+	getTariffs: thunk(async (actions, payload, { dispatch }) => {
 		actions.setLoading(true)
 		await dispatch.auth.refreshTokens()
 		await fetch(server + 'subscription_types/', {
@@ -63,7 +63,6 @@ export const membership = {
 			headers: {
 				'Accept': 'application/json',
 				'Content-Type': 'application/json',
-				'Authorization': `Bearer ${getStoreState().auth.access}`
 			},
 		}).then(response => {
 			if (!response.ok) {
