@@ -34,7 +34,7 @@ export default function hello() {
 			<h5>Добро пожаловать в личный кабинет клуба Katadze!</h5>
 			<div className="text-center">
 				<h1 style={{ fontWeight: '500', letterSpacing: 1.2 }} className="lead">ЖИВИ АКТИВНО.
-				<br/> С KATADZE – ВЫГОДНО.</h1>
+				<br /> С KATADZE – ВЫГОДНО.</h1>
 			</div>
 
 			<div className="row">
@@ -47,6 +47,9 @@ export default function hello() {
 
 					{isActivated && !membershipExpired &&
 						<div className="row no-gutters">
+							<div className="d-md-none">
+								{profileUserCard(name, surname, photo, email, phone)}
+							</div>
 							<h4 className="col" style={{ textTransform: 'uppercase' }}>Ты еще не приобрел подписку</h4>
 							<span style={{
 								fontSize: '100px'
@@ -64,7 +67,12 @@ export default function hello() {
 						</div>}
 
 					{isActivated && !isMembershipActive && membershipExpired &&
-						<p>Твоя подписка отключена модераторами</p>}
+						<div>
+							<div className="d-md-none">
+								{profileUserCard(name, surname, photo, email, phone)}
+							</div>
+							<p>Твоя подписка отключена модераторами</p>
+						</div>}
 
 					{isActivated && isMembershipActive && membershipExpired &&
 						<div>
@@ -88,7 +96,7 @@ export default function hello() {
 							</div>
 						</div>}
 				</div>
-				<div className="d-none d-md-block col-md-4 col-lg-4">
+				<div className="d-none d-md-block col-md-4 col-lg-4 pb-2">
 					{profileUserCard(name, surname, photo, email, phone)}
 				</div>
 
