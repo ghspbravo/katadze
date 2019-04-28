@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useRef, useState } from 'react'
+import React, { useEffect, useCallback, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import cardPartner from '../../components/card/cardPartner';
