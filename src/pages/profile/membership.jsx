@@ -18,6 +18,7 @@ export default function membership() {
 	})
 
 	const isMembershipActive = useStore(store => store.membership.isActive)
+	const isMembershipExpired = useStore(store => !store.membership.expiredAt)
 
 	useEffect(() => {
 		isActivated && !tariffs.length && getTariffs()
@@ -25,7 +26,7 @@ export default function membership() {
 
 	return (
 		<div>
-			{isMembershipActive && <Redirect to='/profile' />}
+			{isMembershipActive && !isMembershipExpired && <Redirect to='/profile' />}
 			<div className="mb-1">
 				<Link className="hide" to="/profile"><i className="fas fa-angle-double-left mr-1"></i>Назад</Link>
 			</div>
