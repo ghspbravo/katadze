@@ -64,7 +64,7 @@ export default function partnersCategories() {
 			<div>
 				<div className="mb-3 col-lg-10 px-0 col-12">
 					<h5>
-						БОЛЕЕ 20 ЛУЧШИХ МАГАЗИНОВ, ЗАВЕДЕНИЙ И АКТИВНОСТЕЙ ГОРОДА СО СКИДКАМИ до 50%
+						БОЛЕЕ 30 ЛУЧШИХ МАГАЗИНОВ, ЗАВЕДЕНИЙ И АКТИВНОСТЕЙ ГОРОДА СО СКИДКАМИ до 50%
 					</h5>
 				</div>
 				{!isMember &&
@@ -191,7 +191,7 @@ export default function partnersCategories() {
 
 								<div className="card__inner">
 									<div className="card__title"><h6>
-										{tariff.title}
+										{tariff.name}
 									</h6></div>
 
 									<div className="card__description">{parse(tariff.description)}</div>

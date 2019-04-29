@@ -28,11 +28,11 @@ export default function headerProfileControls(Portal, closePortal, isOpen) {
 							Мой профиль
 							</Link>
 					</div>
-					<div className="header-profile-controls__item">
+					{/* <div className="header-profile-controls__item">
 						<Link className="header-profile-control" to='/profile'>
 							Подписка
 							</Link>
-					</div>
+					</div> */}
 					<div className="header-profile-controls__item">
 						<button onClick={exitHandler} className="link header-profile-control">
 							Выйти
