@@ -191,7 +191,7 @@ export default function partnersCategories() {
 
 								<div className="card__inner">
 									<div className="card__title"><h6>
-										{tariff.title}
+										{tariff.name}
 									</h6></div>
 
 									<div className="card__description">{parse(tariff.description)}</div>
