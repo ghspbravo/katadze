@@ -1,7 +1,7 @@
 import React from 'react'
 import './partnersSearch.scss'
 import { useFormState } from 'react-use-form-state';
-import { formQueryUri } from './partnersSearch';
+import { formQueryUri } from './partnersSearchFunctions';
 import { useStore } from 'easy-peasy';
 
 function defaultSearch(router, query = '', filterCity = '') {

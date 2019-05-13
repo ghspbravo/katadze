@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { parseSearchUri, filterPartnersByName, filterPartnersByCity } from './partnersSearch/partnersSearch';
+import { parseSearchUri, filterPartnersByName, filterPartnersByCity } from './partnersSearch/partnersSearchFunctions';
 import { useStore, useActions } from 'easy-peasy';
 import cardPartner from '../../components/card/cardPartner';
 
 import { useFormState } from 'react-use-form-state';
 import Portal from '../../components/modal/modalTest'
 import placeholder from './placeholder.svg'
-import partnersSearch from './partnersSearch/partnersSearch.jsx';
+import partnersSearch from './partnersSearch/partnersSearch';
 /**
 * Filter partners list by title and/or city
 * @param {{title: string, city: string}} query 
