@@ -25,7 +25,6 @@ import activate from './pages/auth/activate';
 import acquiring from './pages/orderSuccess';
 import social from './pages/auth/socials';
 
-
 export default function App(router) {
   const refreshTokens = useActions(actions => actions.auth.refreshTokens)
   const getUserInfo = useActions(actions => actions.profile.getUserInfo)

@@ -12,7 +12,9 @@ export default function empty() {
 				<p>Как ты сюда попал? <Link to='/contacts'>
 					Поделись
 				</Link> своей историей с нами</p>
-				<Link to='/' className="button">Вернуться на главную</Link>
+				<div className="row no-gutters">
+					<Link to='/' className="button">Вернуться на главную</Link>
+				</div>
 			</div>
 		</main>
 	)

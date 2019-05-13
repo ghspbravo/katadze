@@ -1,0 +1,25 @@
+@import '../../../scss/vars';
+
+.search-input {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+  &__input {
+    border: 1px solid $c-blue !important;
+    border-radius: 10px 0 0 10px !important;
+    padding: 10px 15px !important;
+    margin: 0 !important;
+
+    &:hover, &:focus {
+      border-color: $c-yellow !important;
+    }
+  }
+
+  &__button {
+    border-radius: 0 10px 10px 0 !important;
+    i {
+      font-size: 2rem;
+    }
+  }
+
+}

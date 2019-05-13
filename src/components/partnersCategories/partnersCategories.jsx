@@ -13,8 +13,9 @@ import ski from './ski.svg'
 
 import { useStore, useActions } from 'easy-peasy';
 import titleBg from '../title/titleBg';
+import partnersSearch from '../../pages/partners/partnersSearch/partnersSearch';
 
-export default function partnersCategories() {
+export default function partnersCategories(router) {
 	const isLoading = useStore(store => store.partners.isLoading)
 
 	const isMember = useStore(store => store.membership.expiredAt)
@@ -56,24 +57,30 @@ export default function partnersCategories() {
 		return `${count} партнеров`;
 	}
 
-	return isLoading
-		? (
-			<p>loading...</p>
-		)
-		: (
-			<div>
-				<div className="mb-3 col-lg-10 px-0 col-12">
-					<h5>
-						БОЛЕЕ 30 ЛУЧШИХ МАГАЗИНОВ, ЗАВЕДЕНИЙ И АКТИВНОСТЕЙ ГОРОДА СО СКИДКАМИ до 50%
+	return (
+		<div>
+			<div className="mb-3 col-lg-10 px-0 col-12">
+				<h5>
+					БОЛЕЕ 30 ЛУЧШИХ МАГАЗИНОВ, ЗАВЕДЕНИЙ И АКТИВНОСТЕЙ ГОРОДА СО СКИДКАМИ до 50%
 					</h5>
-				</div>
-				{!isMember &&
-					<div className='mb-3 col-lg-10 px-0 col-12'>
-						<p>Воспользоваться подпиской могут только члены клуба. Оплатить подписку можно в личном кабинете</p>
+			</div>
+
+			{/* Partner's search */}
+			<div className="col-lg-10 px-0">
+				{partnersSearch(router)}
+			</div>
+
+			{!isMember &&
+				<div className='mb-3 col-lg-10 px-0 col-12'>
+					<p>Воспользоваться подпиской могут только члены клуба. Оплатить подписку можно в личном кабинете</p>
+					<div className="row no-gutters">
 						<Link className="button" to="/profile/membership">Начать пользоваться скидками</Link>
 					</div>
-				}
-				<div className="row">
+				</div>
+			}
+			{isLoading
+				? <p>loading...</p>
+				: <div className="row">
 					<div className="col-lg-3 col-md-6 col-12 mb-2">
 						<Link to='/partners/7' className="partners-category no-style">
 							<div className="partners-category__icon">
@@ -175,44 +182,44 @@ export default function partnersCategories() {
 							</div>
 						</Link>
 					</div>
+				</div>}
+
+			<section className="sbox">
+				<div className="text-center">
+					{titleBg('Тарифы')}
 				</div>
 
-				<section className="sbox">
-					<div className="text-center">
-						{titleBg('Тарифы')}
-					</div>
+				<div className="row mt-4">
+					{tariffs.length && tariffs.map((tariff, index) => <div key={index} className="col-sm-6 col-12 mb-3">
+						<div className="card-membership card">
+							<div className="card__photo-wrapper">
+								<img className="card__photo" src={tariff.img} alt="" />
+							</div>
 
-					<div className="row mt-4">
-						{tariffs.length && tariffs.map((tariff, index) => <div key={index} className="col-sm-6 col-12 mb-3">
-							<div className="card-membership card">
-								<div className="card__photo-wrapper">
-									<img className="card__photo" src={tariff.img} alt="" />
+							<div className="card__inner">
+								<div className="card__title"><h6>
+									{tariff.name}
+								</h6></div>
+
+								<div className="card__description">{parse(tariff.description)}</div>
+
+								<div className="card__price">
+									<h5>{tariff.price} <i className="fas fa-ruble-sign"></i></h5>
 								</div>
+							</div>
 
-								<div className="card__inner">
-									<div className="card__title"><h6>
-										{tariff.name}
-									</h6></div>
-
-									<div className="card__description">{parse(tariff.description)}</div>
-
-									<div className="card__price">
-										<h5>{tariff.price} <i className="fas fa-ruble-sign"></i></h5>
-									</div>
-								</div>
-
-								<div className="card__footer">
+							<div className="card__footer">
 								{isLoggedIn
-									? isMember 
+									? isMember
 										? <button disabled>Приобрести подписку</button>
 										: <button disabled={isLoading} onClick={() => purchaseHandle(tariff.id)}>{isLoading ? '...' : 'Приобрести подписку'}</button>
 									: <Link className="button" to='/login'>Приобрести подписку</Link>
 								}
-								</div>
 							</div>
-						</div>)}
-					</div>
-				</section>
-			</div>
-		)
+						</div>
+					</div>)}
+				</div>
+			</section>
+		</div>
+	)
 }

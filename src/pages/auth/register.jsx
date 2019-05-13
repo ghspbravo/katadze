@@ -187,11 +187,13 @@ export default function register() {
 
 							<div className="form-group">
 								<label htmlFor="gender">Пол</label>
-								<select id="gender" className="col-12 px-0" {...select('gender')}>
-									<option value="" disabled selected hidden>Пол</option>
-									<option value="0">Мужской</option>
-									<option value="1">Женский</option>
-								</select>
+								<div className="select">
+									<select id="gender" className="col-12 px-0" {...select('gender')}>
+										<option value="" disabled selected hidden>Пол</option>
+										<option value="0">Мужской</option>
+										<option value="1">Женский</option>
+									</select>
+								</div>
 								{!formState.validity.gender &&
 									<div className="form-error col-12 px-0">{formState.errors.gender}</div>}
 								{fieldErrors.gender &&

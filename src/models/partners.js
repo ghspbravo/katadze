@@ -6,6 +6,8 @@ export const partners = {
 	partnersCategories: {},
 	partners: {},
 	coupons: {},
+	partnerCities: new Set(),
+	partnerList: [],
 
 	isSubsciptionLoading: false,
 	isLoading: false,
@@ -87,23 +89,23 @@ export const partners = {
 				actions.setLoadingSingle(false)
 				return false
 			})
-			return partner
+		return partner
 	}),
 
-	getCouponsAuth: thunk(async (actions, payload, {getStoreState, dispatch}) => {
+	getCouponsAuth: thunk(async (actions, payload, { getStoreState, dispatch }) => {
 		getStoreState().auth.refresh && await dispatch.auth.refreshTokens()
 		await fetch(server + 'coupons/', {
 			method: 'get',
-			headers: getStoreState().auth.refresh 
-			? {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json',
-				'Authorization': `Bearer ${getStoreState().auth.access}`
-			}
-			: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json',
-			},
+			headers: getStoreState().auth.refresh
+				? {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json',
+					'Authorization': `Bearer ${getStoreState().auth.access}`
+				}
+				: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json',
+				},
 		}).then(response => {
 			if (!response.ok) {
 				throw response.status
@@ -128,7 +130,7 @@ export const partners = {
 			})
 	}),
 
-	activateCoupon: thunk(async (actions, payload, {getStoreState}) => {
+	activateCoupon: thunk(async (actions, payload, { getStoreState }) => {
 		actions.setSubsciptionLoading(true)
 		const isSuccess = await fetch(server + 'user/coupon/', {
 			method: 'post',
@@ -196,6 +198,14 @@ export const partners = {
 				count: category.partners.length
 			}
 			partners.partners[category.id] = category.partners
+
+			category.partners.forEach(partner => {
+				partner &&
+					state.partnerList.push(partner)
+
+				partner.city_name
+					&& state.partnerCities.add(partner.city_name)
+			})
 		})
 	}),
 

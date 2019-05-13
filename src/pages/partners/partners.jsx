@@ -9,6 +9,7 @@ import topbanner from '../../components/topbanner/topbanner';
 import './partners.scss'
 import partnersCategories from '../../components/partnersCategories/partnersCategories';
 import partnersList from './partnersList';
+import partnersSearchList from './partnersSearchList';
 
 export default function partners() {
 
@@ -29,6 +30,7 @@ export default function partners() {
 
 				<Switch>
 					<Route exact path='/partners/' component={partnersCategories} />
+					<Route exact path='/partners/search/' component={partnersSearchList} />
 					<Route exact path='/partners/:id' component={partnersList} />
 				</Switch>
 
