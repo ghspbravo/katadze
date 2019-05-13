@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 import {Link} from 'react-router-dom'
 import './about.scss'
 import aboutBg from './aboutHeader.svg'
@@ -6,6 +6,8 @@ import aboutBg from './aboutHeader.svg'
 import { useSpring, animated as a } from 'react-spring'
 import useEvent from 'react-use/lib/useEvent'
 import useTitle from 'react-use/lib/useTitle';
+
+import Portal from '../../components/modal/modalTest'
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
 const trans1 = (x, y) => `translate3d(${x / 30}px,${y / 28}px,0)`
@@ -19,6 +21,9 @@ export default function about() {
 
 	const mouseMoveHandler = useCallback(({ clientX: x, clientY: y }) => set({ xy: calc(x, y) }))
 	useEvent('mousemove', mouseMoveHandler, window)
+
+	const [state, setState] = useState(false)
+	const [open, setopen] = useState(false)
 
 	useTitle('KATADZE | О нас')
 	return (
@@ -36,6 +41,15 @@ export default function about() {
 							<br className="d-none d-lg-block" /> А также официальный туроператор
 							<br className="d-none d-lg-block" /> Единого федерального реестра.
 							</p>
+
+							{/* trying modals */}
+							<button onClick={() => setopen(true)}>click to call modal</button>
+
+							<Portal isOpen={open} id='modals-root' closeModal={() => setopen(false)}>
+							  <p>Thinking with portals</p>
+								<p>state changes? {state.toString()}</p>
+								<button onClick={() => setState(!state)}>toggle state</button>
+							</Portal>
 						</div>
 
 						<div className="d-lg-none faq-header-figure_bg" style={{ backgroundImage: `url(${aboutBg})` }}></div>
