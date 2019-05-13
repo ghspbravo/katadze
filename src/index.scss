@@ -340,6 +340,11 @@ button {
 button:not(.link):not(.no-style), .button,
 input[type=reset], input[type=button], input[type=submit] {
 
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: block;
+
 	&.alter {
 		font-family: $ff-title;
 		color: $c-black;
@@ -466,6 +471,10 @@ label {
 	border-bottom: 2px solid $c-form-label;
 	color: $c-form-label;
 	background-color: transparent;
+
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: auto;
 
 
 	margin: 10px 0;
