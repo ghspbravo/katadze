@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import { parseSearchUri, filterPartnersByName, filterPartnersByCity } from './partnersSearch/partnersSearchFunctions';
 import { useStore, useActions } from 'easy-peasy';
 import cardPartner from '../../components/card/cardPartner';
@@ -179,7 +180,12 @@ export default function partnersSearchList(router) {
               )}
             </div>)}
           </div>
-          : <p>Поиск не дал результатов</p>}
+          : <div>
+            <p>Поиск не дал результатов</p>
+            <div className="row no-gutters">
+              <Link className="button" to='/partners'>К категориям</Link>
+            </div>
+          </div>}
     </div>
   )
 }

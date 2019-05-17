@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './partnersSearch.scss'
-import { useFormState } from 'react-use-form-state';
-import { formQueryUri } from './partnersSearchFunctions';
+import { formQueryUri, parseSearchUri } from './partnersSearchFunctions';
 import { useStore } from 'easy-peasy';
 
 function defaultSearch(router, query = '', filterCity = '') {
@@ -13,24 +12,51 @@ function defaultSearch(router, query = '', filterCity = '') {
  * @param {function} search custom submit handler callback
  */
 export default function partnersSearch(router, search = defaultSearch) {
-  const [formState, { text, select }] = useFormState();
+
+  const [query, setQuery] = useState('')
+  const [city, setCity] = useState('')
 
   const resetSearch = () => {
-    router.history.push(formQueryUri("", null))
+    search(router)
   }
 
   const submitHandler = (e) => {
     e.preventDefault()
-    search(router, formState.values.query, formState.values.city)
+    search(router, query, city)
+  }
+
+  const selectChangeHandler = (e) => {
+    search(router, query, e.target.value)
   }
 
   const cities = useStore(store => store.partners.partnerCities)
+
+  const searchField = useRef()
+
+  const focusOnSearchField = () => {
+    searchField.current && searchField.current.focus()
+  }
+  useEffect(() => {
+    focusOnSearchField()
+    window.addEventListener('keydown', () => {
+      focusOnSearchField()
+    })
+
+    if (!router.location.search) return
+    const [query, city] = parseSearchUri(router.location.search)
+    setQuery(query)
+    setCity(city)
+
+    return(() => {
+      window.removeEventListener('keydown', focusOnSearchField)
+    })
+  }, [])
 
   return (
     <form className="search-form"
       onSubmit={submitHandler}>
       <div className="row no-gutters search-input">
-        <input {...text('query')} className="col search-input__input" type="text"
+        <input ref={searchField} value={query} onChange={e => setQuery(e.target.value)} className="col search-input__input" type="text"
           placeholder="Найти магазин, заведение, активность..." />
         <button className="search-input__button"><i className="fas fa-search"></i></button>
       </div>
@@ -38,15 +64,15 @@ export default function partnersSearch(router, search = defaultSearch) {
 
       <div className="row no-gutters">
         <div className="select mr-2 mb-1">
-          <select {...select('city')}>
+          <select value={city} onChange={selectChangeHandler}>
             <option defaultValue disabled>Выберите город</option>
-            <option>Все</option>
+            <option value="">Все</option>
             {cities &&
               Array.from(cities).map((city, index) => <option key={index} value={city}>{city}</option>)
             }
           </select>
         </div>
-        <button onClick={resetSearch}>Очистить</button>
+        <button type="button" onClick={resetSearch}>Очистить</button>
       </div>
 
     </form>
