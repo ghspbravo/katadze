@@ -63,16 +63,20 @@ export default function partnersSearch(router, search = defaultSearch) {
       <p className="text-small pl-2">Например: магазин одежды, кафе, лыжи</p>
 
       <div className="row no-gutters">
-        <div className="select mr-2 mb-1">
-          <select value={city} onChange={selectChangeHandler}>
-            <option defaultValue disabled>Выберите город</option>
-            <option value="">Все</option>
-            {cities &&
-              Array.from(cities).map((city, index) => <option key={index} value={city}>{city}</option>)
-            }
-          </select>
+        <div className="mr-2 mb-1">
+          <div className="select">
+            <select value={city} onChange={selectChangeHandler}>
+              <option defaultValue disabled>Выберите город</option>
+              <option value="">Все</option>
+              {cities &&
+                Array.from(cities).map((city, index) => <option key={index} value={city}>{city}</option>)
+              }
+            </select>
+          </div>
         </div>
-        <button type="button" onClick={resetSearch}>Очистить</button>
+        <div>
+          <button type="button" onClick={resetSearch}>Очистить</button>
+        </div>
       </div>
 
     </form>

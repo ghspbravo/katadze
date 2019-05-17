@@ -26,6 +26,7 @@
 
 @import './scss/vars';
 @import './scss/spacing';
+@import './scss/customSelect';
 
 body {
 	position: relative;
@@ -501,38 +502,42 @@ label {
 }
 
 /* Custom Select */
+// .select {
+//   position: relative;
+//   display: flex;
+// 	min-width: 10em;
+//   height: 2em;
+//   line-height: 2;
+//   background: white;
+//   overflow: hidden;
+// 	border-radius: .25em;
+// 	border: 1px solid $c-blue;
+// }
+// select {
+// 	flex: 1;
+// 	font-size: $fz-body-2;
+// 	padding: 0 .5em;
+// 	background: #fff;
+//   cursor: pointer;
+// }
+// /* Arrow */
+// .select::after {
+//   content: '\25BC';
+//   position: absolute;
+//   top: 2px;
+// 	right: 2px;
+// 	height: 80%;
+//   padding: 0 0.5em;
+//   background: #fff;
+//   cursor: pointer;
+//   pointer-events: none;
+//   transition: color $tr-standart;
+// }
+// /* Transition */
+// .select:hover::after {
+//   color: $c-yellow;
+// }
+
 .select {
-  position: relative;
-  display: flex;
-	min-width: 10em;
-  height: 2em;
-  line-height: 2;
-  background: white;
-  overflow: hidden;
-	border-radius: .25em;
-	border: 1px solid $c-blue;
-}
-select {
-	flex: 1;
-	font-size: $fz-body-2;
-	padding: 0 .5em;
-	background: #fff;
-  cursor: pointer;
-}
-/* Arrow */
-.select::after {
-  content: '\25BC';
-  position: absolute;
-  top: 2px;
-	right: 2px;
-	height: 80%;
-  padding: 0 0.5em;
-  background: #fff;
-  cursor: pointer;
-  pointer-events: none;
-  transition: color $tr-standart;
-}
-/* Transition */
-.select:hover::after {
-  color: $c-yellow;
-}
+	@include form-input-select;
+}	
