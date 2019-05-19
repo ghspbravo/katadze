@@ -1,4 +1,4 @@
 export default process.env.REACT_APP_API
 
-export const vkAuthApp = process.env.VK_AUTH
-export const fbAuthApp = process.env.FB_AUTH
+export const vkAuthApp = process.env.REACT_APP_VK_AUTH
+export const fbAuthApp = process.env.REACT_APP_FB_AUTH

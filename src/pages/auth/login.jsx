@@ -3,7 +3,7 @@ import { useFormState } from 'react-use-form-state';
 import { useStore, useActions } from 'easy-peasy';
 import { Redirect, Link } from 'react-router-dom'
 
-import {vkAuthApp, fbAuthApp} from '../../models/constants'
+import { vkAuthApp, fbAuthApp } from '../../models/constants'
 import badgeExperimental from '../../components/badges/badgeExperimental';
 
 import useTitle from 'react-use/lib/useTitle';
@@ -19,8 +19,8 @@ export default function login() {
 	const isLoggedIn = useStore(state => state.auth.isLoggedIn)
 	const isLoading = useStore(state => state.auth.isLoading)
 
-  const getUserInfo = useActions(actions => actions.profile.getUserInfo)
-  const getStatus = useActions(actions => actions.membership.getStatus)
+	const getUserInfo = useActions(actions => actions.profile.getUserInfo)
+	const getStatus = useActions(actions => actions.membership.getStatus)
 
 	const login = useActions(actions => actions.auth.login)
 	const submitHandler = useCallback(e => {
@@ -31,7 +31,7 @@ export default function login() {
 			password: formState.values.password,
 		}).then(isSuccess => {
 			isSuccess && getUserInfo().then(() => {
-        getStatus()
+				getStatus()
 			})
 		})
 	})
@@ -82,13 +82,13 @@ export default function login() {
 
 						<div className="row no-gutters mt-4">
 							<a href={vkAuthApp} className="button mx-auto auth-social auth-social_vk">
-							Авторизация через ВК</a>
+								Авторизация через ВК</a>
 						</div>
 
 						<div className="row no-gutters mt-2">
-							<a href={fbAuthApp} className="button mx-auto auth-social auth-social_fb">
-							{badgeExperimental()}
-							Войти через Facebook</a>
+							<a style={{ overflow: 'visible' }} href={fbAuthApp} className="button mx-auto auth-social auth-social_fb">
+								{badgeExperimental()}
+								Войти через Facebook</a>
 						</div>
 					</div>
 				</div>
