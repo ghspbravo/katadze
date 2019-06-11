@@ -24,7 +24,9 @@ export default function cardPrice(
 				<div className="card__description">{parse(description)}</div>
 
 				<div className="card__price">
-					<button disabled={!isAllowed} onClick={() => paymentHandler(id, null)}>{price} <i className="fas fa-ruble-sign"></i></button>
+					<div className="row no-gutters justify-content-center">
+						<button disabled={!isAllowed} onClick={() => paymentHandler(id, null)}>{price} <i className="fas fa-ruble-sign"></i></button>
+					</div>
 
 					{parts.length && 
 						parts.map((part, index) => <div key={index} className="row no-gutters align-items-center mt-2 card__subprice">

@@ -1,0 +1,77 @@
+@import '../../../scss/vars';
+
+.camp-banner {
+	color: white;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 600px;
+
+	@media (min-width: 1800px) {
+		height: 900px;
+	}
+	@media (max-width: $m-lg-max) {
+		height: 400px;
+	}
+	@media (max-width: $m-sm-max) {
+		height: 450px;
+		background-size: 100vw 450px;
+	}
+	@media (max-width: $m-xs-max) {
+    height: 350px;
+    background-size: 140vw 100%;
+    background-position: left;
+  }
+  
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%; height: 100%;
+		background: rgba($color: #000000, $alpha: 0.3);
+	}
+
+}
+
+.gallery {
+  img {
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: $m-sm-max) {
+    height: 500px;
+  }
+}
+
+.gallery-control-next,
+.gallery-control-prev {
+  position: absolute;
+
+  top: 50%;
+  width: 75px;
+  height: 114px;
+
+  object-fit: contain;
+  cursor: pointer;
+
+  &:hover, &:focus {
+    outline: none;
+    opacity: 0.8;
+    transition: opacity $tr-standart;
+  }
+
+  @media (max-width: $m-sm-max) {
+    display: none;
+  }
+}
+
+.gallery-control-next {
+  right: -100px;
+}
+
+.gallery-control-prev {
+  left: -100px;
+}

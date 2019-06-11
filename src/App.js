@@ -24,6 +24,7 @@ import register from './pages/auth/register';
 import activate from './pages/auth/activate';
 import acquiring from './pages/orderSuccess';
 import social from './pages/auth/socials';
+import afp from './pages/events/afp/afp';
 
 export default function App(router) {
   const refreshTokens = useActions(actions => actions.auth.refreshTokens)
@@ -85,6 +86,7 @@ export default function App(router) {
 
             <Route exact path="/events/" component={events} />
             <Route exact path="/events/camp" component={camp} />
+            <Route exact path="/events/afp" component={afp} />
 
             <Route path="/profile/" component={profile} />
 

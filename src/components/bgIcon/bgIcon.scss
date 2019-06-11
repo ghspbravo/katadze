@@ -14,6 +14,10 @@ $offset-width-big: 50px;
 
 	transition: background-color $tr-standart;
 
+	&_alter {
+		background-color: $c-yellow;
+	}
+
 	img {
 		object-fit: contain;
 		transform: translateX(-$offset-width);
