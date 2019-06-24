@@ -18,7 +18,9 @@ export default function cardMembership(
 				<div className="card__description">{parse(description)}</div>
 
 				<div className="card__price">
-					<h5>{price} <i className="fas fa-ruble-sign"></i></h5>
+					{price !== "0"
+						? <h5>{price} <i className="fas fa-ruble-sign"></i></h5>
+						: <h5>Бесплатно</h5>}
 				</div>
 			</div>
 
