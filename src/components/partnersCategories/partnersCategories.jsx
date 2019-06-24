@@ -204,7 +204,9 @@ export default function partnersCategories(router) {
 								<div className="card__description">{parse(tariff.description)}</div>
 
 								<div className="card__price">
-									<h5>{tariff.price} <i className="fas fa-ruble-sign"></i></h5>
+									{tariff.price !== "0"
+										? <h5>{tariff.price} <i className="fas fa-ruble-sign"></i></h5>
+										: <h5>Бесплатно</h5>}
 								</div>
 							</div>
 
