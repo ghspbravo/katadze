@@ -30,7 +30,7 @@ export default function homeItemsDesktop(
 			</div>
 
 			<div onMouseOver={activateHandlers[0]} onMouseLeave={deactivateHandlers[0]} className="home-item">
-				<div className="home-item__title"><h3>друзья<span>.</span></h3></div>
+				<div className="home-item__title"><h3>Друзья</h3></div>
 
 				<a.div style={springs[0]} className="home-item-inner">
 					<Link className="home-item__link" to='/partners'>Перейти</Link>
@@ -57,7 +57,7 @@ export default function homeItemsDesktop(
 			</div>
 
 			<div onMouseOver={activateHandlers[1]} onMouseLeave={deactivateHandlers[1]} className="home-item">
-				<div className="home-item__title"><h3>события<span>.</span></h3></div>
+				<div className="home-item__title"><h3>События</h3></div>
 
 				<a.div style={springs[1]} className="home-item-inner">
 					<Link className="home-item__link" to='/events'>Перейти</Link>
@@ -87,7 +87,7 @@ export default function homeItemsDesktop(
 			</div>
 
 			<div onMouseOver={activateHandlers[2]} onMouseLeave={deactivateHandlers[2]} className="home-item">
-				<div className="home-item__title"><h3>гиды<span>.</span></h3></div>
+				<div className="home-item__title"><h3>Гиды</h3></div>
 
 				<a.svg style={springs[2]} className="home-item-bg" width="100%" height="100%">
 					<defs>

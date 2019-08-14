@@ -72,7 +72,7 @@ export default function partnersCategories(router) {
 
 			{!isMember &&
 				<div className='mb-3 col-lg-10 px-0 col-12'>
-					<p>Воспользоваться подпиской могут только члены клуба. Оплатить подписку можно в личном кабинете</p>
+					<p>Воспользоваться подпиской могут только члены клуба. Зарегистрируйся в личном кабинете и активируй подписку</p>
 					<div className="row no-gutters">
 						<Link className="button" to="/profile/membership">Начать пользоваться скидками</Link>
 					</div>
@@ -184,44 +184,6 @@ export default function partnersCategories(router) {
 					</div>
 				</div>}
 
-			<section className="sbox">
-				<div className="text-center">
-					{titleBg('Тарифы')}
-				</div>
-
-				<div className="row mt-4">
-					{tariffs.length && tariffs.map((tariff, index) => <div key={index} className="col-sm-6 col-12 mb-3">
-						<div className="card-membership card">
-							<div className="card__photo-wrapper">
-								<img className="card__photo" src={tariff.img} alt="" />
-							</div>
-
-							<div className="card__inner">
-								<div className="card__title"><h6>
-									{tariff.name}
-								</h6></div>
-
-								<div className="card__description">{parse(tariff.description)}</div>
-
-								<div className="card__price">
-									{tariff.price !== "0"
-										? <h5>{tariff.price} <i className="fas fa-ruble-sign"></i></h5>
-										: <h5>Бесплатно</h5>}
-								</div>
-							</div>
-
-							<div className="card__footer">
-								{isLoggedIn
-									? isMember
-										? <button disabled>Приобрести подписку</button>
-										: <button disabled={isLoading} onClick={() => purchaseHandle(tariff.id)}>{isLoading ? '...' : 'Приобрести подписку'}</button>
-									: <Link className="button" to='/login'>Приобрести подписку</Link>
-								}
-							</div>
-						</div>
-					</div>)}
-				</div>
-			</section>
 		</div>
 	)
 }
